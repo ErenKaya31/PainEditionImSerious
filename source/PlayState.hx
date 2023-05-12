@@ -214,6 +214,7 @@ class PlayState extends MusicBeatState
 	var santa:BGSprite;
 	var heyTimer:Float;
 
+	var elapsedtime:Float;
 	var bgGirls:BackgroundGirls;
 	var wiggleShit:WiggleEffect = new WiggleEffect();
 	var bgGhouls:BGSprite;
@@ -1618,7 +1619,7 @@ class PlayState extends MusicBeatState
 			iconP1.swapOldIcon();
 		}*/
 
-		var elapsedtime += elasped;
+		elapsedtime += elasped;
 
 		callOnLuas('onUpdate', [elapsed]);
 
