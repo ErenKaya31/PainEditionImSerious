@@ -101,6 +101,7 @@ class MainMenuState extends MusicBeatState
 			menuItem.animation.play('idle');
 			menuItem.ID = i;
 			//menuItem.screenCenter(X);
+			menuItem.x = 110;
 			menuItems.add(menuItem);
 			var scr:Float = (optionShit.length - 4) * 0.135;
 			if(optionShit.length < 4) scr = 0;
@@ -263,7 +264,6 @@ class MainMenuState extends MusicBeatState
 		menuItems.forEach(function(spr:FlxSprite)
 		{
 			spr.animation.play('idle');
-			FlxTween.tween(spr, {x: 110}, 0.2, {FlxEase.quadOut});
 			spr.offset.y = 0;
 			spr.updateHitbox();
 
@@ -274,7 +274,6 @@ class MainMenuState extends MusicBeatState
 				spr.offset.x = 0.15 * (spr.frameWidth / 2 + 180);
 				spr.offset.y = 0.15 * spr.frameHeight;
 				FlxG.log.add(spr.frameWidth);
-				FlxTween.tween(spr, {x: 220}, 0.2, {FlxEase.quadOut});
 			}
 		});
 	}
