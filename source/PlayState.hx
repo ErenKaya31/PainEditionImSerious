@@ -1618,6 +1618,8 @@ class PlayState extends MusicBeatState
 			iconP1.swapOldIcon();
 		}*/
 
+		var elapsedtime += elasped;
+
 		callOnLuas('onUpdate', [elapsed]);
 
 		if (curbg != null)
@@ -1625,7 +1627,7 @@ class PlayState extends MusicBeatState
 				if (curbg.active) // only the polygonized background is active
 				{
 					var shad = cast(curbg.shader, Shaders.GlitchShader);
-					shad.uTime.value[0] += elapsed;
+					shad.uTime.value[0] = elapsedtime;
 				}
 			}
 
@@ -3556,7 +3558,6 @@ class PlayState extends MusicBeatState
 						black.alpha = 0;
 						add(black);
 						FlxTween.tween(black, {alpha: 0.6}, 1);
-						makeInvisibleNotes(true);
 						subtitleManager.addSubtitle("I block you...", 0.02, 1);
 					case 165:
 						subtitleManager.addSubtitle("You are monster...", 0.02, 1);
@@ -3570,7 +3571,6 @@ class PlayState extends MusicBeatState
 						defaultCamZoom -= 0.1;
 						FlxG.camera.flash();
 						FlxTween.tween(black, {alpha: 0}, 1);
-						makeInvisibleNotes(false);
 					case 640:
 						FlxG.camera.flash();
 						black.alpha = 0.6;
@@ -3580,7 +3580,6 @@ class PlayState extends MusicBeatState
 						defaultCamZoom -= 0.1;
 						black.alpha = 0;
 					case 1028:
-						makeInvisibleNotes(true);
 						subtitleManager.addSubtitle("I'm trying to...", 0.02, 1.5);
 					case 1056:
 						subtitleManager.addSubtitle("No I'm not trying help you...", 0.02, 1);
@@ -3592,7 +3591,6 @@ class PlayState extends MusicBeatState
 						subtitleManager.addSubtitle("go watch me scribe me", 0.02, 1);
 					case 1143:
 						subtitleManager.addSubtitle("Whatever.", 0.02, 1, {subtitleSize: 45});
-						makeInvisibleNotes(false);
 					case 1152:
 						FlxTween.tween(black, {alpha: 0.4}, 1);
 						defaultCamZoom += 0.3;
@@ -3748,26 +3746,6 @@ class PlayState extends MusicBeatState
 		}
 		#end
 		return returnVal;
-	}
-
-	function makeInvisibleNotes(invisible:Bool)
-	{
-		if (invisible)
-		{
-			for (i in 0...strumLineNotes.members.length)
-			{
-				FlxTween.cancelTweensOf(i);
-				FlxTween.tween(i, {alpha: 0}, 1);
-			}
-		}
-		else
-		{
-			for (i in 0...strumLineNotes.members.length)
-			{
-				FlxTween.cancelTweensOf(i);
-				FlxTween.tween(i, {alpha: 1}, 1);
-			}
-		}
 	}
 
 	public function setOnLuas(variable:String, arg:Dynamic) {
