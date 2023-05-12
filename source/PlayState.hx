@@ -559,7 +559,7 @@ class PlayState extends MusicBeatState
 		strumLine.scrollFactor.set();
 
 		timeTxt = new FlxText(STRUM_X + (FlxG.width / 2) - 248, 20, 400, "", 32);
-		timeTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		timeTxt.setFormat(Paths.font("comic.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		timeTxt.scrollFactor.set();
 		timeTxt.alpha = 0;
 		timeTxt.borderSize = 2;
@@ -680,14 +680,14 @@ class PlayState extends MusicBeatState
 		reloadHealthBarColors();
 
 		scoreTxt = new FlxText(0, healthBarBG.y + 36, FlxG.width, "", 20);
-		scoreTxt.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		scoreTxt.setFormat(Paths.font("comic.ttf"), 20, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		scoreTxt.scrollFactor.set();
 		scoreTxt.borderSize = 1.25;
 		scoreTxt.visible = !ClientPrefs.hideHud;
 		add(scoreTxt);
 
 		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, "BOTPLAY", 32);
-		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		botplayTxt.setFormat(Paths.font("comic.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		botplayTxt.scrollFactor.set();
 		botplayTxt.borderSize = 1.25;
 		botplayTxt.visible = cpuControlled;
@@ -2530,24 +2530,6 @@ class PlayState extends MusicBeatState
 			
 			case 'BG Freaks Expression':
 				if(bgGirls != null) bgGirls.swapDanceType();
-
-			case 'Subtitle':
-				var subtitleTxt = new FlxTypeText(0, 0, 1280, value1, 36);
-				subtitleTxt.y = (FlxG.height / 2) - 200;
-				subtitleTxt.setFormat(Paths.font("vcr.ttf"), 36, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-				subtitleTxt.antialiasing = ClientPrefs.globalAntialiasing;
-				subtitleTxt.borderSize = 2;
-				subtitleTxt.cameras = [camOther];
-				subtitleTxt.screenCenter(X);
-				subtitleTxt.start(0.02, false, false, [], () -> {
-					modchartTimers.set(subtitleTxt + 'timer', new FlxTimer().start(value2, _ -> {
-						modchartTweens.set(subtitleTxt + ' tween', FlxTween.tween(subtitleTxt, {alpha: 0}, 0.5, {onComplete: _ -> {
-							remove(subtitleTxt);
-							subtitleTxt.destroy();
-						}}));
-					}));
-				});
-				add(subtitleTxt);
 		}
 		callOnLuas('onEvent', [eventName, value1, value2]);
 	}
@@ -3542,6 +3524,68 @@ class PlayState extends MusicBeatState
 			return;
 		}
 
+		switch (SONG.song.toLowerCase())
+		{
+			case 'blocked':
+				switch (curStep)
+				{
+					case 128:
+						defaultCamZoom += 0.1;
+						FlxG.camera.flash(FlxColor.WHITE, 0.5);
+						black = new FlxSprite().makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
+						black.screenCenter();
+						black.alpha = 0;
+						add(black);
+						FlxTween.tween(black, {alpha: 0.6}, 1);
+						makeInvisibleNotes(true);
+						SubtitleManager.addSubtitle("I block you...", 0.02, 1);
+					case 165:
+						SubtitleManager.addSubtitle("You are monster...", 0.02, 1);
+					case 188:
+						SubtitleManager.addSubtitle("You ruined my life!", 0.02, 1);
+					case 224:
+						SubtitleManager.addSubtitle("Moldy I swear to god I'll block you", 0.02, 1);
+					case 248:
+						SubtitleManager.addSubtitle("FOREVER.", 0.02, 0.5, {subtitleSize: 60});
+					case 256:
+						defaultCamZoom -= 0.1;
+						FlxG.camera.flash();
+						FlxTween.tween(black, {alpha: 0}, 1);
+						makeInvisibleNotes(false);
+					case 640:
+						FlxG.camera.flash();
+						black.alpha = 0.6;
+						defaultCamZoom += 0.1;
+					case 768:
+						FlxG.camera.flash();
+						defaultCamZoom -= 0.1;
+						black.alpha = 0;
+					case 1028:
+						makeInvisibleNotes(true);
+						SubtitleManager.addSubtitle("I'm trying to...", 0.02, 1.5);
+					case 1056:
+						SubtitleManager.addSubtitle("No I'm not trying help you...", 0.02, 1);
+					case 1084:
+						SubtitleManager.addSubtitle("Because you go watch me...", 0.02, 1);
+					case 1104:
+						SubtitleManager.addSubtitle("Because...", 0.02, 1);
+					case 1118:
+						SubtitleManager.addSubtitle("go watch me scribe me", 0.02, 1);
+					case 1143:
+						SubtitleManager.addSubtitle("Whatever.", 0.02, 1, {subtitleSize: 45});
+						makeInvisibleNotes(false);
+					case 1152:
+						FlxTween.tween(black, {alpha: 0.4}, 1);
+						defaultCamZoom += 0.3;
+					case 1200:
+						FlxTween.tween(black, {alpha: 0.7}, (Conductor.stepCrochet / 1000) * 8);
+					case 1216:
+						FlxG.camera.flash(FlxColor.WHITE, 0.5);
+						remove(black);
+						defaultCamZoom -= 0.3;
+				}
+		}
+
 		lastStepHit = curStep;
 		setOnLuas('curStep', curStep);
 		callOnLuas('onStepHit', []);
@@ -3685,6 +3729,26 @@ class PlayState extends MusicBeatState
 		}
 		#end
 		return returnVal;
+	}
+
+	function makeInvisibleNotes(invisible:Bool)
+	{
+		if (invisible)
+		{
+			for (i in 0...strumLineNotes.members.length)
+			{
+				FlxTween.cancelTweensOf(i);
+				FlxTween.tween(i, {alpha: 0}, 1);
+			}
+		}
+		else
+		{
+			for (i in 0...strumLineNotes.members.length)
+			{
+				FlxTween.cancelTweensOf(i);
+				FlxTween.tween(i, {alpha: 1}, 1);
+			}
+		}
 	}
 
 	public function setOnLuas(variable:String, arg:Dynamic) {
