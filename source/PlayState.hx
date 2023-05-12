@@ -387,7 +387,7 @@ class PlayState extends MusicBeatState
 			case 'green-void':
 				defaultCamZoom = 0.7;
 
-				var bg:BGSprite = new BGSprite('void', -700, -350, '', null, 1, 1, false, true);
+				var bg:BGSprite = new BGSprite('void', -700, -350, 1, 1);
 				bg.loadGraphic(Paths.image('backgrounds/void/cheater'));
 				bg.setGraphicSize(Std.int(bg.width * 2));
 				bg.antialiasing = false;
@@ -397,7 +397,7 @@ class PlayState extends MusicBeatState
 			case 'glitchy-void':
 				defaultCamZoom = 0.7;
 	
-				var bg:BGSprite = new BGSprite('void', 0, 200, '', null, 1, 1, false, true);
+				var bg:BGSprite = new BGSprite('void', 0, 200, 1, 1);
 				bg.loadGraphic(Paths.image('backgrounds/void/scarybg'));
 				bg.setGraphicSize(Std.int(bg.width * 3));
 				bg.antialiasing = false;
@@ -407,8 +407,8 @@ class PlayState extends MusicBeatState
 			case 'desktop':
 				defaultCamZoom = 0.5;
 	
-				expungedBG = new BGSprite('void', -600, -200, '', null, 1, 1, false, true);
-				expungedBG.loadGraphic(Paths.image('backgrounds/void/exploit/creepyRoom', 'shared'));
+				expungedBG = new BGSprite('void', -600, -200, 1, 1);
+				expungedBG.loadGraphic(Paths.image('backgrounds/void/exploit/creepyRoom'));
 				expungedBG.setPosition(0, 200);
 				expungedBG.setGraphicSize(Std.int(expungedBG.width * 2));
 				expungedBG.antialiasing = false;
@@ -3329,7 +3329,7 @@ class PlayState extends MusicBeatState
 		testshader.waveSpeed = 2;
 			
 		background.shader = testshader.shader;
-		curbg = background;
+		curStage = background;
 	}
 
 	public function spawnNoteSplash(x:Float, y:Float, data:Int, ?note:Note = null) {
