@@ -162,7 +162,6 @@ class BlockedGlitchEffect
 {
 	public var shader(default, null):BlockedGlitchShader = new BlockedGlitchShader();
 
-	#if SHADERS_ENABLED
 	public var time(default, set):Float = 0;
 	public var resolution(default, set):Float = 0;
 	public var colorMultiplier(default, set):Float = 0;
@@ -208,7 +207,6 @@ class BlockedGlitchEffect
 		shader.time.value = [value];
 		return this.time;
 	}
-	#end
 }
 
 class DitherEffect
@@ -272,7 +270,6 @@ class GlitchShader extends FlxShader
 
 class InvertShader extends FlxShader
 {
-	#if SHADERS_ENABLED
 	@:glFragmentSource('
     #pragma header
     
@@ -287,7 +284,6 @@ class InvertShader extends FlxShader
         vec2 uv = openfl_TextureCoordv;
         gl_FragColor = sineWave(texture2D(bitmap, uv));
     }')
-	#end
 	public function new()
 	{
 		super();
@@ -296,7 +292,6 @@ class InvertShader extends FlxShader
 
 class DistortBGShader extends FlxShader
 {
-	#if SHADERS_ENABLED
 	@:glFragmentSource('
     #pragma header
     //uniform float tx, ty; // x,y waves phase
@@ -342,7 +337,6 @@ class DistortBGShader extends FlxShader
         vec2 uv = sineWave(openfl_TextureCoordv);
         gl_FragColor = makeBlack(texture2D(bitmap, uv)) + texture2D(bitmap,openfl_TextureCoordv);
     }')
-	#end
 	public function new()
 	{
 		super();
@@ -351,7 +345,6 @@ class DistortBGShader extends FlxShader
 
 class PulseShader extends FlxShader
 {
-	#if SHADERS_ENABLED
 	@:glFragmentSource('
     #pragma header
     uniform float uampmul;
@@ -395,7 +388,6 @@ class PulseShader extends FlxShader
         vec2 uv = openfl_TextureCoordv;
         gl_FragColor = sineWave(texture2D(bitmap, uv),uv);
     }')
-	#end
 	public function new()
 	{
 		super();
@@ -405,7 +397,6 @@ class PulseShader extends FlxShader
 class BlockedGlitchShader extends FlxShader
 {
 	// https://www.shadertoy.com/view/MlVSD3
-	#if SHADERS_ENABLED
 	@:glFragmentSource('
     #pragma header
 
@@ -435,7 +426,6 @@ class BlockedGlitchShader extends FlxShader
       gl_FragColor.b = flixel_texture2D(bitmap, uv + vec2(offset(64.0, uv) * 0.03, 0.0)).b;
     }
     ')
-	#end
 	public function new()
 	{
 		super();
@@ -445,7 +435,6 @@ class BlockedGlitchShader extends FlxShader
 class DitherShader extends FlxShader
 {
 	// couldn't find a shadertoy link srry http://devlog-martinsh.blogspot.com/2011/03/glsl-8x8-bayer-matrix-dithering.html
-	#if SHADERS_ENABLED
 	@:glFragmentSource('
         #pragma header
         #extension GL_ARB_arrays_of_arrays : require
@@ -498,7 +487,6 @@ class DitherShader extends FlxShader
             gl_FragColor = finalRGB;
         }
     ')
-	#end
 	public function new()
 	{
 		super();
