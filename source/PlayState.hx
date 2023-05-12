@@ -124,6 +124,8 @@ class PlayState extends MusicBeatState
 	public var gf:Character;
 	public var boyfriend:Boyfriend;
 
+	public var curbg:BGSprite;
+
 	public var notes:FlxTypedGroup<Note>;
 	public var unspawnNotes:Array<Note> = [];
 	public var eventNotes:Array<Dynamic> = [];
@@ -152,6 +154,8 @@ class PlayState extends MusicBeatState
 	private var healthBarBG:AttachedSprite;
 	public var healthBar:FlxBar;
 	var songPercent:Float = 0;
+
+	var black:FlxSprite;
 
 	private var timeBarBG:AttachedSprite;
 	public var timeBar:FlxBar;
@@ -1609,6 +1613,15 @@ class PlayState extends MusicBeatState
 		}*/
 
 		callOnLuas('onUpdate', [elapsed]);
+
+		if (curbg != null)
+			{
+				if (curbg.active) // only the polygonized background is active
+				{
+					var shad = cast(curbg.shader, Shaders.GlitchShader);
+					shad.uTime.value[0] += elapsed;
+				}
+			}
 
 		switch (curStage)
 		{
@@ -3311,7 +3324,7 @@ class PlayState extends MusicBeatState
 		testshader.waveSpeed = 2;
 			
 		background.shader = testshader.shader;
-		curStage = background;
+		curbg = background;
 	}
 
 	public function spawnNoteSplash(x:Float, y:Float, data:Int, ?note:Note = null) {
