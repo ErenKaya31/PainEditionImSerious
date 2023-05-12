@@ -125,6 +125,7 @@ class PlayState extends MusicBeatState
 	public var boyfriend:Boyfriend;
 
 	public var curbg:BGSprite;
+	public static var lazychartshader:Shaders.GlitchEffect = new Shaders.GlitchEffect();
 
 	public var notes:FlxTypedGroup<Note>;
 	public var unspawnNotes:Array<Note> = [];
@@ -713,6 +714,10 @@ class PlayState extends MusicBeatState
 		timeBarBG.cameras = [camHUD];
 		timeTxt.cameras = [camHUD];
 		doof.cameras = [camHUD];
+
+		subtitleManager = new SubtitleManager();
+		subtitleManager.cameras = [camHUD];
+		add(subtitleManager);
 
 		// if (SONG.song == 'South')
 		// FlxG.camera.alpha = 0.7;
@@ -3551,15 +3556,15 @@ class PlayState extends MusicBeatState
 						add(black);
 						FlxTween.tween(black, {alpha: 0.6}, 1);
 						makeInvisibleNotes(true);
-						SubtitleManager.addSubtitle("I block you...", 0.02, 1);
+						subtitleManager.addSubtitle("I block you...", 0.02, 1);
 					case 165:
-						SubtitleManager.addSubtitle("You are monster...", 0.02, 1);
+						subtitleManager.addSubtitle("You are monster...", 0.02, 1);
 					case 188:
-						SubtitleManager.addSubtitle("You ruined my life!", 0.02, 1);
+						subtitleManager.addSubtitle("You ruined my life!", 0.02, 1);
 					case 224:
-						SubtitleManager.addSubtitle("Moldy I swear to god I'll block you", 0.02, 1);
+						subtitleManager.addSubtitle("Moldy I swear to god I'll block you", 0.02, 1);
 					case 248:
-						SubtitleManager.addSubtitle("FOREVER.", 0.02, 0.5, {subtitleSize: 60});
+						subtitleManager.addSubtitle("FOREVER.", 0.02, 0.5, {subtitleSize: 60});
 					case 256:
 						defaultCamZoom -= 0.1;
 						FlxG.camera.flash();
@@ -3575,17 +3580,17 @@ class PlayState extends MusicBeatState
 						black.alpha = 0;
 					case 1028:
 						makeInvisibleNotes(true);
-						SubtitleManager.addSubtitle("I'm trying to...", 0.02, 1.5);
+						subtitleManager.addSubtitle("I'm trying to...", 0.02, 1.5);
 					case 1056:
-						SubtitleManager.addSubtitle("No I'm not trying help you...", 0.02, 1);
+						subtitleManager.addSubtitle("No I'm not trying help you...", 0.02, 1);
 					case 1084:
-						SubtitleManager.addSubtitle("Because you go watch me...", 0.02, 1);
+						subtitleManager.addSubtitle("Because you go watch me...", 0.02, 1);
 					case 1104:
-						SubtitleManager.addSubtitle("Because...", 0.02, 1);
+						subtitleManager.addSubtitle("Because...", 0.02, 1);
 					case 1118:
-						SubtitleManager.addSubtitle("go watch me scribe me", 0.02, 1);
+						subtitleManager.addSubtitle("go watch me scribe me", 0.02, 1);
 					case 1143:
-						SubtitleManager.addSubtitle("Whatever.", 0.02, 1, {subtitleSize: 45});
+						subtitleManager.addSubtitle("Whatever.", 0.02, 1, {subtitleSize: 45});
 						makeInvisibleNotes(false);
 					case 1152:
 						FlxTween.tween(black, {alpha: 0.4}, 1);
