@@ -1619,7 +1619,7 @@ class PlayState extends MusicBeatState
 			iconP1.swapOldIcon();
 		}*/
 
-		elapsedtime += elasped;
+		var elapsedtime += elapsed;
 
 		callOnLuas('onUpdate', [elapsed]);
 
