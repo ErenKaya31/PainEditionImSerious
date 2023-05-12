@@ -1,7 +1,7 @@
 package;
 
 import flixel.util.FlxAxes;
-import flixel.system.FlxSound;
+import flixel.sound.FlxSound;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.addons.text.FlxTypeText;
