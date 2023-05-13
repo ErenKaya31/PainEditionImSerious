@@ -53,8 +53,8 @@ class HealthIcon extends FlxSprite
 				antialiasing = false;
 			}
 
-			for (icons in ditheredLol.length) {
-				if (char == icons) {
+			for (i in ditheredLol.length) {
+				if (char == i) {
 					antialiasing = false;
 				}
 			}
