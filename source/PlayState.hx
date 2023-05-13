@@ -1472,6 +1472,26 @@ class PlayState extends MusicBeatState
 		}
 	}
 
+	function makeInvisibleNotes(invisible:Bool)
+		{
+			if (invisible)
+			{
+				for (strumNote in strumLineNotes)
+				{
+					FlxTween.cancelTweensOf(strumNote);
+					FlxTween.tween(strumNote, {alpha: 0}, 1);
+				}
+			}
+			else
+			{
+				for (strumNote in strumLineNotes)
+				{
+					FlxTween.cancelTweensOf(strumNote);
+					FlxTween.tween(strumNote, {alpha: 1}, 1);
+				}
+			}
+		}
+
 	override function openSubState(SubState:FlxSubState)
 	{
 		if (paused)
@@ -1625,11 +1645,8 @@ class PlayState extends MusicBeatState
 
 		if (curbg != null)
 			{
-				if (curbg.active) // only the polygonized background is active
-				{
-					var shad = cast(curbg.shader, Shaders.GlitchShader);
-					shad.uTime.value[0] = elapsedtime;
-				}
+				var shad = cast(curbg.shader, Shaders.GlitchShader);
+				shad.uTime.value[0] = elapsedtime;
 			}
 
 		switch (curStage)
@@ -3559,6 +3576,7 @@ class PlayState extends MusicBeatState
 						black.alpha = 0;
 						add(black);
 						FlxTween.tween(black, {alpha: 0.6}, 1);
+						makeInvisibleNotes(true);
 						subtitleManager.addSubtitle("I block you...", 0.02, 1);
 					case 165:
 						subtitleManager.addSubtitle("You are monster...", 0.02, 1);
@@ -3572,6 +3590,7 @@ class PlayState extends MusicBeatState
 						defaultCamZoom -= 0.1;
 						FlxG.camera.flash();
 						FlxTween.tween(black, {alpha: 0}, 1);
+						makeInvisibleNotes(false);
 					case 640:
 						FlxG.camera.flash();
 						black.alpha = 0.6;
@@ -3582,6 +3601,7 @@ class PlayState extends MusicBeatState
 						black.alpha = 0;
 					case 1028:
 						subtitleManager.addSubtitle("I'm trying to...", 0.02, 1.5);
+						makeInvisibleNotes(true);
 					case 1056:
 						subtitleManager.addSubtitle("No I'm not trying help you...", 0.02, 1);
 					case 1084:
@@ -3592,6 +3612,7 @@ class PlayState extends MusicBeatState
 						subtitleManager.addSubtitle("go watch me scribe me", 0.02, 1);
 					case 1143:
 						subtitleManager.addSubtitle("Whatever.", 0.02, 1, {subtitleSize: 45});
+						makeInvisibleNotes(false);
 					case 1152:
 						FlxTween.tween(black, {alpha: 0.4}, 1);
 						defaultCamZoom += 0.3;
