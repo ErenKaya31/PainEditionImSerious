@@ -12,8 +12,6 @@ class HealthIcon extends FlxSprite
 	private var isPlayer:Bool = false;
 	private var char:String = '';
 
-	private var ditheredLol:Array<String> = ['expunged', 'bambi-3d', 'bambi-unfair', 'glitchy-expunged'];
-
 	public function new(char:String = 'bf', isPlayer:Bool = false)
 	{
 		super();
@@ -28,7 +26,7 @@ class HealthIcon extends FlxSprite
 		super.update(elapsed);
 
 		if (sprTracker != null)
-			setPosition(sprTracker.x + sprTracker.width + 10, sprTracker.y - 30);
+			setPosition(sprTracker.x + sprTracker.width + 12, sprTracker.y - 30);
 	}
 
 	public function swapOldIcon() {
@@ -36,6 +34,7 @@ class HealthIcon extends FlxSprite
 		else changeIcon('bf');
 	}
 
+	private var iconOffsets:Array<Float> = [0, 0];
 	public function changeIcon(char:String) {
 		if(this.char != char) {
 			var name:String = 'icons/' + char;
@@ -43,16 +42,28 @@ class HealthIcon extends FlxSprite
 			if(!Paths.fileExists('images/' + name + '.png', IMAGE)) name = 'icons/icon-face'; //Prevents crash from missing icon
 			var file:Dynamic = Paths.image(name);
 
-			loadGraphic(file, true, 150, 150);
+			loadGraphic(file); //Load stupidly first for getting the file size
+			loadGraphic(file, true, Math.floor(width / 2), Math.floor(height)); //Then load it fr
+			iconOffsets[0] = (width - 150) / 2;
+			iconOffsets[1] = (width - 150) / 2;
+			updateHitbox();
+
 			animation.add(char, [0, 1], 0, false, isPlayer);
 			animation.play(char);
 			this.char = char;
 
 			antialiasing = ClientPrefs.globalAntialiasing;
-			if(char.endsWith('-pixel') && char.endsWidth('-3d')) {
-				antialiasing = false; // twitta
+			if(char.endsWith('-pixel')) {
+				antialiasing = false;
 			}
 		}
+	}
+
+	override function updateHitbox()
+	{
+		super.updateHitbox();
+		offset.x = iconOffsets[0];
+		offset.y = iconOffsets[1];
 	}
 
 	public function getCharacter():String {
