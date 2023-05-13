@@ -106,6 +106,8 @@ class PlayState extends MusicBeatState
 	public var GF_X:Float = 400;
 	public var GF_Y:Float = 130;
 
+	var funnyFloatyBoys:Array<String> = ['bambi-3d', 'expunged', 'bambi-unfair', 'glitchy-expunged'];
+
 	public var boyfriendGroup:FlxSpriteGroup;
 	public var dadGroup:FlxSpriteGroup;
 	public var gfGroup:FlxSpriteGroup;
@@ -1449,8 +1451,14 @@ class PlayState extends MusicBeatState
 	{
 		for (i in 0...4)
 		{
+			var strumType:String = '';
+			if ((funnyFloatyBoys.contains(dad.curCharacter)) && player == 0 || funnyFloatyBoys.contains(boyfriend.curCharacter) && player == 1)
+			{
+				strumType = '3D';
+			}
+			
 			// FlxG.log.add(i);
-			var babyArrow:StrumNote = new StrumNote(ClientPrefs.middleScroll ? STRUM_X_MIDDLESCROLL : STRUM_X, strumLine.y, i, player);
+			var babyArrow:StrumNote = new StrumNote(ClientPrefs.middleScroll ? STRUM_X_MIDDLESCROLL : STRUM_X, strumLine.y, strumType, arrowType, player == 1); // ClientPrefs.middleScroll ? STRUM_X_MIDDLESCROLL : STRUM_X
 			if (!isStoryMode)
 			{
 				babyArrow.y -= 10;
@@ -3673,10 +3681,12 @@ class PlayState extends MusicBeatState
 			camHUD.zoom += 0.03;
 		}
 
-		iconP1.setGraphicSize(Std.int(iconP1.width + 30));
-		iconP2.setGraphicSize(Std.int(iconP2.width + 30));
+		var thingy = 0.88;
 
+		iconP1.setGraphicSize(Std.int(FlxMath.lerp(150, iconP1.width, thingy)),Std.int(FlxMath.lerp(150, iconP1.height, thingy)));
 		iconP1.updateHitbox();
+
+		iconP2.setGraphicSize(Std.int(FlxMath.lerp(150, iconP2.width, thingy)),Std.int(FlxMath.lerp(150, iconP2.height, thingy)));
 		iconP2.updateHitbox();
 
 		if (curBeat % gfSpeed == 0 && !gf.stunned && gf.animation.curAnim.name != null && !gf.animation.curAnim.name.startsWith("sing"))

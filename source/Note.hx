@@ -28,6 +28,13 @@ class Note extends FlxSprite
 	public var isSustainNote:Bool = false;
 	public var noteType(default, set):String = null;
 
+	private var CharactersWith3D:Array<String> = [
+		"bambi-3d",
+		'bambi-unfair',
+		'expunged',
+		'glitchy-expunged'
+	];
+
 	public var eventName:String = '';
 	public var eventVal1:String = '';
 	public var eventVal2:String = '';
@@ -107,7 +114,7 @@ class Note extends FlxSprite
 		return value;
 	}
 
-	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?inEditor:Bool = false)
+	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?inEditor:Bool = false, noteStyle:String = "normal")
 	{
 		super();
 
@@ -117,6 +124,7 @@ class Note extends FlxSprite
 		this.prevNote = prevNote;
 		isSustainNote = sustainNote;
 		this.inEditor = inEditor;
+		this.noteStyle = noteStyle;
 
 		x += (ClientPrefs.middleScroll ? PlayState.STRUM_X_MIDDLESCROLL : PlayState.STRUM_X) + 50;
 		// MAKE SURE ITS DEFINITELY OFF SCREEN?
@@ -125,6 +133,17 @@ class Note extends FlxSprite
 		if(!inEditor) this.strumTime += ClientPrefs.noteOffset;
 
 		this.noteData = noteData;
+
+		if ((((CharactersWith3D.contains(PlayState.SONG.player2) && !musthit)
+			|| ((CharactersWith3D.contains(PlayState.SONG.player1))
+				&& musthit))
+			|| ((CharactersWith3D.contains(PlayState.SONG.player2) || CharactersWith3D.contains(PlayState.SONG.player1))
+				&& ((this.strumTime / 50) % 20 > 10)))
+			&& this.noteStyle == 'normal')
+		{
+			this.noteStyle = '3D';
+			texture = 'NOTE_assets_3D';
+		}
 
 		if(noteData > -1) {
 			texture = '';
