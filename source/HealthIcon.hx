@@ -12,7 +12,7 @@ class HealthIcon extends FlxSprite
 	private var isPlayer:Bool = false;
 	private var char:String = '';
 
-	private var ditheredBitchs:Array<String> = ['expunged', 'bambi-3d', 'bambi-unfair', 'glitched-expunged'];
+	private var ditheredLol:Array<String> = ['expunged', 'bambi-3d', 'bambi-unfair', 'glitchy-expunged'];
 
 	public function new(char:String = 'bf', isPlayer:Bool = false)
 	{
@@ -53,8 +53,8 @@ class HealthIcon extends FlxSprite
 				antialiasing = false;
 			}
 
-			for (i in ditheredBitchs.length) {
-				if (PlayState.dad == i) {
+			for (icons in ditheredLol.length) {
+				if (char == icons) {
 					antialiasing = false;
 				}
 			}

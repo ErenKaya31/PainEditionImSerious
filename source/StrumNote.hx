@@ -14,21 +14,13 @@ class StrumNote extends FlxSprite
 
 	private var player:Int;
 
-	public function new(x:Float, y:Float, type:String, leData:Int, player:Int) {
+	public function new(x:Float, y:Float, leData:Int, player:Int) {
 		colorSwap = new ColorSwap();
 		shader = colorSwap.shader;
 		noteData = leData;
 		this.player = player;
 		this.noteData = leData;
 		super(x, y);
-
-		switch (type)
-		{
-			case '3D':
-				frames = Paths.getSparrowAtlas('NOTE_assets_3D');
-			default:
-				frames = Paths.getSparrowAtlas(skin);
-		}
 
 		var skin:String = 'NOTE_assets';
 		if(PlayState.SONG.arrowSkin != null && PlayState.SONG.arrowSkin.length > 1) skin = PlayState.SONG.arrowSkin;
@@ -101,8 +93,6 @@ class StrumNote extends FlxSprite
 
 		updateHitbox();
 		scrollFactor.set();
-
-		antialiasing = type != '3D';
 	}
 
 	public function postAddedToGroup() {

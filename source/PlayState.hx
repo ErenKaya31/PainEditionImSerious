@@ -1450,15 +1450,9 @@ class PlayState extends MusicBeatState
 	private function generateStaticArrows(player:Int):Void
 	{
 		for (i in 0...4)
-		{
-			var strumType:String = '';
-			if ((funnyFloatyBoys.contains(dad.curCharacter)) && player == 0 || funnyFloatyBoys.contains(boyfriend.curCharacter) && player == 1)
-			{
-				strumType = '3D';
-			}
-			
+		{	
 			// FlxG.log.add(i);
-			var babyArrow:StrumNote = new StrumNote(ClientPrefs.middleScroll ? STRUM_X_MIDDLESCROLL : STRUM_X, strumLine.y, strumType, arrowType, player == 1); // ClientPrefs.middleScroll ? STRUM_X_MIDDLESCROLL : STRUM_X
+			var babyArrow:StrumNote = new StrumNote(ClientPrefs.middleScroll ? STRUM_X_MIDDLESCROLL : STRUM_X, strumLine.y, i, player);
 			if (!isStoryMode)
 			{
 				babyArrow.y -= 10;
