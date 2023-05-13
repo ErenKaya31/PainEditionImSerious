@@ -214,7 +214,7 @@ class PlayState extends MusicBeatState
 	var santa:BGSprite;
 	var heyTimer:Float;
 
-	var elapsedtime:Float;
+	public var elapsedtime:Float = 0;
 	var bgGirls:BackgroundGirls;
 	var wiggleShit:WiggleEffect = new WiggleEffect();
 	var bgGhouls:BGSprite;
@@ -1634,12 +1634,11 @@ class PlayState extends MusicBeatState
 
 	override public function update(elapsed:Float)
 	{
+		elapsedtime += elapsed;
 		/*if (FlxG.keys.justPressed.NINE)
 		{
 			iconP1.swapOldIcon();
 		}*/
-
-		elapsedtime += elasped;
 
 		callOnLuas('onUpdate', [elapsed]);
 
