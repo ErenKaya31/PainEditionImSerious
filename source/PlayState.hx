@@ -321,8 +321,12 @@ class PlayState extends MusicBeatState
 		if(PlayState.SONG.stage == null || PlayState.SONG.stage.length < 1) {
 			switch (songName)
 			{
-				case 'blocked' | 'corn-theft' | 'flintcorn':
+				case 'blocked':
 					curStage = 'farm';
+				case 'corn-theft':
+					curStage = 'farm-sunset';
+				case 'flintcorn':
+					curStage = 'farm-night';
 				case 'indignancy' | 'the-phone' | 'get-out':
 					curStage = 'farm-night';
 				case 'reality-breaking':
@@ -423,6 +427,128 @@ class PlayState extends MusicBeatState
 				expungedBG.antialiasing = false;
 				add(expungedBG);
 				voidShader(expungedBG);
+
+			case 'farm':
+				var bg:BGSprite = new BGSprite('backgrounds/shared/sky', -600, -200, 0.6, 0.6);
+				add(bg);
+
+				var flatgrass:BGSprite = new BGSprite('backgrounds/farm/gm_flatgrass', 350, 75, 0.65, 0.65);
+				flatgrass.setGraphicSize(Std.int(flatgrass * 0.34));
+				flatgrass.updateHitbox();
+				add(flatgrass);
+
+				var hills:BGSprite = new BGSprite('backgrounds/farm/orangey hills', -173, 100, 0.65, 0.65);
+				add(hills);
+
+				var farmHouse:BGSprite = new BGSprite('backgrounds/farm/gm_flatgrass', 100, 125, 0.7, 0.7);
+				farmHouse.setGraphicSize(Std.int(farmHouse * 0.9));
+				farmHouse.updateHitbox();
+				add(farmHouse);
+
+				var grassLand:BGSprite = new BGSprite('backgrounds/farm/grass lands', -600, 500, 1, 1);
+				add(grassLand);
+
+				var cornFence:BGSprite = new BGSprite('backgrounds/farm/cornFence', -400, 200, 1, 1);
+				add(cornFence);
+
+				var cornFence2:BGSprite = new BGSprite('backgrounds/farm/cornFence2', 1100, 200, 1, 1);
+				add(cornFence2);
+
+				var cornBag:BGSprite = new BGSprite('backgrounds/farm/cornbag', 1200, 550, 1, 1);
+				add(cornBag);
+
+				var sign:BGSprite = new BGSprite('backgrounds/farm/sign', 0, 350, 1, 1);
+				add(sign);
+
+			case 'farm-night':
+				var bg:BGSprite = new BGSprite('backgrounds/shared/sky_night', -600, -200, 0.6, 0.6);
+				add(bg);
+	
+				var flatgrass:BGSprite = new BGSprite('backgrounds/farm/gm_flatgrass', 350, 75, 0.65, 0.65);
+				flatgrass.setGraphicSize(Std.int(flatgrass * 0.34));
+				flatgrass.updateHitbox();
+				add(flatgrass);
+	
+				var hills:BGSprite = new BGSprite('backgrounds/farm/orangey hills', -173, 100, 0.65, 0.65);
+				add(hills);
+	
+				var farmHouse:BGSprite = new BGSprite('backgrounds/farm/gm_flatgrass', 100, 125, 0.7, 0.7);
+				farmHouse.setGraphicSize(Std.int(farmHouse * 0.9));
+				farmHouse.updateHitbox();
+				add(farmHouse);
+	
+				var grassLand:BGSprite = new BGSprite('backgrounds/farm/grass lands', -600, 500, 1, 1);
+				add(grassLand);
+	
+				var cornFence:BGSprite = new BGSprite('backgrounds/farm/cornFence', -400, 200, 1, 1);
+				add(cornFence);
+	
+				var cornFence2:BGSprite = new BGSprite('backgrounds/farm/cornFence2', 1100, 200, 1, 1);
+				add(cornFence2);
+	
+				var cornBag:BGSprite = new BGSprite('backgrounds/farm/cornbag', 1200, 550, 1, 1);
+				add(cornBag);
+	
+				var sign:BGSprite = new BGSprite('backgrounds/farm/sign', 0, 350, 1, 1);
+				add(sign);
+
+				flatgrass.color = 0xFF878787;
+				hills.color = 0xFF878987;
+				farmHouse.color = 0xFF878787;
+				grassland.color = 0xFF878787;
+				cornFence.color = 0xFF878787;
+				cornFence2.color = 0xFF878787;
+				cornBag.color = 0xFF878787;
+				sign.color = 0xFF878787;
+
+				boyfriend.color = 0xFF878787;
+				gf.color = 0xFF878787;
+				dad.color = 0xFF878787;
+
+			case 'farm-sunset':
+				var bg:BGSprite = new BGSprite('backgrounds/shared/sky_sunset', -600, -200, 0.6, 0.6);
+				add(bg);
+		
+				var flatgrass:BGSprite = new BGSprite('backgrounds/farm/gm_flatgrass', 350, 75, 0.65, 0.65);
+				flatgrass.setGraphicSize(Std.int(flatgrass * 0.34));
+				flatgrass.updateHitbox();
+				add(flatgrass);
+		
+				var hills:BGSprite = new BGSprite('backgrounds/farm/orangey hills', -173, 100, 0.65, 0.65);
+				add(hills);
+		
+				var farmHouse:BGSprite = new BGSprite('backgrounds/farm/gm_flatgrass', 100, 125, 0.7, 0.7);
+				farmHouse.setGraphicSize(Std.int(farmHouse * 0.9));
+				farmHouse.updateHitbox();
+				add(farmHouse);
+		
+				var grassLand:BGSprite = new BGSprite('backgrounds/farm/grass lands', -600, 500, 1, 1);
+				add(grassLand);
+		
+				var cornFence:BGSprite = new BGSprite('backgrounds/farm/cornFence', -400, 200, 1, 1);
+				add(cornFence);
+		
+				var cornFence2:BGSprite = new BGSprite('backgrounds/farm/cornFence2', 1100, 200, 1, 1);
+				add(cornFence2);
+		
+				var cornBag:BGSprite = new BGSprite('backgrounds/farm/cornbag', 1200, 550, 1, 1);
+				add(cornBag);
+		
+				var sign:BGSprite = new BGSprite('backgrounds/farm/sign', 0, 350, 1, 1);
+				add(sign);
+	
+				flatgrass.color = FlxColor.fromRGB(255, 143, 178);
+				hills.color = FlxColor.fromRGB(255, 143, 178);
+				farmHouse.color = FlxColor.fromRGB(255, 143, 178);
+				grassland.color = FlxColor.fromRGB(255, 143, 178);
+				cornFence.color = FlxColor.fromRGB(255, 143, 178);
+				cornFence2.color = FlxColor.fromRGB(255, 143, 178);
+				cornBag.color = FlxColor.fromRGB(255, 143, 178);
+				sign.color = FlxColor.fromRGB(255, 143, 178);
+	
+				boyfriend.color = FlxColor.fromRGB(255, 143, 178);
+				gf.color = FlxColor.fromRGB(255, 143, 178);
+				dad.color = FlxColor.fromRGB(255, 143, 178);
 		}
 
 		if(isPixelStage) {
@@ -3681,6 +3807,15 @@ class PlayState extends MusicBeatState
 		iconP1.updateHitbox();
 
 		iconP2.setGraphicSize(Std.int(FlxMath.lerp(150, iconP2.width, thingy)),Std.int(FlxMath.lerp(150, iconP2.height, thingy)));
+		iconP2.updateHitbox();
+
+		var funny:Float = Math.max(Math.min(healthBar.value,1.9),0.1);//Math.clamp(healthBar.value,0.02,1.98);//Math.min(Math.min(healthBar.value,1.98),0.02);
+
+		//health icon bounce but epic
+		iconP2.setGraphicSize(Std.int(iconP2.width + (50 * funny)),Std.int(iconP2.height - (25 * funny)));
+		iconP1.setGraphicSize(Std.int(iconP1.width + (50 * ((2 - funny) + 0.1))),Std.int(iconP1.height - (25 * ((2 - funny) + 0.1))));
+
+		iconP1.updateHitbox();
 		iconP2.updateHitbox();
 
 		if (curBeat % gfSpeed == 0 && !gf.stunned && gf.animation.curAnim.name != null && !gf.animation.curAnim.name.startsWith("sing"))
