@@ -12,7 +12,7 @@ class HealthIcon extends FlxSprite
 	private var isPlayer:Bool = false;
 	private var char:String = '';
 
-	private var ditheredBitchs:Array<String> = ['expunged', 'bambi-3d', 'bambi-unfair', 'glitched-expunged']
+	private var ditheredBitchs:Array<String> = ['expunged', 'bambi-3d', 'bambi-unfair', 'glitched-expunged'];
 
 	public function new(char:String = 'bf', isPlayer:Bool = false)
 	{
