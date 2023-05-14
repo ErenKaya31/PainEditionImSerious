@@ -77,10 +77,22 @@ class Main extends Sprite
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, #if (flixel < "5.0.0") zoom, #end framerate, framerate, skipSplash, startFullscreen));
 
 		#if !mobile
+<<<<<<< HEAD
 		fps = new FpsDisplay(10, 3, 0xFFFFFF);
 		var fpsFormat = new TextFormat("Comic Sans MS Bold", 15, 0xFFFFFF, true);
 		fps.defaultTextFormat = fpsFormat;
 		addChild(fps);
+=======
+		fpsVar = new FPS(10, 3, 0xFFFFFF);
+		var fpsFormat = new TextField("Comic Sans MS Bold", 15, 0xFFFFFF, true);
+		fpsVar.defaultTextFormat = fpsFormat;
+		addChild(fpsVar);
+		#end
+
+		#if html5
+		FlxG.autoPause = false;
+		FlxG.mouse.visible = false;
+>>>>>>> 8a14aac0fddeb2eb6f3015458ce9a37a63e5a92b
 		#end
 	}
 }
