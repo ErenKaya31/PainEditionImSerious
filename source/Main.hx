@@ -81,6 +81,7 @@ class Main extends Sprite
 		var fpsFormat = new TextFormat("Comic Sans MS Bold", 15, 0xFFFFFF, true);
 		fps.defaultTextFormat = fpsFormat;
 		addChild(fps);
+		#end
 
 		#if html5
 		FlxG.autoPause = false;
