@@ -1,6 +1,6 @@
 package;
 
-import flixel.FlxG;
+import openfl.text.TextFormat;
 import flixel.FlxGame;
 import flixel.FlxState;
 import openfl.Assets;
@@ -8,6 +8,8 @@ import openfl.Lib;
 import openfl.display.FPS;
 import openfl.display.Sprite;
 import openfl.events.Event;
+import flixel.sound.FlxSound;
+import flixel.FlxG;
 
 class Main extends Sprite
 {
@@ -15,10 +17,15 @@ class Main extends Sprite
 	var gameHeight:Int = 720; // Height of the game in pixels (might be less / more in actual pixels depending on your zoom).
 	var initialState:Class<FlxState> = TitleState; // The FlxState the game starts with.
 	var zoom:Float = -1; // If -1, zoom is automatically calculated to fit the window dimensions.
-	var framerate:Int = 60; // How many frames per second the game should run at.
-	var skipSplash:Bool = true; // Whether to skip the flixel splash screen that appears in release mode.
+
+	public static var framerate:Int = 144; // How many frames per second the game should run at.
+
+	var skipSplash:Bool = false; // Whether to skip the flixel splash screen that appears in release mode.
 	var startFullscreen:Bool = false; // Whether to start the game in fullscreen on desktop targets
-	public static var fpsVar:FPS;
+
+	public static var fps:FpsDisplay;
+
+	public static var applicationName:String = "Friday Night Funkin': Vs Bambi: Pain Edition";
 
 	// You can pretty much ignore everything from here on - your code should go in your states.
 
@@ -32,13 +39,9 @@ class Main extends Sprite
 		super();
 
 		if (stage != null)
-		{
 			init();
-		}
 		else
-		{
 			addEventListener(Event.ADDED_TO_STAGE, init);
-		}
 	}
 
 	private function init(?E:Event):Void
@@ -52,9 +55,9 @@ class Main extends Sprite
 	}
 
 	public static function toggleFuckedFPS(toggle:Bool)
-		{
-			fpsVar.fuckFps = toggle;
-		}
+	{
+		fps.fuckFps = toggle;
+	}
 
 	private function setupGame():Void
 	{
@@ -70,23 +73,14 @@ class Main extends Sprite
 			gameHeight = Math.ceil(stageHeight / zoom);
 		}
 
-		#if !debug
 		initialState = TitleState;
-		#end
-
-		Paths.getModFolders();
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, #if (flixel < "5.0.0") zoom, #end framerate, framerate, skipSplash, startFullscreen));
 
 		#if !mobile
-		fpsVar = new FPS(10, 3, 0xFFFFFF);
+		fps = new FpsDisplay(10, 3, 0xFFFFFF);
 		var fpsFormat = new TextFormat("Comic Sans MS Bold", 15, 0xFFFFFF, true);
-		fpsVar.defaultTextFormat = fpsFormat;
-		addChild(fpsVar);
-		#end
-
-		#if html5
-		FlxG.autoPause = false;
-		FlxG.mouse.visible = false;
+		fps.defaultTextFormat = fpsFormat;
+		addChild(fps);
 		#end
 	}
 }

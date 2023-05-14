@@ -1,20 +1,17 @@
-package openfl.display;
+package;
 
+import openfl.system.System;
+import flixel.math.FlxMath;
 import haxe.Timer;
 import openfl.events.Event;
 import openfl.text.TextField;
 import openfl.text.TextFormat;
-import flixel.math.FlxMath;
 #if gl_stats
 import openfl.display._internal.stats.Context3DStats;
 import openfl.display._internal.stats.DrawCallContext;
 #end
 #if flash
 import openfl.Lib;
-#end
-
-#if openfl
-import openfl.system.System;
 #end
 
 /**
@@ -25,18 +22,18 @@ import openfl.system.System;
 @:fileXml('tags="haxe,release"')
 @:noDebug
 #end
-class FPS extends TextField
+class FpsDisplay extends TextField
 {
 	/**
 		The current frame rate, expressed using frames-per-second
 	**/
 	public var currentFPS(default, null):Int;
 
-	public var fuckFps:Bool = false;
-
 	@:noCompletion private var cacheCount:Int;
 	@:noCompletion private var currentTime:Float;
 	@:noCompletion private var times:Array<Float>;
+
+	public var fuckFps:Bool = false;
 
 	public function new(x:Float = 10, y:Float = 10, color:Int = 0x000000)
 	{
@@ -48,14 +45,14 @@ class FPS extends TextField
 		currentFPS = 0;
 		selectable = false;
 		mouseEnabled = false;
-		defaultTextFormat = new TextFormat("_sans", 14, color);
-		autoSize = LEFT;
-		multiline = true;
+		defaultTextFormat = new TextFormat("_sans", 12, color);
 		text = "FPS: ";
 
 		cacheCount = 0;
 		currentTime = 0;
 		times = [];
+		maxChars = 6969;
+		wordWrap = true;
 
 		#if flash
 		addEventListener(Event.ENTER_FRAME, function(e)
@@ -80,7 +77,11 @@ class FPS extends TextField
 
 		var currentCount = times.length;
 		currentFPS = Math.round((currentCount + cacheCount) / 2);
-		if (currentFPS > ClientPrefs.framerate) currentFPS = ClientPrefs.framerate;
+
+		if (currentFPS > Main.framerate)
+		{
+			currentFPS = Main.framerate;
+		}
 
 		if (currentCount != cacheCount /*&& visible*/)
 		{
@@ -88,26 +89,24 @@ class FPS extends TextField
 				text = "FPS: -" + (currentFPS * 10000) + " RVhQVU5HRUQgV0lMTCBUQUtFIE9WRVI= " + (currentFPS * 10000);
 			else
 				text = "FPS: " + currentFPS;
-			var memoryMegas:Float = 0;
-			
 			#if openfl
+			var memoryMegas:Float = 0;
 			memoryMegas = Math.abs(FlxMath.roundDecimal(System.totalMemory / 1000000, 1));
-			text += "\nMemory: " + memoryMegas + " MB";
-			#end
-
-			textColor = 0xFFFFFFFF;
-			if (memoryMegas > 3000 || currentFPS <= ClientPrefs.framerate / 2)
+			if (memoryMegas > 1000)
 			{
-				textColor = 0xFFFF0000;
+				var memoryGB = (memoryMegas / 1000);
+				text += "\nMemory: " + FlxMath.roundDecimal(memoryGB, 2) + " GB";
 			}
-
+			else
+			{
+				text += "\nMemory: " + memoryMegas + " MB";
+			}
+			#end
 			#if (gl_stats && !disable_cffi && (!html5 || !canvas))
 			text += "\ntotalDC: " + Context3DStats.totalDrawCalls();
 			text += "\nstageDC: " + Context3DStats.contextDrawCalls(DrawCallContext.STAGE);
 			text += "\nstage3DDC: " + Context3DStats.contextDrawCalls(DrawCallContext.STAGE3D);
 			#end
-
-			text += "\n";
 		}
 
 		cacheCount = currentCount;
