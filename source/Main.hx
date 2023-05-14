@@ -51,6 +51,11 @@ class Main extends Sprite
 		setupGame();
 	}
 
+	public static function toggleFuckedFPS(toggle:Bool)
+		{
+			fps.fuckFps = toggle;
+		}
+
 	private function setupGame():Void
 	{
 		var stageWidth:Int = Lib.current.stage.stageWidth;
@@ -73,11 +78,10 @@ class Main extends Sprite
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, #if (flixel < "5.0.0") zoom, #end framerate, framerate, skipSplash, startFullscreen));
 
 		#if !mobile
-		fpsVar = new FPS(10, 3, 0xFFFFFF);
-		addChild(fpsVar);
-		if(fpsVar != null) {
-			fpsVar.visible = ClientPrefs.showFPS;
-		}
+		fps = new FpsDisplay(10, 3, 0xFFFFFF);
+		var fpsFormat = new TextFormat("Comic Sans MS Bold", 15, 0xFFFFFF, true);
+		fps.defaultTextFormat = fpsFormat;
+		addChild(fps);
 		#end
 
 		#if html5
