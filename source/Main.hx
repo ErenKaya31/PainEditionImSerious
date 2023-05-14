@@ -78,7 +78,7 @@ class Main extends Sprite
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, #if (flixel < "5.0.0") zoom, #end framerate, framerate, skipSplash, startFullscreen));
 
 		#if !mobile
-		fps = new FpsDisplay(10, 3, 0xFFFFFF);
+		fps = new FPS(10, 3, 0xFFFFFF);
 		var fpsFormat = new TextFormat("Comic Sans MS Bold", 15, 0xFFFFFF, true);
 		fps.defaultTextFormat = fpsFormat;
 		addChild(fps);

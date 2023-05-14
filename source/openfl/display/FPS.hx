@@ -1,4 +1,4 @@
-package;
+package openfl.display;
 
 import openfl.system.System;
 import flixel.math.FlxMath;
@@ -22,7 +22,7 @@ import openfl.Lib;
 @:fileXml('tags="haxe,release"')
 @:noDebug
 #end
-class FpsDisplay extends TextField
+class FPS extends TextField
 {
 	/**
 		The current frame rate, expressed using frames-per-second
