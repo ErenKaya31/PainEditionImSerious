@@ -108,8 +108,6 @@ class PlayState extends MusicBeatState
 
 	var mcStarted:Bool;
 
-	public var modchart:ExploitationModchartType;
-
 	var funnyFloatyBoys:Array<String> = ['bambi-3d', 'expunged', 'bambi-unfair', 'glitchy-expunged'];
 
 	public var boyfriendGroup:FlxSpriteGroup;
@@ -1641,167 +1639,6 @@ class PlayState extends MusicBeatState
 		}*/
 
 		callOnLuas('onUpdate', [elapsed]);
-
-		if (SONG.song.toLowerCase() == 'exploitation' && !inCutscene && mcStarted) // fuck you
-		{
-			switch (modchart)
-			{
-				case ExploitationModchartType.None:
-
-				case ExploitationModchartType.Jitterwave:
-					playerStrums.forEach(function(spr:StrumNote)
-					{
-						if (spr.ID == 1)
-						{
-							spr.x = playerStrums.members[2].baseX;
-						}
-						else if (spr.ID == 2)
-						{
-							spr.x = playerStrums.members[1].baseX;
-						}
-						else
-						{
-							spr.x = spr.baseX;
-						}
-						spr.y = ((FlxG.height / 2) - (spr.height / 2)) + ((Math.sin((elapsedtime + spr.ID) * (((curBeat % 6) + 1) * 0.6))) * 140);
-					});
-					opponentStrums.forEach(function(spr:StrumNote)
-					{
-						if (spr.ID == 1)
-						{
-							spr.x = opponentStrums.members[2].baseX;
-						}
-						else if (spr.ID == 2)
-						{
-							spr.x = opponentStrums.members[1].baseX;
-						}
-						else
-						{
-							spr.x = spr.baseX;
-						}
-						spr.y = ((FlxG.height / 2) - (spr.height / 2)) + ((Math.sin((elapsedtime + spr.ID) * (((curBeat % 6) + 1) * 0.6))) * 140);
-					});
-					
-				case ExploitationModchartType.Cheating:
-					playerStrums.forEach(function(spr:StrumNote)
-					{
-						spr.x += (spr.ID == 1 ? 0.5 : 1) * Math.sin(elapsedtime) * ((spr.ID % 3) == 0 ? 1 : -1);
-						spr.x -= (spr.ID == 1 ? 0.5 : 1) * Math.sin(elapsedtime) * ((spr.ID / 3) + 1.2);
-					});
-					opponentStrums.forEach(function(spr:StrumNote)
-					{
-						spr.x -= (spr.ID == 1 ? 0.5 : 1) * Math.sin(elapsedtime) * ((spr.ID % 3) == 0 ? 1 : -1);
-						spr.x += (spr.ID == 1 ? 0.5 : 1) * Math.sin(elapsedtime) * ((spr.ID / 3) + 1.2);
-					});
-
-				case ExploitationModchartType.Sex: 
-					playerStrums.forEach(function(spr:StrumNote)
-					{
-						spr.x = ((FlxG.width / 2) - (spr.width / 2));
-						spr.y = ((FlxG.height / 2) - (spr.height / 2));
-						if (spr.ID == 0)
-						{
-							spr.x -= spr.width * 2.5;
-						}
-						if (spr.ID == 1)
-						{
-							spr.x += spr.width * 0.5;
-							spr.y += spr.height;
-						}
-						if (spr.ID == 2)
-						{
-							spr.x -= spr.width * 0.5;
-							spr.y += spr.height;
-						}
-						if (spr.ID == 3)
-						{
-							spr.x += spr.width * 2.5;
-						}
-						spr.x += Math.sin(elapsedtime * (spr.ID + 1)) * 30;
-						spr.y += Math.cos(elapsedtime * (spr.ID + 1)) * 30;
-					});
-					opponentStrums.forEach(function(spr:StrumNote)
-					{
-						spr.x = ((FlxG.width / 2) - (spr.width / 2));
-						spr.y = ((FlxG.height / 2) - (spr.height / 2));
-						spr.x += ((spr.width) * (spr.ID == 3 ? 0 : spr.ID == 0 ? 3 : spr.ID == 2 ? 1 : 2)) - (2 * spr.width) + (spr.width * 0.5);
-						spr.x += Math.sin(elapsedtime * (spr.ID + 1)) * -30;
-						spr.y += Math.cos(elapsedtime * (spr.ID + 1)) * -30;
-					});
-				case ExploitationModchartType.Unfairness: //unfairnesses mod chart with a few changes to keep it interesting
-					playerStrums.forEach(function(spr:StrumNote)
-					{
-						//0.62 is a speed modifier. its there simply because i thought the og modchart was a bit too hard.
-						spr.x = ((FlxG.width / 2) - (spr.width / 2)) + (Math.sin(((elapsedtime + (spr.ID * 2))) * 0.62) * 250);
-						spr.y = ((FlxG.height / 2) - (spr.height / 2)) + (Math.cos(((elapsedtime + (spr.ID * 0.5))) * 0.62) * 250);
-					});
-					opponentStrums.forEach(function(spr:StrumNote)
-					{
-						spr.x = ((FlxG.width / 2) - (spr.width / 2)) + (Math.sin(((elapsedtime + (spr.ID * 0.5)) * 2) * 0.62) * 250);
-						spr.y = ((FlxG.height / 2) - (spr.height / 2)) + (Math.cos(((elapsedtime + (spr.ID * 2)) * 2) * 0.62) * 250);
-					});
-
-				case ExploitationModchartType.PingPong:
-					var xx = (FlxG.width / 2.4) + (Math.sin(elapsedtime * 1.2) * 400);
-					var yy = (FlxG.height / 2) + (Math.sin(elapsedtime * 1.5) * 200) - 50;
-					var xx2 = (FlxG.width / 2.4) + (Math.cos(elapsedtime) * 400);
-					var yy2 = (FlxG.height / 2) + (Math.cos(elapsedtime * 1.4) * 200) - 50;
-					playerStrums.forEach(function(spr:StrumNote)
-					{
-						spr.x = (xx + (spr.width / 2)) - (spr.ID == 0 || spr.ID == 2 ? spr.width : spr.ID == 1 || spr.ID == 3 ? -spr.width : 0);
-						spr.y = (yy + (spr.height / 2)) - (spr.ID <= 1 ? 0 : spr.height);
-						spr.x += Math.sin((elapsedtime + (spr.ID * 3)) / 3) * spr.width;
-					});
-					opponentStrums.forEach(function(spr:StrumNote)
-					{
-						spr.x = (xx2 + (spr.width / 2)) - (spr.ID == 0 || spr.ID == 2 ? spr.width : spr.ID == 1 || spr.ID == 3 ? -spr.width : 0);
-						spr.y = (yy2 + (spr.height / 2)) - (spr.ID <= 1 ? 0 : spr.height);
-						spr.x += Math.sin((elapsedtime + (spr.ID * 3)) / 3) * spr.width;
-
-					});
-
-				case ExploitationModchartType.Figure8:
-					playerStrums.forEach(function(spr:FlxSprite)
-					{
-						spr.x = ((FlxG.width / 2) - (spr.width / 2)) + (Math.sin((elapsedtime * 0.3) + spr.ID + 1) * (FlxG.width * 0.4));
-						spr.y = ((FlxG.height / 2) - (spr.height / 2)) + (Math.sin(((elapsedtime * 0.3) + spr.ID) * 3) * (FlxG.height * 0.2));
-					});
-					opponentStrums.forEach(function(spr:FlxSprite)
-					{
-						spr.x = ((FlxG.width / 2) - (spr.width / 2)) + (Math.sin((elapsedtime * 0.3) + spr.ID + 1.5) * (FlxG.width * 0.4));
-						spr.y = ((FlxG.height / 2) - (spr.height / 2)) + (Math.sin((((elapsedtime * 0.3) + spr.ID) * -3) + 0.5) * (FlxG.height * 0.2));
-					});
-				case ExploitationModchartType.ScrambledNotes:
-					playerStrums.forEach(function(spr:StrumNote)
-					{
-						spr.x = (FlxG.width / 2) + (Math.sin(elapsedtime) * ((spr.ID % 2) == 0 ? 1 : -1)) * (60 * (spr.ID + 1));
-						spr.x += Math.sin(elapsedtime - 1) * 40;
-						spr.y = (FlxG.height / 2) + (Math.sin(elapsedtime - 69.2) * ((spr.ID % 3) == 0 ? 1 : -1)) * (67 * (spr.ID + 1)) - 15;
-						spr.y += Math.cos(elapsedtime - 1) * 40;
-						spr.x -= 80;
-					});
-					opponentStrums.forEach(function(spr:StrumNote)
-					{
-						spr.x = (FlxG.width / 2) + (Math.cos(elapsedtime - 1) * ((spr.ID % 2) == 0 ? -1 : 1)) * (60 * (spr.ID + 1));
-						spr.x += Math.sin(elapsedtime - 1) * 40;
-						spr.y = (FlxG.height / 2) + (Math.sin(elapsedtime - 63.4) * ((spr.ID % 3) == 0 ? -1 : 1)) * (67 * (spr.ID + 1)) - 15;
-						spr.y += Math.cos(elapsedtime - 1) * 40;
-						spr.x -= 80;
-					});
-
-				case ExploitationModchartType.Cyclone:
-					playerStrums.forEach(function(spr:StrumNote)
-					{
-						spr.x = ((FlxG.width / 2) - (spr.width / 2)) + (Math.sin((spr.ID + 1) * (elapsedtime * 0.15)) * (65 * (spr.ID + 1)));
-						spr.y = ((FlxG.height / 2) - (spr.height / 2)) + (Math.cos((spr.ID + 1) * (elapsedtime * 0.15)) * (65 * (spr.ID + 1)));
-					});
-					opponentStrums.forEach(function(spr:StrumNote)
-					{
-						spr.x = ((FlxG.width / 2) - (spr.width / 2)) + (Math.cos((spr.ID + 1) * (elapsedtime * 0.15)) * (65 * (spr.ID + 1)));
-						spr.y = ((FlxG.height / 2) - (spr.height / 2)) + (Math.sin((spr.ID + 1) * (elapsedtime * 0.15)) * (65 * (spr.ID + 1)));
-					});
-			}
-		}
 
 		if (curbg != null)
 			{
@@ -4062,9 +3899,4 @@ class PlayState extends MusicBeatState
 
 	var curLight:Int = 0;
 	var curLightEvent:Int = 0;
-}
-
-enum ExploitationModchartType
-{
-	None; Cheating; Figure8; ScrambledNotes; Cyclone; Unfairness; Jitterwave; PingPong; Sex;
 }
