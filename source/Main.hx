@@ -79,7 +79,7 @@ class Main extends Sprite
 
 		#if !mobile
 		fpsVar = new FPS(10, 3, 0xFFFFFF);
-		var fpsFormat = new TextFormat("Comic Sans MS Bold", 15, 0xFFFFFF, true);
+		var fpsFormat = new TextField("Comic Sans MS Bold", 15, 0xFFFFFF, true);
 		fpsVar.defaultTextFormat = fpsFormat;
 		addChild(fpsVar);
 		#end
