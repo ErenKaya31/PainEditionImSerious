@@ -662,17 +662,21 @@ class PlayState extends MusicBeatState
 		switch (Paths.formatToSongPath(SONG.song)) {
 			case 'unfairness':
 				credits = "Ghost Tapping is forced off! FUCK YOU!";
+				creditsText = true;
 			case 'cheating':
 				credits = "Notes are scrambled! FUCK YOU!";
+				creditsText = true;
 			case 'exploitation':
 				credits = "You won't survive " + #if windows Sys.getEnv("USERNAME") #else Sys.getEnv("USER") #end + "!";
+				creditsText = true;
 			case 'last-reality':
 				credits = "GET READY FOR UNEXPECTED " + #if windows Sys.getEnv("USERNAME") #else Sys.getEnv("USER") #end;
+				creditsText = true;
 			default: // nothing :shrug: 
 				credits = '';
 		} // this took me long to realize
 
-		var creditsText:Bool = credits != '';
+		var creditsText:Bool = false;
 		var textYPos:Float = healthBarBG.y + 50;
 		if (creditsText)
 		{
