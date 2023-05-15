@@ -667,7 +667,6 @@ class PreferencesSubstate extends MusicBeatSubstate
 		'GAMEPLAY'
 	];
 	static var noCheckbox:Array<String> = [
-		'Framerate',
 		'Note Delay'
 	];
 
@@ -882,18 +881,6 @@ class PreferencesSubstate extends MusicBeatSubstate
 				var add:Int = controls.UI_LEFT ? -1 : 1;
 				if(holdTime > 0.5 || controls.UI_LEFT_P || controls.UI_RIGHT_P)
 				switch(options[curSelected]) {
-					case 'Framerate':
-						ClientPrefs.framerate += add;
-						if(ClientPrefs.framerate < 60) ClientPrefs.framerate = 60;
-						else if(ClientPrefs.framerate > 240) ClientPrefs.framerate = 240;
-
-						if(ClientPrefs.framerate > FlxG.drawFramerate) {
-							FlxG.updateFramerate = ClientPrefs.framerate;
-							FlxG.drawFramerate = ClientPrefs.framerate;
-						} else {
-							FlxG.drawFramerate = ClientPrefs.framerate;
-							FlxG.updateFramerate = ClientPrefs.framerate;
-						}
 					case 'Note Delay':
 						var mult:Int = 1;
 						if(holdTime > 1.5) { //Double speed after 1.5 seconds holding
@@ -1047,8 +1034,6 @@ class PreferencesSubstate extends MusicBeatSubstate
 			if(text != null) {
 				var daText:String = '';
 				switch(options[textNumber[i]]) {
-					case 'Framerate':
-						daText = '' + ClientPrefs.framerate;
 					case 'Note Delay':
 						daText = ClientPrefs.noteOffset + 'ms';
 				}
