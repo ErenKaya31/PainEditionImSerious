@@ -247,13 +247,17 @@ class FreeplayState extends MusicBeatState
 			MusicBeatState.switchState(new MainMenuState());
 		}
 
-		destroyFreeplayVocals();
-		Paths.currentModDirectory = songs[curSelected].folder;
-		var poop:String = Highscore.formatSong(songs[curSelected].songName.toLowerCase(), curDifficulty);
-		PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName.toLowerCase());
+		if(instPlaying != curSelected)
+			{
+				destroyFreeplayVocals();
+				FlxG.sound.music.volume = 0;
+				Paths.currentModDirectory = songs[curSelected].folder;
+				var poop:String = Highscore.formatSong(songs[curSelected].songName.toLowerCase(), curDifficulty);
+				PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName.toLowerCase());
 
-		FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 0.7);
-		instPlaying = curSelected;
+				FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 0.7);
+				instPlaying = curSelected;
+			}
 
 		if(songs[curSelected].songName == 'last-reality') {
 			FlxG.camera.shake(0.0010, 0.0010);
