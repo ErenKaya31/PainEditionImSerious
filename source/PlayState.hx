@@ -661,9 +661,9 @@ class PlayState extends MusicBeatState
 		switch (SONG.song.toLowerCase())
 		{
 			case 'unfairness':
-				credits = "Ghost Tapping is forced off! FUCK YOU!"
+				credits = "Ghost Tapping is forced off! FUCK YOU!";
 			case 'cheating':
-				credits = "Notes are scrambled! FUCK YOU!"
+				credits = "Notes are scrambled! FUCK YOU!";
 			case 'exploitation':
 				credits = "You won't survive " + #if windows Sys.getEnv("USERNAME"); #else Sys.getEnv("USER"); #end + "!";
 			case 'last-reality':
