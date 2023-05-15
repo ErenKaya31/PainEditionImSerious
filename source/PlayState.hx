@@ -669,12 +669,12 @@ class PlayState extends MusicBeatState
 			case 'cheating':
 				credits = "Notes are scrambled! FUCK YOU!";
 			case 'exploitation':
-				credits = "You won't survive " + #if windows Sys.getEnv("USERNAME"); #else Sys.getEnv("USER"); #end + "!";
+				credits = "You won't survive " + #if windows Sys.getEnv("USERNAME") #else Sys.getEnv("USER") #end + "!";
 			case 'last-reality':
-				credits = "GET READY FOR UNEXPECTED " + #if windows Sys.getEnv("USERNAME"); #else Sys.getEnv("USER"); #end;
-			default:
+				credits = "GET READY FOR UNEXPECTED " + #if windows Sys.getEnv("USERNAME") #else Sys.getEnv("USER") #end;
+			default: // nothing :shrug: 
 				credits = '';
-		}
+		} // this took me long to realize
 
 		var creditsText:Bool = credits != '';
 		var textYPos:Float = healthBarBG.y + 50;
