@@ -109,6 +109,7 @@ class PlayState extends MusicBeatState
 	var mcStarted:Bool;
 
 	var funnyFloatyBoys:Array<String> = ['bambi-3d', 'expunged', 'bambi-unfair', 'glitchy-expunged'];
+	var creditsText:Bool;
 
 	public var boyfriendGroup:FlxSpriteGroup;
 	public var dadGroup:FlxSpriteGroup;
@@ -675,8 +676,6 @@ class PlayState extends MusicBeatState
 			default: // nothing :shrug: 
 				credits = '';
 		} // this took me long to realize
-
-		var creditsText:Bool = false;
 		var textYPos:Float = healthBarBG.y + 50;
 		if (creditsText)
 		{
