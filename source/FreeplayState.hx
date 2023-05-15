@@ -247,27 +247,19 @@ class FreeplayState extends MusicBeatState
 			MusicBeatState.switchState(new MainMenuState());
 		}
 
-		#if PRELOAD_ALL
-		if(space && instPlaying != curSelected)
-		{
-			destroyFreeplayVocals();
-			Paths.currentModDirectory = songs[curSelected].folder;
-			var poop:String = Highscore.formatSong(songs[curSelected].songName.toLowerCase(), curDifficulty);
-			PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName.toLowerCase());
-			if (PlayState.SONG.needsVoices)
-				vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song));
-			else
-				vocals = new FlxSound();
+		destroyFreeplayVocals();
+		Paths.currentModDirectory = songs[curSelected].folder;
+		var poop:String = Highscore.formatSong(songs[curSelected].songName.toLowerCase(), curDifficulty);
+		PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName.toLowerCase());
 
-			FlxG.sound.list.add(vocals);
-			FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 0.7);
-			vocals.play();
-			vocals.persist = true;
-			vocals.looped = true;
-			vocals.volume = 0.7;
-			instPlaying = curSelected;
+		FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 0.7);
+		instPlaying = curSelected;
+
+		if(songs[curSelected].songName == 'last-reality') {
+			FlxG.camera.shake(0.0010, 0.0010);
 		}
-		else #end if (accepted)
+
+		if (accepted)
 		{
 			var songLowercase:String = Paths.formatToSongPath(songs[curSelected].songName);
 			var poop:String = Highscore.formatSong(songLowercase, curDifficulty);

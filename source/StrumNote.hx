@@ -93,11 +93,6 @@ class StrumNote extends FlxSprite
 
 		updateHitbox();
 		scrollFactor.set();
-
-		if (PlayState.SONG.player2 == 'expunged') {
-			skin = 'NOTE_assets_3D';
-			antialiasing = false;
-		}
 	}
 
 	public function postAddedToGroup() {
