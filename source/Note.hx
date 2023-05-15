@@ -223,6 +223,11 @@ class Note extends FlxSprite
 				skin = 'NOTE_assets';
 			}
 		}
+		
+		if (PlayState.SONG.player2 == 'expunged') {
+			skin = 'NOTE_assets_3D';
+			antialiasing = false;
+		}
 
 		var animName:String = null;
 		if(animation.curAnim != null) {
