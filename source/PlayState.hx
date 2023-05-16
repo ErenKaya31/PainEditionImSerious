@@ -1642,31 +1642,6 @@ class PlayState extends MusicBeatState
 			iconP1.swapOldIcon();
 		}*/
 
-		var toy = -100 + -Math.sin((curStep / 9.5) * 2) * 30 * 5;
-		var tox = -330 -Math.cos((curStep / 9.5)) * 100;
-
-		if(funnyFloatyBoys.contains(dad.curCharacter.toLowerCase()) && canFloat)
-			{
-				if (dad.curCharacter.toLowerCase() == "expunged")
-				{
-					// mentally insane movement
-					dad.x += (tox - dad.x) / 12;
-					dad.y += (toy - dad.y) / 12;
-				}
-				else
-				{
-					dad.y += (Math.sin(elapsedtime) * 0.2);
-				}
-			}
-			if(funnyFloatyBoys.contains(boyfriend.curCharacter.toLowerCase()) && canFloat)
-			{
-				boyfriend.y += (Math.sin(elapsedtime) * 0.2);
-			}
-			if(funnyFloatyBoys.contains(gf.curCharacter.toLowerCase()) && canFloat)
-			{
-				gf.y += (Math.sin(elapsedtime) * 0.2);
-			}
-
 		callOnLuas('onUpdate', [elapsed]);
 
 		if (curbg != null)
