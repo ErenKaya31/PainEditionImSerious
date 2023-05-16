@@ -659,29 +659,6 @@ class PlayState extends MusicBeatState
 		FlxG.fixedTimestep = false;
 		moveCameraSection(0);
 
-		var credits:String;
-		switch (Paths.formatToSongPath(SONG.song)) {
-			case 'unfairness':
-				credits = "Ghost Tapping is forced off! FUCK YOU!";
-				creditsText = true;
-			case 'cheating':
-				credits = "Notes are scrambled! FUCK YOU!";
-				creditsText = true;
-			case 'exploitation':
-				credits = "You won't survive " + #if windows Sys.getEnv("USERNAME") #else Sys.getEnv("USER") #end + "!";
-				creditsText = true;
-			case 'last-reality':
-				credits = "GET READY FOR UNEXPECTED " + #if windows Sys.getEnv("USERNAME") #else Sys.getEnv("USER") #end;
-				creditsText = true;
-			default: // nothing :shrug: 
-				credits = '';
-		} // this took me long to realize
-		var textYPos:Float = healthBarBG.y + 50;
-		if (creditsText)
-		{
-			textYPos = healthBarBG.y + 30;
-		}
-
 		healthBarBG = new AttachedSprite('healthBar');
 		healthBarBG.y = FlxG.height * 0.9;
 		healthBarBG.screenCenter(X);
@@ -718,22 +695,11 @@ class PlayState extends MusicBeatState
 		scoreTxt.visible = !ClientPrefs.hideHud;
 		add(scoreTxt);
 
-		kadeEngineWatermark = new FlxText(4, textYPos, 0, SONG.song, 16);
+		kadeEngineWatermark = new FlxText(4, healthBarBG.y + 50, 0, SONG.song, 16);
 		kadeEngineWatermark.setFormat(Paths.font("comic.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		kadeEngineWatermark.scrollFactor.set();
 		kadeEngineWatermark.borderSize = 1.25;
-		kadeEngineWatermark.cameras = [camHUD];
 		add(kadeEngineWatermark);
-		if (creditsText)
-		{
-			creditsWatermark = new FlxText(4, healthBarBG.y + 50, 0, credits, 16);
-			creditsWatermark.setFormat(Paths.font("comic.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-			creditsWatermark.scrollFactor.set();
-			creditsWatermark.borderSize = 1.25;
-			creditsWatermark.antialiasing = true;
-			add(creditsWatermark);
-			creditsWatermark.cameras = [camHUD];
-		}
 
 		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, "BOTPLAY", 32);
 		botplayTxt.setFormat(Paths.font("comic.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -757,6 +723,7 @@ class PlayState extends MusicBeatState
 		timeBar.cameras = [camHUD];
 		timeBarBG.cameras = [camHUD];
 		timeTxt.cameras = [camHUD];
+		kadeEngineWatermark.cameras = [camHUD];
 		doof.cameras = [camHUD];
 
 		subtitleManager = new SubtitleManager();
@@ -869,7 +836,7 @@ class PlayState extends MusicBeatState
 		healthBar.updateBar();
 		timeBar.updateBar();
 
-		timeBar.createFilledBar(0xFF808080, 0xFF39FF14);
+		timeBar.createFilledBar(0xFF808080, dad.healthColorArray[0], dad.healthColorArray[1], dad.healthColorArray[2]);
 	}
 
 	public function addCharacterToList(newCharacter:String, type:Int) {
