@@ -130,6 +130,14 @@ class PlayState extends MusicBeatState
 	public var boyfriend:Boyfriend;
 
 	public var curbg:BGSprite;
+
+	// shaders l
+	public static var screenshader:Shaders.PulseEffect = new PulseEffect();
+	public static var ssFilter:ShaderFilter = new ShaderFilter(screenshader.shader);
+	public static var blockedShader:BlockedGlitchEffect;
+	public static var blockedFilter:ShaderFilter;
+
+	public var dither:DitherEffect = new DitherEffect();
 	public static var lazychartshader:Shaders.GlitchEffect = new Shaders.GlitchEffect();
 
 	public var notes:FlxTypedGroup<Note>;
@@ -152,6 +160,8 @@ class PlayState extends MusicBeatState
 
 	public var camZooming:Bool = false;
 	private var curSong:String = "";
+
+	var canFloat:Bool = true;
 
 	public var gfSpeed:Int = 1;
 	public var health:Float = 1;
@@ -1632,6 +1642,31 @@ class PlayState extends MusicBeatState
 			iconP1.swapOldIcon();
 		}*/
 
+		var toy = -100 + -Math.sin((curStep / 9.5) * 2) * 30 * 5;
+		var tox = -330 -Math.cos((curStep / 9.5)) * 100;
+
+		if(funnyFloatyBoys.contains(dad.curCharacter.toLowerCase()) && canFloat)
+			{
+				if (dad.curCharacter.toLowerCase() == "expunged")
+				{
+					// mentally insane movement
+					dad.x += (tox - dad.x) / 12;
+					dad.y += (toy - dad.y) / 12;
+				}
+				else
+				{
+					dad.y += (Math.sin(elapsedtime) * 0.2);
+				}
+			}
+			if(funnyFloatyBoys.contains(boyfriend.curCharacter.toLowerCase()) && canFloat)
+			{
+				boyfriend.y += (Math.sin(elapsedtime) * 0.2);
+			}
+			if(funnyFloatyBoys.contains(gf.curCharacter.toLowerCase()) && canFloat)
+			{
+				gf.y += (Math.sin(elapsedtime) * 0.2);
+			}
+
 		callOnLuas('onUpdate', [elapsed]);
 
 		if (curbg != null)
@@ -1770,7 +1805,7 @@ class PlayState extends MusicBeatState
 		if(ratingString == '?') {
 			scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Accuracy: ' + ratingString;
 		} else {
-			scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Accuracy: ' + ratingString + ' (' + Math.floor(ratingPercent * 100) + '%)';
+			scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Accuracy: ' + ratingString + ' (' + truncateFloat(ratingPercent, 2) + '%)';
 		}
 
 		if(cpuControlled) {
@@ -1858,6 +1893,14 @@ class PlayState extends MusicBeatState
 			cancelFadeTween();
 			CustomFadeTransition.nextCamera = camOther;
 			MusicBeatState.switchState(new CharacterEditorState(SONG.player2));
+		}
+
+		if (FlxG.keys.justPressed.SIX && !endingSong && !inCutscene) {
+			persistentUpdate = false;
+			paused = true;
+			cancelFadeTween();
+			CustomFadeTransition.nextCamera = camOther;
+			MusicBeatState.switchState(new CharacterEditorState(SONG.player1));
 		}
 
 		if (startingSong)
@@ -2613,6 +2656,14 @@ class PlayState extends MusicBeatState
 			}
 		}
 	}
+
+	function truncateFloat(number:Float, precision:Int):Float
+		{
+			var num = number;
+			num = num * Math.pow(10, precision);
+			num = Math.round(num) / Math.pow(10, precision);
+			return num;
+		}
 
 	function tweenCamIn() {
 		if (Paths.formatToSongPath(SONG.song) == 'tutorial' && cameraTwn == null && FlxG.camera.zoom != 1.3) {
