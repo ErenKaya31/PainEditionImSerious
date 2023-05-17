@@ -1780,13 +1780,13 @@ class PlayState extends MusicBeatState
 		if(ratingString == '?') {
 			scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Accuracy: ' + ratingString;
 		} else {
-			scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Accuracy: ' + ratingString + ' (' + floorDecimal(ratingPercent * 100, 2) + '%)';
-		}
+			scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Accuracy: ' + ratingString + ' (' + Math.floor(ratingPercent * 100) + '%)';
+		} 
 
 		if(cpuControlled) {
 			botplaySine += 180 * elapsed;
 			botplayTxt.alpha = 1 - Math.sin((Math.PI * botplaySine) / 180);
-		}
+		} 
 		botplayTxt.visible = cpuControlled;
 
 		if (FlxG.keys.justPressed.ENTER && startedCountdown && canPause)
