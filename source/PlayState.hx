@@ -131,13 +131,13 @@ class PlayState extends MusicBeatState
 
 	public var curbg:BGSprite;
 
-	// shaders l
+	// shaders l lol
 	public static var screenshader:Shaders.PulseEffect = new PulseEffect();
-	public static var ssFilter:ShaderFilter = new ShaderFilter(screenshader.shader);
-	public static var blockedShader:BlockedGlitchEffect;
+	public static var ssFilter:Shaders.ShaderFilter = new ShaderFilter(screenshader.shader);
+	public static var blockedShader:Shaders.BlockedGlitchEffect = new BlockedGlitchEffect();
 	public static var blockedFilter:ShaderFilter;
 
-	public var dither:DitherEffect = new DitherEffect();
+	public var dither:Shaders.DitherEffect = new DitherEffect();
 	public static var lazychartshader:Shaders.GlitchEffect = new Shaders.GlitchEffect();
 
 	public var notes:FlxTypedGroup<Note>;
