@@ -343,12 +343,6 @@ class PlayState extends MusicBeatState
 			}
 		}
 
-		if (funnyFloatyBoys.contains(dad.curCharacter)) {
-			iconP2.antialiasing = false;
-		} else {
-			iconP2.antialiasing = true;
-		}
-
 		var stageData:StageFile = StageData.getStageFile(curStage);
 		if(stageData == null) { //Stage couldn't be found, create a dummy stage for preventing a crash
 			stageData = {

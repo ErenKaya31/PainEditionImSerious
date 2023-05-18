@@ -12,6 +12,13 @@ class HealthIcon extends FlxSprite
 	private var isPlayer:Bool = false;
 	private var char:String = '';
 
+	public var noAaChars:Array<String> = [
+		'bambi-3d',
+		'bambi-unfair',
+		'expunged',
+		'glitchy-expunged'
+	];
+
 	public function new(char:String = 'bf', isPlayer:Bool = false)
 	{
 		super();
@@ -48,6 +55,7 @@ class HealthIcon extends FlxSprite
 			iconOffsets[1] = (width - 150) / 2;
 			updateHitbox();
 
+			antialiasing = !noAaChars.contains(char);
 			animation.add(char, [0, 1], 0, false, isPlayer);
 			animation.play(char);
 			this.char = char;
