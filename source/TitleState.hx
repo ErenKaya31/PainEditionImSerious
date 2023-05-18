@@ -157,7 +157,7 @@ class TitleState extends MusicBeatState
 			}
 		}
 
-		Conductor.changeBPM(102);
+		Conductor.changeBPM(120);
 		persistentUpdate = true;
 
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
@@ -166,7 +166,7 @@ class TitleState extends MusicBeatState
 		// bg.updateHitbox();
 		add(bg);
 
-		logoBl = new FlxSprite(-150, -100);
+		logoBl = new FlxSprite(0, 30);
 		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
 		logoBl.antialiasing = ClientPrefs.globalAntialiasing;
 		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
@@ -184,7 +184,7 @@ class TitleState extends MusicBeatState
 		}
 		else //Psyka easter egg
 		{
-			gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.04);
+			gfDance = new FlxSprite(850, 250);
 			gfDance.frames = Paths.getSparrowAtlas('psykaDanceTitle');
 			gfDance.animation.addByIndices('danceLeft', 'psykaDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
 			gfDance.animation.addByIndices('danceRight', 'psykaDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
@@ -195,7 +195,7 @@ class TitleState extends MusicBeatState
 		add(logoBl);
 		//logoBl.shader = swagShader.shader;
 
-		titleText = new FlxSprite(100, FlxG.height * 0.8);
+		titleText = new FlxSprite(150, 625);
 		titleText.frames = Paths.getSparrowAtlas('titleEnter');
 		titleText.animation.addByPrefix('idle', "Press Enter to Begin", 24);
 		titleText.animation.addByPrefix('press', "ENTER PRESSED", 24);
@@ -431,11 +431,11 @@ class TitleState extends MusicBeatState
 			switch (curBeat)
 			{
 				case 1:
-					createCoolText(['Psych Engine by'], 45);
+					createCoolText(['Pain Edition by'], 45);
 				// credTextShit.visible = true;
 				case 3:
-					addMoreText('Shadow Mario', 45);
-					addMoreText('RiverOaken', 45);
+					addMoreText('Eren Kaya', 45);
+					addMoreText('so lonely lol', 45);
 				// credTextShit.text += '\npresent...';
 				// credTextShit.addText();
 				case 4:
@@ -468,13 +468,13 @@ class TitleState extends MusicBeatState
 				// credTextShit.text = "Friday";
 				// credTextShit.screenCenter();
 				case 13:
-					addMoreText('Friday');
+					addMoreText('Bambi');
 				// credTextShit.visible = true;
 				case 14:
-					addMoreText('Night');
+					addMoreText('Pain');
 				// credTextShit.text += '\nNight';
 				case 15:
-					addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
+					addMoreText('Edition'); // credTextShit.text += '\nFunkin';
 
 				case 16:
 					skipIntro();

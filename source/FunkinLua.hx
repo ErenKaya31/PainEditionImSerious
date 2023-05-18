@@ -41,6 +41,7 @@ class FunkinLua {
 	var lePlayState:PlayState = null;
 	var scriptName:String = '';
 	var gonnaClose:Bool = false;
+	var subtitleManager:SubtitleManager = new SubtitleManager(); // i
 
 	public var accessedProps:Map<String, Dynamic> = null;
 	public function new(script:String) {
@@ -71,6 +72,10 @@ class FunkinLua {
 
 		var curState:Dynamic = FlxG.state;
 		lePlayState = curState;
+
+		subtitleManager = new SubtitleManager();
+		subtitleManager.cameras = [camHUD];
+		add(subtitleManager);
 
 		// Lua shit
 		set('Function_Stop', Function_Stop);
@@ -219,6 +224,10 @@ class FunkinLua {
 				return;
 			}
 			Reflect.getProperty(lePlayState, obj).remove(Reflect.getProperty(lePlayState, obj)[index]);
+		});
+
+		Lua_helper.add_callback(lua, "addSubtitle", function(text, typeSpeed, duration) {
+			subtitleManager.addSubtitle(text, typeSpeed, duration);
 		});
 
 		Lua_helper.add_callback(lua, "getPropertyFromClass", function(classVar:String, variable:String) {

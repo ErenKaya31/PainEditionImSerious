@@ -260,7 +260,7 @@ class FreeplayState extends MusicBeatState
 			}
 
 		if(songs[curSelected].songName == 'last-reality') {
-			FlxG.camera.shake(0.0010, 0.0010);
+			FlxG.camera.shake(0.010, 0.010);
 		}
 
 		if (accepted)
