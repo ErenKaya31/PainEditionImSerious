@@ -74,7 +74,7 @@ class FunkinLua {
 		lePlayState = curState;
 
 		subtitleManager = new SubtitleManager();
-		subtitleManager.cameras = [camHUD];
+		subtitleManager.cameras = [PlayState.camHUD];
 		add(subtitleManager);
 
 		// Lua shit
