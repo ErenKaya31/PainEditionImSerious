@@ -37,7 +37,7 @@ class CreditsPopUp extends FlxSpriteGroup
 		var songCreatorIcon:String = '';
 		var headingPath:SongHeading = null;
 
-		switch (PlayState.SONG.song.toLowerCase())
+		switch (Paths.formatToSongPath(PlayState.SONG.song))
 		{
 			case 'corn-theft' | 'indignancy' | 'unfairness':
 				songCreator = 'MoldyGH';

@@ -40,47 +40,14 @@ class CoolUtil
 	}
 
 	public static function coolTextFile(path:String):Array<String>
-	{
-		var daList:Array<String> = [];
-		#if sys
-		if(FileSystem.exists(path)) daList = File.getContent(path).trim().split('\n');
-		#else
-		if(Assets.exists(path)) daList = Assets.getText(path).trim().split('\n');
-		#end
-
-		for (i in 0...daList.length)
 		{
-			daList[i] = daList[i].trim();
-		}
-
-		return daList;
-	}
-
-	public static function getTextString(stringName:String):String
-		{
-			var returnedString:String = '';
-			for (i in 0...currentLocaleList.length)
+			var daList:Array<String> = Assets.getText(path).trim().split('\n');
+	
+			for (i in 0...daList.length)
 			{
-				var currentValue = currentLocaleList[i].trim().split('==');
-				if (currentValue[0] != stringName)
-				{
-					continue;
-				}
-				else
-				{
-					returnedString = currentValue[1];
-				}
+				daList[i] = daList[i].trim();
 			}
-			if (returnedString == '')
-			{
-				return stringName;
-			}
-			else
-			{
-				returnedString = returnedString.replace(':linebreak:', '\n');
-				returnedString = returnedString.replace(':addquote:', '\"');
-				return returnedString;
-			}
+			return daList;
 		}
 
 	public static function numberArray(max:Int, ?min = 0):Array<Int>

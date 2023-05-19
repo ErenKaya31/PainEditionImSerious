@@ -3639,19 +3639,19 @@ class PlayState extends MusicBeatState
 						add(black);
 						FlxTween.tween(black, {alpha: 0.6}, 1);
 						makeInvisibleNotes(true);
-						subtitleManager.addSubtitle(CoolUtil.getTextString('ctheft_sub1'), 0.02, 1);
+						subtitleManager.addSubtitle(LyricsManager.getTextString('ctheft_sub1'), 0.02, 1);
 					case 945:
-						subtitleManager.addSubtitle(CoolUtil.getTextString('ctheft_sub2'), 0.02, 1);
+						subtitleManager.addSubtitle(LyricsManager.getTextString('ctheft_sub2'), 0.02, 1);
 					case 976:
-						subtitleManager.addSubtitle(CoolUtil.getTextString('ctheft_sub3'), 0.02, 0.5);
+						subtitleManager.addSubtitle(LyricsManager.getTextString('ctheft_sub3'), 0.02, 0.5);
 					case 982:
-						subtitleManager.addSubtitle(CoolUtil.getTextString('ctheft_sub4'), 0.02, 1);
+						subtitleManager.addSubtitle(LyricsManager.getTextString('ctheft_sub4'), 0.02, 1);
 					case 992:
-						subtitleManager.addSubtitle(CoolUtil.getTextString('ctheft_sub5'), 0.02, 1);
+						subtitleManager.addSubtitle(LyricsManager.getTextString('ctheft_sub5'), 0.02, 1);
 					case 1002:
-						subtitleManager.addSubtitle(CoolUtil.getTextString('ctheft_sub6'), 0.02, 0.3);
+						subtitleManager.addSubtitle(LyricsManager.getTextString('ctheft_sub6'), 0.02, 0.3);
 					case 1007:
-						subtitleManager.addSubtitle(CoolUtil.getTextString('ctheft_sub7'), 0.02, 0.3);
+						subtitleManager.addSubtitle(LyricsManager.getTextString('ctheft_sub7'), 0.02, 0.3);
 					case 1033:
 						subtitleManager.addSubtitle("Bye Baa!", 0.02, 0.3, {subtitleSize: 45});
 						FlxTween.tween(dad, {alpha: 0}, (Conductor.stepCrochet / 1000) * 6);
