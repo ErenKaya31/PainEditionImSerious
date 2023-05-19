@@ -14,7 +14,7 @@ import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import flixel.tweens.FlxTween;
 import lime.utils.Assets;
-import flixel.sound.FlxSound;
+import flixel.system.FlxSound;
 import openfl.utils.Assets as OpenFlAssets;
 import WeekData;
 
@@ -118,7 +118,7 @@ class FreeplayState extends MusicBeatState
 		WeekData.setDirectoryFromWeek();
 
 		scoreText = new FlxText(FlxG.width * 0.7, 5, 0, "", 32);
-		scoreText.setFormat(Paths.font("comic.ttf"), 32, FlxColor.WHITE, RIGHT);
+		scoreText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, RIGHT);
 
 		scoreBG = new FlxSprite(scoreText.x - 6, 0).makeGraphic(1, 66, 0xFF000000);
 		scoreBG.alpha = 0.6;
@@ -164,7 +164,7 @@ class FreeplayState extends MusicBeatState
 		var leText:String = "Press RESET to Reset your Score and Accuracy.";
 		#end
 		var text:FlxText = new FlxText(textBG.x, textBG.y + 4, FlxG.width, leText, 18);
-		text.setFormat(Paths.font("comic.ttf"), 18, FlxColor.WHITE, RIGHT);
+		text.setFormat(Paths.font("vcr.ttf"), 18, FlxColor.WHITE, RIGHT);
 		text.scrollFactor.set();
 		add(text);
 		super.create();
@@ -216,8 +216,8 @@ class FreeplayState extends MusicBeatState
 		scoreText.text = 'PERSONAL BEST: ' + lerpScore + ' (' + Math.floor(lerpRating * 100) + '%)';
 		positionHighscore();
 
-		var upP = controls.UI_LEFT_P;
-		var downP = controls.UI_RIGHT_P;
+		var upP = controls.UI_UP_P;
+		var downP = controls.UI_DOWN_P;
 		var accepted = controls.ACCEPT;
 		var space = FlxG.keys.justPressed.SPACE;
 
@@ -233,12 +233,10 @@ class FreeplayState extends MusicBeatState
 			changeSelection(shiftMult);
 		}
 
-		/*
 		if (controls.UI_LEFT_P)
 			changeDiff(-1);
 		if (controls.UI_RIGHT_P)
 			changeDiff(1);
-		*/
 
 		if (controls.BACK)
 		{
@@ -249,23 +247,27 @@ class FreeplayState extends MusicBeatState
 			MusicBeatState.switchState(new MainMenuState());
 		}
 
-		if(instPlaying != curSelected)
-			{
-				destroyFreeplayVocals();
-				FlxG.sound.music.volume = 0;
-				Paths.currentModDirectory = songs[curSelected].folder;
-				var poop:String = Highscore.formatSong(songs[curSelected].songName.toLowerCase(), curDifficulty);
-				PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName.toLowerCase());
+		#if PRELOAD_ALL
+		if(space && instPlaying != curSelected)
+		{
+			destroyFreeplayVocals();
+			Paths.currentModDirectory = songs[curSelected].folder;
+			var poop:String = Highscore.formatSong(songs[curSelected].songName.toLowerCase(), curDifficulty);
+			PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName.toLowerCase());
+			if (PlayState.SONG.needsVoices)
+				vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song));
+			else
+				vocals = new FlxSound();
 
-				FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 0.7);
-				instPlaying = curSelected;
-			}
-
-		if(songs[curSelected].songName == 'last-reality') {
-			FlxG.camera.shake(0.010, 0.010);
+			FlxG.sound.list.add(vocals);
+			FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 0.7);
+			vocals.play();
+			vocals.persist = true;
+			vocals.looped = true;
+			vocals.volume = 0.7;
+			instPlaying = curSelected;
 		}
-
-		if (accepted)
+		else #end if (accepted)
 		{
 			var songLowercase:String = Paths.formatToSongPath(songs[curSelected].songName);
 			var poop:String = Highscore.formatSong(songLowercase, curDifficulty);
