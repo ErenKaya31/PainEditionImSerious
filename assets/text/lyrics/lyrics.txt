@@ -1,0 +1,10 @@
+// Hey dude! put some custom lyrics if YOU wanna make a fanmade version of something :) -Eren Kaya //
+
+// Corn Theft //
+ctheft_sub1==Because he add me...
+ctheft_sub2==Why you add me...
+ctheft_sub3==I-
+ctheft_sub4==I don't care...
+ctheft_sub5==You want to
+ctheft_sub6==I'll block you
+ctheft_sub7==I'm never coming back again.

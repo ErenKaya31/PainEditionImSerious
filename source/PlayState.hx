@@ -3620,63 +3620,52 @@ class PlayState extends MusicBeatState
 
 		switch (SONG.song.toLowerCase())
 		{
-			case 'blocked':
+			case 'corn-theft':
 				switch (curStep)
 				{
-					case 128:
+					case 668:
 						defaultCamZoom += 0.1;
-						FlxG.camera.flash(FlxColor.WHITE, 0.5);
+					case 784:
+						defaultCamZoom += 0.1;
+					case 848:
+						defaultCamZoom -= 0.2;
+					case 916:
+						FlxG.camera.flash();
+					case 935:
+						defaultCamZoom += 0.2;
 						black = new FlxSprite().makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
 						black.screenCenter();
 						black.alpha = 0;
 						add(black);
 						FlxTween.tween(black, {alpha: 0.6}, 1);
 						makeInvisibleNotes(true);
-						subtitleManager.addSubtitle("I block you...", 0.02, 1);
-					case 165:
-						subtitleManager.addSubtitle("You are monster...", 0.02, 1);
-					case 188:
-						subtitleManager.addSubtitle("You ruined my life!", 0.02, 1);
-					case 224:
-						subtitleManager.addSubtitle("Moldy I swear to god I'll block you", 0.02, 1);
-					case 248:
-						subtitleManager.addSubtitle("FOREVER.", 0.02, 0.5, {subtitleSize: 60});
-					case 256:
-						defaultCamZoom -= 0.1;
-						FlxG.camera.flash();
-						FlxTween.tween(black, {alpha: 0}, 1);
+						subtitleManager.addSubtitle(CoolUtil.getTextString('ctheft_sub1'), 0.02, 1);
+					case 945:
+						subtitleManager.addSubtitle(CoolUtil.getTextString('ctheft_sub2'), 0.02, 1);
+					case 976:
+						subtitleManager.addSubtitle(CoolUtil.getTextString('ctheft_sub3'), 0.02, 0.5);
+					case 982:
+						subtitleManager.addSubtitle(CoolUtil.getTextString('ctheft_sub4'), 0.02, 1);
+					case 992:
+						subtitleManager.addSubtitle(CoolUtil.getTextString('ctheft_sub5'), 0.02, 1);
+					case 1002:
+						subtitleManager.addSubtitle(CoolUtil.getTextString('ctheft_sub6'), 0.02, 0.3);
+					case 1007:
+						subtitleManager.addSubtitle(CoolUtil.getTextString('ctheft_sub7'), 0.02, 0.3);
+					case 1033:
+						subtitleManager.addSubtitle("Bye Baa!", 0.02, 0.3, {subtitleSize: 45});
+						FlxTween.tween(dad, {alpha: 0}, (Conductor.stepCrochet / 1000) * 6);
+						FlxTween.tween(black, {alpha: 0}, (Conductor.stepCrochet / 1000) * 6);
+						FlxTween.num(defaultCamZoom, defaultCamZoom + 0.2, (Conductor.stepCrochet / 1000) * 6, {}, function(newValue:Float)
+						{
+							defaultCamZoom = newValue;
+						});
 						makeInvisibleNotes(false);
-					case 640:
-						FlxG.camera.flash();
-						black.alpha = 0.6;
-						defaultCamZoom += 0.1;
-					case 768:
-						FlxG.camera.flash();
-						defaultCamZoom -= 0.1;
-						black.alpha = 0;
-					case 1028:
-						subtitleManager.addSubtitle("I'm trying to...", 0.02, 1.5);
-						makeInvisibleNotes(true);
-					case 1056:
-						subtitleManager.addSubtitle("No I'm not trying help you...", 0.02, 1);
-					case 1084:
-						subtitleManager.addSubtitle("Because you go watch me...", 0.02, 1);
-					case 1104:
-						subtitleManager.addSubtitle("Because...", 0.02, 1);
-					case 1118:
-						subtitleManager.addSubtitle("go watch me scribe me", 0.02, 1);
-					case 1143:
-						subtitleManager.addSubtitle("Whatever.", 0.02, 1, {subtitleSize: 45});
-						makeInvisibleNotes(false);
-					case 1152:
-						FlxTween.tween(black, {alpha: 0.4}, 1);
-						defaultCamZoom += 0.3;
-					case 1200:
-						FlxTween.tween(black, {alpha: 0.7}, (Conductor.stepCrochet / 1000) * 8);
-					case 1216:
-						FlxG.camera.flash(FlxColor.WHITE, 0.5);
+					case 1040:
+						defaultCamZoom = 0.8; 
+						dad.alpha = 1;
 						remove(black);
-						defaultCamZoom -= 0.3;
+						FlxG.camera.flash();
 				}
 		}
 

@@ -21,6 +21,11 @@ class CoolUtil
 		['Normal', '']
 	];
 
+	public static function init()
+		{
+			CoolUtil.currentLocaleList = CoolUtil.coolTextFile(Paths.file('lyrics/lyrcis.txt', TEXT, 'text'));
+		}
+
 	public static function difficultyString():String
 	{
 		return difficultyStuff[PlayState.storyDifficulty][0].toUpperCase();
@@ -49,6 +54,33 @@ class CoolUtil
 
 		return daList;
 	}
+
+	public static function getTextString(stringName:String):String
+		{
+			var returnedString:String = '';
+			for (i in 0...currentLocaleList.length)
+			{
+				var currentValue = currentLocaleList[i].trim().split('==');
+				if (currentValue[0] != stringName)
+				{
+					continue;
+				}
+				else
+				{
+					returnedString = currentValue[1];
+				}
+			}
+			if (returnedString == '')
+			{
+				return stringName;
+			}
+			else
+			{
+				returnedString = returnedString.replace(':linebreak:', '\n');
+				returnedString = returnedString.replace(':addquote:', '\"');
+				return returnedString;
+			}
+		}
 
 	public static function numberArray(max:Int, ?min = 0):Array<Int>
 	{
