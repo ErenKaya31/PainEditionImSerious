@@ -54,6 +54,10 @@ class FreeplayState extends MusicBeatState
 
 	var songColors:Array<FlxColor> = [
 		0xFF000000, // DUMBASS PLACEHOLDER
+		0xFF00B515, // MISTER BAMBI RETARD (thats kinda rude ngl)
+		0xFF119A2B, // CHEATING
+		0xFFFF0000, // UNFAIRNESS
+		0xFF810000, // EXPLOITATION
     ];
 
 	private var iconArray:Array<HealthIcon> = [];
@@ -110,13 +114,13 @@ class FreeplayState extends MusicBeatState
 						songs.push(new SongMetadata(data[0], Std.parseInt(data[2]), data[1]));
 					}
 				case 'main':
-					var initSonglist = CoolUtil.coolTextFile(Paths.txt('mainSonglist'));
-	
-					for (i in 0...initSonglist.length)
-					{
-						var data:Array<String> = initSonglist[i].split(':');
-						songs.push(new SongMetadata(data[0], Std.parseInt(data[2]), data[1]));
-					}
+					addWeek(['Blocked', 'Corn-Theft', 'Flintcorn'], 1, ['bambi']);
+					addWeek(['The Phone', 'Indignancy'], 1, ['bambi-angey']);
+					addWeek(['Get Out'], 2, ['bambi-ripple']);
+					addWeek(['Mazeophobia', 'Reality Breaking'], 3, ['bambi-garcello']);
+					addWeek(['Cheating'], 4, ['bambi-3d']);
+					addWeek(['Unfairness'], 5, ['bambi-unfair']);
+					addWeek(['Exploitation'], 6, ['expunged']);
 				case 'extras':
 					var initSonglist = CoolUtil.coolTextFile(Paths.txt('extrasSonglist'));
 		
