@@ -8,7 +8,7 @@ import flixel.util.FlxColor;
 
 class MenuItem extends FlxSprite
 {
-	public var targetX:Float = 0;
+	public var targetY:Float = 0;
 	public var flashingInt:Int = 0;
 
 	public function new(x:Float, y:Float, weekName:String = '')
@@ -35,7 +35,7 @@ class MenuItem extends FlxSprite
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
-		x = FlxMath.lerp(x, (targetX * 450) + 420, 0.17);
+		x = FlxMath.lerp(x, (targetY * 450) + 420, 0.17);
 
 		if (isFlashing)
 			flashingInt += 1;

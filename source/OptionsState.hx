@@ -112,11 +112,11 @@ class OptionsState extends MusicBeatState
 		var bullShit:Int = 0;
 
 		for (item in grpOptions.members) {
-			item.targetX = bullShit - curSelected;
+			item.targetY = bullShit - curSelected;
 			bullShit++;
 
 			item.alpha = 0.6;
-			if (item.targetX == 0) {
+			if (item.targetY == 0) {
 				item.alpha = 1;
 			}
 		}
@@ -447,7 +447,7 @@ class ControlsSubstate extends MusicBeatSubstate {
 				optionText.forceX = 200;
 			}
 			optionText.yMult = 60;
-			optionText.targetX = i;
+			optionText.targetY = i;
 			grpOptions.add(optionText);
 
 			if(!isCentered) {
@@ -550,12 +550,12 @@ class ControlsSubstate extends MusicBeatSubstate {
 		}
 
 		for (item in grpOptions.members) {
-			item.targetX = bullShit - curSelected;
+			item.targetY = bullShit - curSelected;
 			bullShit++;
 
 			if(!unselectableCheck(bullShit-1)) {
 				item.alpha = 0.6;
-				if (item.targetX == 0) {
+				if (item.targetY == 0) {
 					item.alpha = 1;
 					for (i in 0...grpInputs.length) {
 						if(grpInputs[i].sprTracker == item && grpInputs[i].isAlt == curAlt) {
@@ -639,12 +639,12 @@ class ControlsSubstate extends MusicBeatSubstate {
 		}
 
 		for (item in grpOptions.members) {
-			item.targetX = bullShit - curSelected;
+			item.targetY = bullShit - curSelected;
 			bullShit++;
 
 			if(!unselectableCheck(bullShit-1)) {
 				item.alpha = 0.6;
-				if (item.targetX == 0) {
+				if (item.targetY == 0) {
 					item.alpha = 1;
 					for (i in 0...grpInputs.length) {
 						if(grpInputs[i].sprTracker == item && grpInputs[i].isAlt == curAlt) {
@@ -729,7 +729,7 @@ class PreferencesSubstate extends MusicBeatSubstate
 				optionText.forceX = 300;
 			}
 			optionText.yMult = 90;
-			optionText.targetX = i;
+			optionText.targetY = i;
 			grpOptions.add(optionText);
 
 			if(!isCentered) {
@@ -959,12 +959,12 @@ class PreferencesSubstate extends MusicBeatSubstate
 		var bullShit:Int = 0;
 
 		for (item in grpOptions.members) {
-			item.targetX = bullShit - curSelected;
+			item.targetY = bullShit - curSelected;
 			bullShit++;
 
 			if(!unselectableCheck(bullShit-1)) {
 				item.alpha = 0.6;
-				if (item.targetX == 0) {
+				if (item.targetY == 0) {
 					item.alpha = 1;
 				}
 

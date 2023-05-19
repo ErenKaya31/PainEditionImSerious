@@ -583,7 +583,7 @@ class WeekEditorFreeplayState extends MusicBeatState
 		{
 			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, weekFile.songs[i][0], true, false);
 			songText.isMenuItem = true;
-			songText.targetX = i;
+			songText.targetY = i;
 			grpSongs.add(songText);
 
 			var icon:HealthIcon = new HealthIcon(weekFile.songs[i][1]);
@@ -741,13 +741,13 @@ class WeekEditorFreeplayState extends MusicBeatState
 
 		for (item in grpSongs.members)
 		{
-			item.targetX = bullShit - curSelected;
+			item.targetY = bullShit - curSelected;
 			bullShit++;
 
 			item.alpha = 0.6;
 			// item.setGraphicSize(Std.int(item.width * 0.8));
 
-			if (item.targetX == 0)
+			if (item.targetY == 0)
 			{
 				item.alpha = 1;
 				// item.setGraphicSize(Std.int(item.width));

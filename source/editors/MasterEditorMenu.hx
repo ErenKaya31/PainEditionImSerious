@@ -48,7 +48,7 @@ class MasterEditorMenu extends MusicBeatState
 		{
 			var leText:Alphabet = new Alphabet(0, (70 * i) + 30, options[i], true, false);
 			leText.isMenuItem = true;
-			leText.targetX = i;
+			leText.targetY = i;
 			grpTexts.add(leText);
 		}
 
@@ -93,13 +93,13 @@ class MasterEditorMenu extends MusicBeatState
 		var bullShit:Int = 0;
 		for (item in grpTexts.members)
 		{
-			item.targetX = bullShit - curSelected;
+			item.targetY = bullShit - curSelected;
 			bullShit++;
 
 			item.alpha = 0.6;
 			// item.setGraphicSize(Std.int(item.width * 0.8));
 
-			if (item.targetX == 0)
+			if (item.targetY == 0)
 			{
 				item.alpha = 1;
 				// item.setGraphicSize(Std.int(item.width));

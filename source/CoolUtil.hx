@@ -17,6 +17,7 @@ using StringTools;
 class CoolUtil
 {
 	// [Difficulty name, Chart file suffix]
+	public static var currentLocaleList:Array<String>;
 	public static var difficultyStuff:Array<Dynamic> = [
 		['Normal', '']
 	];
