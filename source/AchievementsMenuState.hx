@@ -53,7 +53,7 @@ class AchievementsMenuState extends MusicBeatState
 			optionText.isMenuItem = true;
 			optionText.x += 280;
 			optionText.xAdd = 200;
-			optionText.targetY = i;
+			optionText.targetX = i;
 			grpOptions.add(optionText);
 
 			var icon:AttachedAchievement = new AttachedAchievement(optionText.x - 105, optionText.y, achievementIndex[i]);
@@ -98,11 +98,11 @@ class AchievementsMenuState extends MusicBeatState
 		var bullShit:Int = 0;
 
 		for (item in grpOptions.members) {
-			item.targetY = bullShit - curSelected;
+			item.targetX = bullShit - curSelected;
 			bullShit++;
 
 			item.alpha = 0.6;
-			if (item.targetY == 0) {
+			if (item.targetX == 0) {
 				item.alpha = 1;
 			}
 		}

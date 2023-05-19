@@ -238,6 +238,7 @@ class PlayState extends MusicBeatState
 	public var scoreTxt:FlxText;
 	var timeTxt:FlxText;
 	var scoreTxtTween:FlxTween;
+	public var creditsPopup:CreditsPopUp;
 
 	public static var campaignScore:Int = 0;
 	public static var campaignMisses:Int = 0;
@@ -426,6 +427,19 @@ class PlayState extends MusicBeatState
 				expungedBG.antialiasing = false;
 				add(expungedBG);
 				voidShader(expungedBG);
+
+			case 'yoyleworld':
+				var oppositonBG:BGSprite = new BGSprite('backgrounds/oppositon/OppositonLol', -600, -300, 0, 0);
+				oppositonBG.setGraphicSize(Std.int(oppositonBG.width * 1.8));
+				oppositonBG.setGraphicSize(Std.int(oppositonBG.height * 1.8));
+				voidShader(oppositonBG);
+				add(oppositonBG);
+
+				var oppositonGround:BGSprite = new BGSprite('backgrounds/oppositon/ThanosGround', 790, 620, 1, 1);
+				oppositonGround.setGraphicSize(Std.int(oppositonGround.width * 1.5));
+				oppositonGround.setGraphicSize(Std.int(oppositonGround.height * 1.5));
+				oppositonGround.updateHitbox();
+				add(oppositonGround);
 		}
 
 		if(isPixelStage) {
@@ -1197,6 +1211,19 @@ class PlayState extends MusicBeatState
 						});
 						FlxG.sound.play(Paths.sound('introGo' + introSoundsSuffix), 0.6);
 					case 4:
+						creditsPopup = new CreditsPopUp(FlxG.width, 200);
+						creditsPopup.camera = camHUD;
+						creditsPopup.scrollFactor.set();
+						creditsPopup.x = creditsPopup.width * -1;
+						add(creditsPopup);
+	
+						FlxTween.tween(creditsPopup, {x: 0}, 0.5, {ease: FlxEase.backOut, onComplete: function(tweeen:FlxTween)
+						{
+							FlxTween.tween(creditsPopup, {x: creditsPopup.width * -1} , 1, {ease: FlxEase.backIn, onComplete: function(tween:FlxTween)
+							{
+								creditsPopup.destroy();
+							}, startDelay: 3});
+						}});
 				}
 
 				notes.forEachAlive(function(note:Note) {

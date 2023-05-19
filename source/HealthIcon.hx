@@ -13,10 +13,10 @@ class HealthIcon extends FlxSprite
 	private var char:String = '';
 
 	public var noAaChars:Array<String> = [
-		'bambi-3d',
-		'bambi-unfair',
-		'expunged',
-		'glitchy-expunged'
+		'icon-bambi-3d',
+		'icon-bambi-unfair',
+		'icon-expunged',
+		'icon-glitchy-expunged'
 	];
 
 	public function new(char:String = 'bf', isPlayer:Bool = false)
@@ -59,6 +59,11 @@ class HealthIcon extends FlxSprite
 			animation.add(char, [0, 1], 0, false, isPlayer);
 			animation.play(char);
 			this.char = char;
+
+			if (char == 'glitchy-expunged') {
+				frames = Paths.getSparrowAtlas('icon-glitchy-expunged');
+				animation.addByPrefix(char, char, 24, false, isPlayer, false);
+			}
 
 			antialiasing = ClientPrefs.globalAntialiasing;
 			if(char.endsWith('-pixel')) {

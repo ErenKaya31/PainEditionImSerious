@@ -20,6 +20,13 @@ class CoolUtil
 	public static var difficultyStuff:Array<Dynamic> = [
 		['Normal', '']
 	];
+	public static var exploitationDifficulties:Array<String> = [
+		"YOU'RE FUCKED",
+		'HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA',
+		"YOU CAN'T ESCAPE FROM THE FUN ALREADY",
+		"EXPUNGED'S REIGN IS HERE, YOU'RE FUCKED", "YOU HAVE REACHED THE END OF THE RABBIT HOLE",
+		"YOU'RE WORTHLESS YOU'RE WORTHLESS YOU'RE WORTHLESS YOU'RE WORTHLESS YOU'RE WORTHLESS",
+	];
 
 	public static function difficultyString():String
 	{
@@ -59,6 +66,19 @@ class CoolUtil
 		}
 		return dumbArray;
 	}
+
+	public static function getMinAndMax(value1:Float, value2:Float):Array<Float>
+		{
+			var minAndMaxs = new Array<Float>();
+	
+			var min = Math.min(value1, value2);
+			var max = Math.max(value1, value2);
+	
+			minAndMaxs.push(min);
+			minAndMaxs.push(max);
+	
+			return minAndMaxs;
+		}
 
 	//uhhhh does this even work at all? i'm starting to doubt
 	public static function precacheSound(sound:String, ?library:String = null):Void {

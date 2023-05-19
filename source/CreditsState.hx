@@ -72,7 +72,7 @@ class CreditsState extends MusicBeatState
 			}
 			optionText.forceX = optionText.x;
 			//optionText.yMult = 90;
-			optionText.targetY = i;
+			optionText.targetX = i;
 			grpOptions.add(optionText);
 
 			if(isSelectable) {
@@ -159,12 +159,12 @@ class CreditsState extends MusicBeatState
 
 		for (item in grpOptions.members)
 		{
-			item.targetY = bullShit - curSelected;
+			item.targetX = bullShit - curSelected;
 			bullShit++;
 
 			if(!unselectableCheck(bullShit-1)) {
 				item.alpha = 0.6;
-				if (item.targetY == 0) {
+				if (item.targetX == 0) {
 					item.alpha = 1;
 				}
 			}
