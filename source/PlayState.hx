@@ -198,6 +198,7 @@ class PlayState extends MusicBeatState
 	var songPercent:Float = 0;
 
 	var black:FlxSprite;
+	var blackScreen:FlxSprite;
 
 	private var timeBarBG:AttachedSprite;
 	public var timeBar:FlxBar;
@@ -1310,7 +1311,7 @@ class PlayState extends MusicBeatState
 		switch (SONG.song.toLowerCase())
 		{
 			case 'exploitation':
-				blackScreen:FlxSprite = new FlxSprite().makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
+				blackScreen = new FlxSprite().makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
 				blackScreen.cameras = [camHUD];
 				blackScreen.screenCenter();
 				blackScreen.scrollFactor.set();
