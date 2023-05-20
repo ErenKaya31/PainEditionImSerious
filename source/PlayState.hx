@@ -600,7 +600,7 @@ class PlayState extends MusicBeatState
 		timeTxt.visible = !ClientPrefs.hideTime;
 		if(ClientPrefs.downScroll) timeTxt.y = FlxG.height - 45;
 
-		var yPos = (ClientPrefs.downscroll) ? FlxG.height * 0.9 + 20 : strumLine.y - 20;
+		var yPos = (ClientPrefs.downScroll) ? FlxG.height * 0.9 + 20 : strumLine.y - 20;
 
 		timeBarBG = new AttachedSprite('timeBar');
 		//timeBarBG.x = timeTxt.x;
@@ -1676,8 +1676,8 @@ class PlayState extends MusicBeatState
 
 		callOnLuas('onUpdate', [elapsed]);
 
-		var toy = ((-Math.sin((elapsedexpungedtime / 9.5) * 2) * 30 * 5.1) / 1080) * screenheight;
-		var tox = ((-Math.cos((elapsedexpungedtime / 9.5)) * 100) / 1980) * screenwidth;
+		var toy = ((-Math.sin((elapsedexpungedtime / 9.5) * 2) * 30 * 5.1) / 1080) * FlxG.height;
+		var tox = ((-Math.cos((elapsedexpungedtime / 9.5)) * 100) / 1980) * FlxG.width;
 		
 		if(funnyFloatyBoys.contains(dad.curCharacter.toLowerCase()) && canFloat)
 			{
