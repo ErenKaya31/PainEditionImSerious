@@ -4152,35 +4152,35 @@ class PlayState extends MusicBeatState
 						case 2083:
 							PlatformUtil.senddesktopNotification("Anticheat.dll", "Threat expunged.dat successfully contained.");
 					case 32:
-						subtitleManager.addSubtitle(LanguageManager.getTextString('exploit_sub1'), 0.02, 1);
+						subtitleManager.addSubtitle("The fuck?", 0.02, 1);
 					case 56:
-						subtitleManager.addSubtitle(LanguageManager.getTextString('exploit_sub2'), 0.02, 0.8);
+						subtitleManager.addSubtitle("Ehhhhhhhhhhhhhhhhhhhhh!!!", 0.02, 0.8);
 					case 64:
-						subtitleManager.addSubtitle(LanguageManager.getTextString('exploit_sub3'), 0.02, 1);
+						subtitleManager.addSubtitle("Wahahauahahahuehehe!", 0.02, 1);
 					case 85:
-						subtitleManager.addSubtitle(LanguageManager.getTextString('exploit_sub4'), 0.02, 1);
+						subtitleManager.addSubtitle("Fucking phone...", 0.02, 1);
 					case 99:
-						subtitleManager.addSubtitle(LanguageManager.getTextString('exploit_sub5'), 0.02, 0.5);
+						subtitleManager.addSubtitle("Eoooooooooooooooooo", 0.02, 0.5);
 					case 105:
-						subtitleManager.addSubtitle(LanguageManager.getTextString('exploit_sub6'), 0.02, 0.5);
+						subtitleManager.addSubtitle("Seeeiuuuuuuuuuuuuuu", 0.02, 0.5);
 					case 117:
-						subtitleManager.addSubtitle(LanguageManager.getTextString('exploit_sub7'), 0.02, 1);
+						subtitleManager.addSubtitle("Naaaaaaaaaaaaaaaaaaaaa", 0.02, 1);
 					case 512:
-						subtitleManager.addSubtitle(LanguageManager.getTextString('exploit_sub8'), 0.02, 1);
+						subtitleManager.addSubtitle("Aehehehe...", 0.02, 1);
 					case 524:
-						subtitleManager.addSubtitle(LanguageManager.getTextString('exploit_sub9'), 0.02, 1);
+						subtitleManager.addSubtitle("Oh he...", 0.02, 1);
 					case 533:
-						subtitleManager.addSubtitle(LanguageManager.getTextString('exploit_sub10'), 0.02, 0.7);
+						subtitleManager.addSubtitle("You are so", 0.02, 0.7);
 					case 545:
-						subtitleManager.addSubtitle(LanguageManager.getTextString('exploit_sub11'), 0.02, 1);
+						subtitleManager.addSubtitle("get trolled!", 0.02, 1);
 					case 566:
-						subtitleManager.addSubtitle(LanguageManager.getTextString('exploit_sub12'), 0.02, 1);
+						subtitleManager.addSubtitle("Whoopsies...", 0.02, 1);
 					case 1263:
-						subtitleManager.addSubtitle(LanguageManager.getTextString('exploit_sub13'), 0.02, 0.3);
+						subtitleManager.addSubtitle("You lying!", 0.02, 0.3);
 					case 1270:
-						subtitleManager.addSubtitle(LanguageManager.getTextString('exploit_sub14'), 0.02, 0.3);
+						subtitleManager.addSubtitle("YOU LYING!", 0.02, 0.3);
 					case 1276:
-						subtitleManager.addSubtitle(LanguageManager.getTextString('exploit_sub15'), 0.02, 0.3);
+						subtitleManager.addSubtitle("A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€", 0.02, 0.3);
 					case 1100:
 						PlatformUtil.senddesktopNotification("Anticheat.dll", "Potential threat detected: expunged.dat");
 					}
