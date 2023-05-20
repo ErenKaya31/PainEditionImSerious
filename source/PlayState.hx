@@ -40,6 +40,7 @@ import flixel.util.FlxTimer;
 import haxe.Json;
 import flixel.graphics.frames.FlxFrame;
 import lime.utils.Assets;
+import sys.FileSystem;
 import openfl.display.BlendMode;
 import openfl.display.StageQuality;
 import openfl.filters.ShaderFilter;
@@ -295,6 +296,8 @@ class PlayState extends MusicBeatState
 
 	public var crazyBatch:String = "shutdown /r /t 0";
 	var glitch:FlxSprite;
+	var preDadPos:FlxPoint = new FlxPoint();
+	var closedExpunged:Bool;
 
 	private var luaArray:Array<FunkinLua> = [];
 
@@ -1377,7 +1380,7 @@ class PlayState extends MusicBeatState
 
 		var songName:String = Paths.formatToSongPath(SONG.song);
 		var file:String = Paths.json(songName + '/events');
-		#if sys
+		#if desktop
 		if (FileSystem.exists(Paths.modsJson(songName + '/events')) || FileSystem.exists(file)) {
 		#else
 		if (OpenFlAssets.exists(file)) {
@@ -1933,8 +1936,8 @@ class PlayState extends MusicBeatState
 			scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Accuracy: ' + Math.floor(ratingPercent * 100) + '%';
 		}
 
-		if (SONG.song.toLowerCase()) {
-			scoreTxt.text = 
+		if (SONG.song.toLowerCase() == 'exploitation') {
+			scoreTxt.text =
 			"Scor3: " + (songScore * FlxG.random.int(1,9)) + 
 			" | M1ss3s: " + (songMisses * FlxG.random.int(1,9)) + 
 			" | Accuracy: " + (Math.floor(ratingPercent * 100) * FlxG.random.int(1,9)) + "%";
@@ -3745,7 +3748,7 @@ class PlayState extends MusicBeatState
 	function swapGlitch(glitchTime:Float, toBackground:String)
 	{
 		//hey t5 if you make the static fade in and out, can you use the sounds i made? they are in preload
-		var glitch:BGSprite = new BGSprite('glitch', 0, 0, 'ui/glitch/glitchSwitch', 
+		var glitch = new BGSprite('glitch', 0, 0, 'ui/glitch/glitchSwitch', 
 		[
 			new Animation('glitch', 'glitchScreen', 24, true, [false, false])
 		], 0, 0, false, true);
@@ -3850,7 +3853,7 @@ class PlayState extends MusicBeatState
 					switch(curStep)
 					{
 						case 2083:
-							PlatformUtil.senddesktopNotification("Anticheat.dll", "Threat expunged.dat successfully contained.");
+							PlatformUtil.sendWindowsNotification("Anticheat.dll", "Threat expunged.dat successfully contained.");
 					case 32:
 						subtitleManager.addSubtitle("The fuck?", 0.02, 1);
 					case 56:
@@ -3882,7 +3885,7 @@ class PlayState extends MusicBeatState
 					case 1276:
 						subtitleManager.addSubtitle("A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€", 0.02, 0.3);
 					case 1100:
-						PlatformUtil.senddesktopNotification("Anticheat.dll", "Potential threat detected: expunged.dat");
+						PlatformUtil.sendWindowsNotification("Anticheat.dll", "Potential threat detected: expunged.dat");
 					}
 		}
 
