@@ -1,37 +1,63 @@
 package;
 
+import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.FlxSprite;
-import flixel.graphics.frames.FlxAtlasFrames;
+
+using StringTools;
 
 class BGSprite extends FlxSprite
 {
-	private var idleAnim:String;
-	public function new(image:String, x:Float = 0, y:Float = 0, ?scrollX:Float = 1, ?scrollY:Float = 1, ?animArray:Array<String> = null, ?loop:Bool = false) {
-		super(x, y);
+	public var spriteName:String;
 
-		if (animArray != null) {
-			frames = Paths.getSparrowAtlas(image);
-			for (i in 0...animArray.length) {
-				var anim:String = animArray[i];
-				animation.addByPrefix(anim, anim, 24, loop);
-				if(idleAnim == null) {
-					idleAnim = anim;
-					animation.play(anim);
+	public function new(spriteName:String, posX:Float, posY:Float, path:String = '', animations:Array<Animation>, scrollX:Float = 1, scrollY:Float = 1,
+			antialiasing:Bool = true, active:Bool = false)
+	{
+		super(posX, posY);
+
+		this.spriteName = spriteName;
+		var hasAnimations:Bool = animations != null;
+
+		if (path != '')
+		{
+			if (hasAnimations)
+			{
+				frames = Paths.getSparrowAtlas(path);
+				for (i in 0...animations.length)
+				{
+					var curAnim = animations[i];
+					if (curAnim != null)
+					{
+						if (curAnim.indices != null)
+						{
+							animation.addByIndices(curAnim.name, curAnim.prefixName, curAnim.indices, "", curAnim.frames, curAnim.looped, curAnim.flip[0],
+								curAnim.flip[1]);
+						}
+						else
+						{
+							animation.addByPrefix(curAnim.name, curAnim.prefixName, curAnim.frames, curAnim.looped, curAnim.flip[0], curAnim.flip[1]);
+						}
+					}
 				}
 			}
-		} else {
-			if(image != null) {
-				loadGraphic(Paths.image(image));
+			else
+			{
+				loadGraphic(path);
 			}
-			active = false;
 		}
+		this.antialiasing = antialiasing;
 		scrollFactor.set(scrollX, scrollY);
-		antialiasing = ClientPrefs.globalAntialiasing;
+		this.active = active;
 	}
 
-	public function dance(?forceplay:Bool = false) {
-		if(idleAnim != null) {
-			animation.play(idleAnim, forceplay);
+	public static function getBGSprite(spriteGroup:FlxTypedGroup<BGSprite>, spriteName:String):BGSprite
+	{
+		for (bgSprite in spriteGroup.members)
+		{
+			if (bgSprite.spriteName == spriteName)
+			{
+				return bgSprite;
+			}
 		}
+		return null;
 	}
 }
