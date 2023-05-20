@@ -108,7 +108,7 @@ class PlayState extends MusicBeatState
 
 	var mcStarted:Bool;
 
-	var funnyFloatyBoys:Array<String> = ['bambi-3d', 'expunged', 'bambi-unfair', 'glitchy-expunged'];
+	var funnyFloatyBoys:Array<String> = ['bambi-3d', 'expunged', 'bambi-unfair', 'glitchy-expunged', 'oppositionexpunged', 'thearchyexpunged', 'bambi-garcello'];
 	var creditsText:Bool;
 
 	public var boyfriendGroup:FlxSpriteGroup;
@@ -124,6 +124,9 @@ class PlayState extends MusicBeatState
 	public static var storyDifficulty:Int = 1;
 
 	public var vocals:FlxSound;
+
+	static var DOWNSCROLL_Y:Float;
+	static var UPSCROLL_Y:Float;
 
 	public var dad:Character;
 	public var gf:Character;
@@ -152,6 +155,7 @@ class PlayState extends MusicBeatState
 	public var grpNoteSplashes:FlxTypedGroup<NoteSplash>;
 
 	public var camZooming:Bool = false;
+	public var crazyZooming:Bool = false;
 	private var curSong:String = "";
 
 	var canFloat:Bool = true;
@@ -226,6 +230,7 @@ class PlayState extends MusicBeatState
 	var heyTimer:Float;
 
 	public var elapsedtime:Float = 0;
+	public var elapsedexpungedtime:Float = 0;
 	var bgGirls:BackgroundGirls;
 	var wiggleShit:WiggleEffect = new WiggleEffect();
 	var bgGhouls:BGSprite;
@@ -580,8 +585,12 @@ class PlayState extends MusicBeatState
 
 		Conductor.songPosition = -5000;
 
+		UPSCROLL_Y = 50;
+		DOWNSCROLL_Y = FlxG.height - 165;
+
 		strumLine = new FlxSprite(ClientPrefs.middleScroll ? STRUM_X_MIDDLESCROLL : STRUM_X, 50).makeGraphic(FlxG.width, 10);
-		if(ClientPrefs.downScroll) strumLine.y = FlxG.height - 150;
+		if(ClientPrefs.downScroll) 
+			strumLine.y = FlxG.height - 165;;
 		strumLine.scrollFactor.set();
 
 		timeTxt = new FlxText(STRUM_X + (FlxG.width / 2) - 248, 20, 400, "", 32);
@@ -592,15 +601,18 @@ class PlayState extends MusicBeatState
 		timeTxt.visible = !ClientPrefs.hideTime;
 		if(ClientPrefs.downScroll) timeTxt.y = FlxG.height - 45;
 
+		var yPos = (ClientPrefs.downscroll) ? FlxG.height * 0.9 + 20 : strumLine.y - 20;
+
 		timeBarBG = new AttachedSprite('timeBar');
-		timeBarBG.x = timeTxt.x;
-		timeBarBG.y = timeTxt.y + (timeTxt.height / 4);
+		//timeBarBG.x = timeTxt.x;
+		timeBarBG.y = yPos;
 		timeBarBG.scrollFactor.set();
 		timeBarBG.alpha = 0;
 		timeBarBG.visible = !ClientPrefs.hideTime;
 		timeBarBG.color = FlxColor.BLACK;
 		timeBarBG.xAdd = -4;
 		timeBarBG.yAdd = -4;
+		timeBarBG.screenCenter(X);
 		add(timeBarBG);
 
 		timeBar = new FlxBar(timeBarBG.x + 4, timeBarBG.y + 4, LEFT_TO_RIGHT, Std.int(timeBarBG.width - 8), Std.int(timeBarBG.height - 8), this,
@@ -1657,12 +1669,40 @@ class PlayState extends MusicBeatState
 	override public function update(elapsed:Float)
 	{
 		elapsedtime += elapsed;
+		elapsedexpungedtime += elapsed * 9;
 		/*if (FlxG.keys.justPressed.NINE)
 		{
 			iconP1.swapOldIcon();
 		}*/
 
 		callOnLuas('onUpdate', [elapsed]);
+
+		var toy = ((-Math.sin((elapsedexpungedtime / 9.5) * 2) * 30 * 5.1) / 1080) * screenheight;
+		var tox = ((-Math.cos((elapsedexpungedtime / 9.5)) * 100) / 1980) * screenwidth;
+		
+		if(funnyFloatyBoys.contains(dad.curCharacter.toLowerCase()) && canFloat)
+			{
+				if (dad.curCharacter.toLowerCase() == "expunged")
+				{
+					// mentally insane movement
+					dad.x += (tox - dad.x) / 12;
+					dad.y += (toy - dad.y) / 12;
+				}
+				else
+				{
+					dad.y += (Math.sin(elapsedtime) * 0.2);
+				}
+			}
+
+			if(funnyFloatyBoys.contains(boyfriend.curCharacter.toLowerCase()) && canFloat)
+			{
+				boyfriend.y += (Math.sin(elapsedtime) * 0.2);
+			}
+	
+			if(funnyFloatyBoys.contains(gf.curCharacter.toLowerCase()) && canFloat)
+			{
+				gf.y += (Math.sin(elapsedtime) * 0.2);
+			}
 
 		if (curbg != null)
 			{
@@ -1943,7 +1983,7 @@ class PlayState extends MusicBeatState
 			// Conductor.lastSongPos = FlxG.sound.music.time;
 		}
 
-		if (camZooming)
+		if (camZooming || crazyZooming)
 		{
 			FlxG.camera.zoom = FlxMath.lerp(defaultCamZoom, FlxG.camera.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125), 0, 1));
 			camHUD.zoom = FlxMath.lerp(1, camHUD.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125), 0, 1));
@@ -3639,19 +3679,19 @@ class PlayState extends MusicBeatState
 						add(black);
 						FlxTween.tween(black, {alpha: 0.6}, 1);
 						makeInvisibleNotes(true);
-						subtitleManager.addSubtitle(LyricsManager.getTextString('ctheft_sub1'), 0.02, 1);
+						subtitleManager.addSubtitle("Because he add me...", 0.02, 1);
 					case 945:
-						subtitleManager.addSubtitle(LyricsManager.getTextString('ctheft_sub2'), 0.02, 1);
+						subtitleManager.addSubtitle("Why you add me...", 0.02, 1);
 					case 976:
-						subtitleManager.addSubtitle(LyricsManager.getTextString('ctheft_sub3'), 0.02, 0.5);
+						subtitleManager.addSubtitle("I-", 0.02, 0.5);
 					case 982:
-						subtitleManager.addSubtitle(LyricsManager.getTextString('ctheft_sub4'), 0.02, 1);
+						subtitleManager.addSubtitle("I don't care...", 0.02, 1);
 					case 992:
-						subtitleManager.addSubtitle(LyricsManager.getTextString('ctheft_sub5'), 0.02, 1);
+						subtitleManager.addSubtitle("You want to", 0.02, 1);
 					case 1002:
-						subtitleManager.addSubtitle(LyricsManager.getTextString('ctheft_sub6'), 0.02, 0.3);
+						subtitleManager.addSubtitle("I'll block you", 0.02, 0.3);
 					case 1007:
-						subtitleManager.addSubtitle(LyricsManager.getTextString('ctheft_sub7'), 0.02, 0.3);
+						subtitleManager.addSubtitle("I'm never coming back again.", 0.02, 0.3);
 					case 1033:
 						subtitleManager.addSubtitle("Bye Baa!", 0.02, 0.3, {subtitleSize: 45});
 						FlxTween.tween(dad, {alpha: 0}, (Conductor.stepCrochet / 1000) * 6);
@@ -3712,7 +3752,7 @@ class PlayState extends MusicBeatState
 		{
 			moveCameraSection(Std.int(curStep / 16));
 		}
-		if (camZooming && FlxG.camera.zoom < 1.35 && ClientPrefs.camZooms && curBeat % 4 == 0)
+		if ((camZooming && FlxG.camera.zoom < 1.35 && ClientPrefs.camZooms && curBeat % 4 == 0) || crazyZooming)
 		{
 			FlxG.camera.zoom += 0.015;
 			camHUD.zoom += 0.03;
