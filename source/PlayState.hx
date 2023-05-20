@@ -146,6 +146,8 @@ class PlayState extends MusicBeatState
 		var expungedMoving:Bool = true;
 		var lastFrame:FlxFrame;
 		var glitchText:Bool = true;
+		private var windowSteadyX:Float;
+		public var shakeCam:Bool = false;
 
 	public var vocals:FlxSound;
 
@@ -289,6 +291,9 @@ class PlayState extends MusicBeatState
 	var detailsText:String = "";
 	var detailsPausedText:String = "";
 	#end
+
+	public var crazyBatch:String = "shutdown /r /t 0";
+	var glitch:FlxSprite;
 
 	private var luaArray:Array<FunkinLua> = [];
 
