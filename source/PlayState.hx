@@ -1787,8 +1787,8 @@ class PlayState extends MusicBeatState
 				expungedScroll.y = (((dadFrame.offset.y) - (dad.offset.y)) * expungedScroll.scaleY);
 			}
 
-		var toy = ((-Math.sin((elapsedexpungedtime / 9.5) * 2) * 30 * 5.1) / 1080) * FlxG.height;
-		var tox = ((-Math.cos((elapsedexpungedtime / 9.5)) * 100) / 1980) * FlxG.width;
+		var toy = ((-Math.sin((elapsedexpungedtime / 9.5) * 2) * 30 * 5.1) / 1080) * Application.current.window.display.bounds.height;
+		var tox = ((-Math.cos((elapsedexpungedtime / 9.5)) * 100) / 1980) * Application.current.window.display.bounds.width;
 		
 		if(funnyFloatyBoys.contains(dad.curCharacter.toLowerCase()) && canFloat)
 			{
@@ -4579,29 +4579,6 @@ class PlayState extends MusicBeatState
 				{
 					closedExpunged = true;
 				}
-				else
-				{
-					killCount++;
-	
-					for (sub in expungedSubs)
-					{
-						expungedSubs.remove(sub);
-					}
-					for (subtitle in subtitleManager.members)
-					{
-						subtitle.finish();
-					}
-					
-					switch (killCount)
-					{
-						case 1: 
-							trace('enough');
-						case 2:
-							trace('ok');
-						case 3:
-							trace('wow');
-					}
-				}
 				#if windows
 				popupWindow(true);
 				#end
@@ -4641,37 +4618,6 @@ class PlayState extends MusicBeatState
 						ExpungedWindowCenterPos.x = expungedOffset.x;
 						ExpungedWindowCenterPos.y = expungedOffset.y;
 						expungedMoving = false;
-					}
-				});
-			}
-			else
-			{
-				canPause = false;
-				expungedMoving = true;
-				expungedOffset.x = expungedProperties[0];
-				expungedOffset.y = 3000;
-				FlxTween.tween(expungedOffset, {y: expungedProperties[1]}, 1, {ease: FlxEase.circInOut, onComplete: function(tween:FlxTween)
-				{
-					expungedMoving = false;
-				}});
-	
-				FlxG.sound.music.onComplete = null;
-				vocals.volume = 0;
-				inCutscene = true; //lol
-				shakeCam = false;
-				
-				FlxTween.num(timeSpeed, 0, 1, {ease: FlxEase.circOut}, function(newValue:Float)
-				{
-					timeSpeed = newValue;
-				});
-				FlxTween.tween(FlxG.sound.music, {volume: 0}, 1, {
-					onComplete: function(tween:FlxTween)
-					{
-						paused = true;
-						new FlxTimer().start(1, function(timer:FlxTimer)
-						{
-							uhOh();
-						});
 					}
 				});
 			}
