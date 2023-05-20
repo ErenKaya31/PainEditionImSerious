@@ -3728,7 +3728,7 @@ class PlayState extends MusicBeatState
 		testshader.waveSpeed = 2;
 			
 		background.shader = testshader.shader;
-		curbg = background;
+		curbg = background; // i love this!!!!!!!!!
 	}
 
 	public function spawnNoteSplash(x:Float, y:Float, data:Int, ?note:Note = null) {
