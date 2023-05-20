@@ -3928,6 +3928,47 @@ class PlayState extends MusicBeatState
 		}
 	}
 
+	function swapGlitch(glitchTime:Float, toBackground:String)
+	{
+		//hey t5 if you make the static fade in and out, can you use the sounds i made? they are in preload
+		var glitch:BGSprite = new BGSprite('glitch', 0, 0, 'ui/glitch/glitchSwitch', 
+		[
+			new Animation('glitch', 'glitchScreen', 24, true, [false, false])
+		], 0, 0, false, true);
+		glitch.scrollFactor.set();
+		glitch.cameras = [camHUD];
+		glitch.setGraphicSize(FlxG.width, FlxG.height);
+		glitch.updateHitbox();
+		glitch.screenCenter();
+		glitch.animation.play('glitch');
+		add(glitch);
+
+		new FlxTimer().start(glitchTime, function(timer:FlxTimer)
+		{
+			expungedBG.setPosition(0, 200);
+			switch (toBackground)
+			{
+				case 'expunged':
+					expungedBG.loadGraphic(Paths.image('backgrounds/void/exploit/creepyRoom', 'shared'));
+					expungedBG.setGraphicSize(Std.int(expungedBG.width * 2));
+				case 'cheating':
+					expungedBG.loadGraphic(Paths.image('backgrounds/void/exploit/cheater GLITCH'));
+					expungedBG.setGraphicSize(Std.int(expungedBG.width * 3));
+				case 'cheating-2':
+					expungedBG.loadGraphic(Paths.image('backgrounds/void/exploit/glitchy_cheating_2'));
+					expungedBG.setGraphicSize(Std.int(expungedBG.width * 3));
+				case 'unfair':
+					expungedBG.loadGraphic(Paths.image('backgrounds/void/exploit/glitchyUnfairBG'));
+					expungedBG.setGraphicSize(Std.int(expungedBG.width * 3));
+				case 'chains':
+					expungedBG.setPosition(-300, 0);
+					expungedBG.loadGraphic(Paths.image('backgrounds/void/exploit/expunged_chains'));
+					expungedBG.setGraphicSize(Std.int(expungedBG.width * 2));
+			}
+			remove(glitch);
+		});
+	}
+
 	var lastStepHit:Int = -1;
 	override function stepHit()
 	{
@@ -4164,38 +4205,6 @@ class PlayState extends MusicBeatState
 			case 'exploitation':
 				switch (curBeat)
 				{
-					case 40:
-						switchNotePositions([6,7,5,4,3,2,0,1]);
-						switchNoteScroll(false);
-					case 44:
-						switchNotePositions([0,1,3,2,4,5,7,6]);
-					case 46:
-						switchNotePositions([6,7,5,4,3,2,0,1]);
-						switchNoteScroll(false);
-					case 56:
-						switchNotePositions([1,3,2,0,5,7,6,4]);
-					case 60:
-						switchNotePositions([4,6,7,5,0,2,3,1]);
-						switchNoteScroll(false);
-					case 62:
-						switchNotePositions([7,1,0,2,3,5,4,6]);
-						switchNoteScroll(false);
-					case 120:
-						switchNoteScroll();
-					case 124:
-						switchNoteScroll();
-					case 72:
-						switchNotePositions([6,7,2,3,4,5,0,1]);
-					case 76:
-						switchNotePositions([6,7,4,5,2,3,0,1]);
-					case 80:
-						switchNotePositions([1,0,2,4,3,5,7,6]);
-					case 88:
-						switchNotePositions([4,2,0,1,6,7,5,3]);
-					case 90:
-						switchNoteSide();
-					case 92:
-						switchNoteSide();
 					case 112:
 						opponentStrums.forEach(function(strum:StrumNote)
 						{
@@ -4264,18 +4273,6 @@ class PlayState extends MusicBeatState
 							strum.resetX();
 							strum.resetY();
 						});
-					case 456:
-						switchNotePositions([1,0,2,3,4,5,7,6]);
-					case 460:
-						switchNotePositions([1,2,0,3,4,7,5,6]);
-					case 465:
-						switchNotePositions([1,2,3,0,7,4,5,6]);
-					case 470:
-						switchNotePositions([6,2,3,0,7,4,5,1]);
-					case 475:
-						switchNotePositions([2,6,3,0,7,5,4,1]);
-					case 480:
-						switchNotePositions([2,3,6,0,5,7,4,1]);
 					case 486:
 						swapGlitch((Conductor.crochet / 1000) * 2, 'expunged');
 					case 487:
@@ -4416,69 +4413,6 @@ class PlayState extends MusicBeatState
 		#end
 		return returnVal;
 	}
-
-	function switchNoteScroll(cancelTweens:Bool = true)
-		{
-			for (strumNote in strumLineNotes)
-			{
-				if (!ClientPrefs.downScroll) {
-					if (cancelTweens)
-					{
-						FlxTween.completeTweensOf(strumNote);
-					}
-					strumNote.angle = 0;
-				
-					FlxTween.angle(strumNote, strumNote.angle, strumNote.angle + 360, 0.4, {ease: FlxEase.expoOut});
-					FlxTween.tween(strumNote, {y: UPSCROLL_Y}, 0.6, {ease: FlxEase.backOut});
-				} else {
-					if (cancelTweens)
-					{
-						FlxTween.completeTweensOf(strumNote);
-					}
-					strumNote.angle = 0;
-				
-					FlxTween.angle(strumNote, strumNote.angle, strumNote.angle + 360, 0.4, {ease: FlxEase.expoOut});
-					FlxTween.tween(strumNote, {y: DOWNSCROLL_Y}, 0.6, {ease: FlxEase.backOut});
-				}
-			}
-		}
-	
-		function switchNoteSide()
-		{
-			for (i in 0...4)
-			{
-				var curOpponentNote = opponentStrums.members[i];
-				var curPlayerNote = playerStrums.members[i];
-	
-				FlxTween.tween(curOpponentNote, {x: curPlayerNote.x}, 0.6, {ease: FlxEase.expoOut, startDelay: 0.01 * i});
-				FlxTween.tween(curPlayerNote, {x: curOpponentNote.x}, 0.6, {ease: FlxEase.expoOut, startDelay: 0.01 * i});
-			}
-			switchSide = !switchSide;
-		}
-	
-		function switchNotePositions(order:Array<Int>)
-		{
-			var positions:Array<Float> = [];
-			for (i in 0...4)
-			{
-				var curNote = playerStrums.members[i];
-				positions.push(curNote.baseX);
-			}
-			for (i in 0...4)
-			{
-				var curNote = opponentStrums.members[i];
-				positions.push(curNote.baseX);
-			}
-			for (i in 0...4)
-			{
-				var curOpponentNote = opponentStrums.members[i];
-				var curPlayerNote = playerStrums.members[i];
-	
-				FlxTween.tween(curOpponentNote, {x: positions[order[i + 4]]}, 0.6, {ease: FlxEase.expoOut, startDelay: 0.01 * i});
-				FlxTween.tween(curPlayerNote, {x: positions[order[i]]}, 0.6, {ease: FlxEase.expoOut, startDelay: 0.01 * i});
-			}
-			switchSide = !switchSide;
-		}
 
 	public function setOnLuas(variable:String, arg:Dynamic) {
 		#if LUA_ALLOWED
