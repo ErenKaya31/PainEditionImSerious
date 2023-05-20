@@ -4417,6 +4417,69 @@ class PlayState extends MusicBeatState
 		return returnVal;
 	}
 
+	function switchNoteScroll(cancelTweens:Bool = true)
+		{
+			for (strumNote in strumLineNotes)
+			{
+				if (!ClientPrefs.downScroll) {
+					if (cancelTweens)
+					{
+						FlxTween.completeTweensOf(strumNote);
+					}
+					strumNote.angle = 0;
+				
+					FlxTween.angle(strumNote, strumNote.angle, strumNote.angle + 360, 0.4, {ease: FlxEase.expoOut});
+					FlxTween.tween(strumNote, {y: UPSCROLL_Y}, 0.6, {ease: FlxEase.backOut});
+				} else {
+					if (cancelTweens)
+					{
+						FlxTween.completeTweensOf(strumNote);
+					}
+					strumNote.angle = 0;
+				
+					FlxTween.angle(strumNote, strumNote.angle, strumNote.angle + 360, 0.4, {ease: FlxEase.expoOut});
+					FlxTween.tween(strumNote, {y: DOWNSCROLL_Y}, 0.6, {ease: FlxEase.backOut});
+				}
+			}
+		}
+	
+		function switchNoteSide()
+		{
+			for (i in 0...4)
+			{
+				var curOpponentNote = opponentStrums.members[i];
+				var curPlayerNote = playerStrums.members[i];
+	
+				FlxTween.tween(curOpponentNote, {x: curPlayerNote.x}, 0.6, {ease: FlxEase.expoOut, startDelay: 0.01 * i});
+				FlxTween.tween(curPlayerNote, {x: curOpponentNote.x}, 0.6, {ease: FlxEase.expoOut, startDelay: 0.01 * i});
+			}
+			switchSide = !switchSide;
+		}
+	
+		function switchNotePositions(order:Array<Int>)
+		{
+			var positions:Array<Float> = [];
+			for (i in 0...4)
+			{
+				var curNote = playerStrums.members[i];
+				positions.push(curNote.baseX);
+			}
+			for (i in 0...4)
+			{
+				var curNote = opponentStrums.members[i];
+				positions.push(curNote.baseX);
+			}
+			for (i in 0...4)
+			{
+				var curOpponentNote = opponentStrums.members[i];
+				var curPlayerNote = playerStrums.members[i];
+	
+				FlxTween.tween(curOpponentNote, {x: positions[order[i + 4]]}, 0.6, {ease: FlxEase.expoOut, startDelay: 0.01 * i});
+				FlxTween.tween(curPlayerNote, {x: positions[order[i]]}, 0.6, {ease: FlxEase.expoOut, startDelay: 0.01 * i});
+			}
+			switchSide = !switchSide;
+		}
+
 	public function setOnLuas(variable:String, arg:Dynamic) {
 		#if LUA_ALLOWED
 		for (i in 0...luaArray.length) {
