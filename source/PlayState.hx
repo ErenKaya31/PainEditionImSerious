@@ -589,8 +589,7 @@ class PlayState extends MusicBeatState
 		DOWNSCROLL_Y = FlxG.height - 165;
 
 		strumLine = new FlxSprite(ClientPrefs.middleScroll ? STRUM_X_MIDDLESCROLL : STRUM_X, 50).makeGraphic(FlxG.width, 10);
-		if(ClientPrefs.downScroll) 
-			strumLine.y = FlxG.height - 165;;
+		if(ClientPrefs.downScroll) strumLine.y = FlxG.height - 165;
 		strumLine.scrollFactor.set();
 
 		timeTxt = new FlxText(STRUM_X + (FlxG.width / 2) - 248, 20, 400, "", 32);
