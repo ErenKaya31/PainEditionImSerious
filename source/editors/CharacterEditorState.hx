@@ -224,17 +224,17 @@ class CharacterEditorState extends MusicBeatState
 				playerYDifference = 220;
 			}
 
-			var bgSky:BGSprite = new BGSprite('weeb/weebSky', OFFSET_X - (playerXDifference / 2) - 300, 0 - playerYDifference, null, 0.1, 0.1, false, true);
+			var bgSky:BGSprite = new BGSprite('weeb/weebSky', OFFSET_X - (playerXDifference / 2) - 300, 0 - playerYDifference, null, 0.1, 0.1);
 			bgLayer.add(bgSky);
 			bgSky.antialiasing = false;
 
 			var repositionShit = -200 + OFFSET_X - playerXDifference;
 
-			var bgSchool:BGSprite = new BGSprite('weeb/weebSchool', repositionShit, -playerYDifference + 6, null, 0.6, 0.90, false, true);
+			var bgSchool:BGSprite = new BGSprite('weeb/weebSchool', repositionShit, -playerYDifference + 6, null, 0.6, 0.90);
 			bgLayer.add(bgSchool);
 			bgSchool.antialiasing = false;
 
-			var bgStreet:BGSprite = new BGSprite('weeb/weebStreet', repositionShit, -playerYDifference, null, 0.95, 0.95, false, true);
+			var bgStreet:BGSprite = new BGSprite('weeb/weebStreet', repositionShit, -playerYDifference, null, 0.95, 0.95);
 			bgLayer.add(bgStreet);
 			bgStreet.antialiasing = false;
 
@@ -258,10 +258,10 @@ class CharacterEditorState extends MusicBeatState
 			bgTrees.updateHitbox();
 			changeBGbutton.text = "Regular BG";
 		} else {
-			var bg:BGSprite = new BGSprite('stageback', -600 + OFFSET_X - playerXDifference, -300, null, 0.9, 0.9, false, true);
+			var bg:BGSprite = new BGSprite('stageback', -600 + OFFSET_X - playerXDifference, -300, null, 0.9, 0.9);
 			bgLayer.add(bg);
 
-			var stageFront:BGSprite = new BGSprite('stagefront', -650 + OFFSET_X - playerXDifference, 500, null, 0.9, 0.9, false, true);
+			var stageFront:BGSprite = new BGSprite('stagefront', -650 + OFFSET_X - playerXDifference, 500, null, 0.9, 0.9);
 			stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
 			stageFront.updateHitbox();
 			bgLayer.add(stageFront);
