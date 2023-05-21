@@ -459,10 +459,11 @@ class PlayState extends MusicBeatState
 			case 'desktop':
 				defaultCamZoom = 0.5;
 	
-				expungedBG = new BGSprite('void', -600, -200, null, 1, 1);
-				expungedBG.loadGraphic(Paths.image('backgrounds/void/exploit/creepyRoom'));
+				expungedBG = new BGSprite('void', -600, -200, '', null, 1, 1, false, true);
+				expungedBG.loadGraphic(Paths.image('backgrounds/void/exploit/creepyRoom', 'shared'));
 				expungedBG.setPosition(0, 200);
 				expungedBG.setGraphicSize(Std.int(expungedBG.width * 2));
+				expungedBG.scrollFactor.set();
 				expungedBG.antialiasing = false;
 				add(expungedBG);
 				voidShader(expungedBG);
@@ -1816,6 +1817,10 @@ class PlayState extends MusicBeatState
 			"Scor3: " + (songScore * FlxG.random.int(1,9)) + 
 			" | M1ss3s: " + (songMisses * FlxG.random.int(1,9)) + 
 			" | Accuracy: " + (Math.floor(ratingPercent * 100) * FlxG.random.int(1,9)) + "%";
+		}
+
+		if (combo >= 10) {
+			add(comboSpr);
 		}
 
 		if(cpuControlled) {

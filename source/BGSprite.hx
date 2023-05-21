@@ -9,8 +9,7 @@ class BGSprite extends FlxSprite
 {
 	public var spriteName:String;
 
-	public function new(spriteName:String, posX:Float, posY:Float, path:String = '', animations:Array<Animation>, scrollX:Float = 1, scrollY:Float = 1,
-			antialiasing:Bool = true, active:Bool = false)
+	public function new(spriteName:String, posX:Float, posY:Float, path:String = '', animations:Array<Animation>, scrollX:Float = 1, scrollY:Float = 1)
 	{
 		super(posX, posY);
 
@@ -44,9 +43,7 @@ class BGSprite extends FlxSprite
 				loadGraphic(path);
 			}
 		}
-		this.antialiasing = antialiasing;
 		scrollFactor.set(scrollX, scrollY);
-		this.active = active;
 	}
 
 	public static function getBGSprite(spriteGroup:FlxTypedGroup<BGSprite>, spriteName:String):BGSprite
