@@ -224,7 +224,7 @@ class CharacterEditorState extends MusicBeatState
 				playerYDifference = 220;
 			}
 
-			var bgSky:BGSprite = new BGSprite('weeb/weebSky', OFFSET_X - (playerXDifference / 2) - 300, 0 - playerYDifference, null, 0.1, 0.1 false, true);
+			var bgSky:BGSprite = new BGSprite('weeb/weebSky', OFFSET_X - (playerXDifference / 2) - 300, 0 - playerYDifference, null, 0.1, 0.1, false, true);
 			bgLayer.add(bgSky);
 			bgSky.antialiasing = false;
 
