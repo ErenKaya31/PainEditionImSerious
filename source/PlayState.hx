@@ -446,6 +446,14 @@ class PlayState extends MusicBeatState
 				add(bg);
 				voidShader(bg);
 
+			case 'missing-texture':
+				var bg:BGSprite = new BGSprite('void', -600, -200, 0, 0);
+				bg.loadGraphic(Paths.image('backgrounds/void/missingTexture'));
+				bg.setGraphicSize(Std.int(bg.width * 2));
+				bg.antialiasing = false;
+				add(bg);
+				voidShader(bg);
+
 			case 'glitchy-void':
 				var bg:BGSprite = new BGSprite('void', 0, 0, 1, 1);
 				bg.loadGraphic(Paths.image('backgrounds/void/scarybg'));
@@ -3721,11 +3729,11 @@ class PlayState extends MusicBeatState
 						FlxG.camera.flash();
 				}
 
-				case 'exploitation':
-					switch(curStep)
-					{
-						case 2083:
-							PlatformUtil.sendWindowsNotification("Anticheat.dll", "Threat expunged.dat successfully contained.");
+			case 'exploitation':
+				switch(curStep)
+				{
+					case 2083:
+						PlatformUtil.sendWindowsNotification("Anticheat.dll", "Threat expunged.dat successfully contained.");
 					case 32:
 						subtitleManager.addSubtitle("The fuck?", 0.02, 1);
 					case 56:
@@ -3758,7 +3766,7 @@ class PlayState extends MusicBeatState
 						subtitleManager.addSubtitle("A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€", 0.02, 0.3);
 					case 1100:
 						PlatformUtil.sendWindowsNotification("Anticheat.dll", "Potential threat detected: expunged.dat");
-					}
+				}
 		}
 
 		lastStepHit = curStep;
@@ -3782,6 +3790,16 @@ class PlayState extends MusicBeatState
 		if (generatedMusic)
 		{
 			notes.sort(FlxSort.byY, ClientPrefs.downScroll ? FlxSort.ASCENDING : FlxSort.DESCENDING);
+		}
+
+		switch (SONG.song.toLowerCase()) {
+			case 'exploitation':
+				switch (curBeat) {
+					case 320:
+						#if desktop
+							popupWindow();
+						#end
+				}
 		}
 
 		if (SONG.notes[Math.floor(curStep / 16)] != null)
@@ -3810,7 +3828,7 @@ class PlayState extends MusicBeatState
 			camHUD.zoom += 0.03;
 		}
 
-		var funny:Float = Math.min(Math.max(healthBar.value,1.9),0.1);//Math.clamp(healthBar.value,0.02,1.98);//Math.min(Math.min(healthBar.value,1.98),0.02);
+		var funny:Float = Math.max(Math.min(healthBar.value,1.9),0.1);//Math.clamp(healthBar.value,0.02,1.98);//Math.min(Math.min(healthBar.value,1.98),0.02);
 
 		//health icon bounce but epic
 		iconP2.setGraphicSize(Std.int(iconP2.width + (50 * funny)),Std.int(iconP2.height - (25 * funny)));
