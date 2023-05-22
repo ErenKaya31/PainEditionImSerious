@@ -412,26 +412,26 @@ class PlayState extends MusicBeatState
 		switch (curStage)
 		{
 			case 'stage': //Week 1
-				var bg:BGSprite = new BGSprite('stageback', -600, -200, null, 0.9, 0.9);
+				var bg:BGSprite = new BGSprite('stageback', -600, -200, 0.9, 0.9);
 				add(bg);
 
-				var stageFront:BGSprite = new BGSprite('stagefront', -650, 600, null, 0.9, 0.9);
+				var stageFront:BGSprite = new BGSprite('stagefront', -650, 600, 0.9, 0.9);
 				stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
 				stageFront.updateHitbox();
 				add(stageFront);
 
 				if(!ClientPrefs.lowQuality) {
-					var stageLight:BGSprite = new BGSprite('stage_light', -125, -100, null, 0.9, 0.9);
+					var stageLight:BGSprite = new BGSprite('stage_light', -125, -100, 0.9, 0.9);
 					stageLight.setGraphicSize(Std.int(stageLight.width * 1.1));
 					stageLight.updateHitbox();
 					add(stageLight);
-					var stageLight:BGSprite = new BGSprite('stage_light', 1225, -100, null, 0.9, 0.9);
+					var stageLight:BGSprite = new BGSprite('stage_light', 1225, -100, 0.9, 0.9);
 					stageLight.setGraphicSize(Std.int(stageLight.width * 1.1));
 					stageLight.updateHitbox();
 					stageLight.flipX = true;
 					add(stageLight);
 
-					var stageCurtains:BGSprite = new BGSprite('stagecurtains', -500, -300, null, 1.3, 1.3);
+					var stageCurtains:BGSprite = new BGSprite('stagecurtains', -500, -300, 1.3, 1.3);
 					stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.9));
 					stageCurtains.updateHitbox();
 					add(stageCurtains);
@@ -439,7 +439,7 @@ class PlayState extends MusicBeatState
 			case 'green-void':
 				defaultCamZoom = 0.7;
 
-				var bg:BGSprite = new BGSprite('void', -700, -350, null, 1, 1);
+				var bg:BGSprite = new BGSprite('void', -700, -350, 1, 1);
 				bg.loadGraphic(Paths.image('backgrounds/void/cheater'));
 				bg.setGraphicSize(Std.int(bg.width * 2));
 				bg.antialiasing = false;
@@ -449,7 +449,7 @@ class PlayState extends MusicBeatState
 			case 'glitchy-void':
 				defaultCamZoom = 0.7;
 	
-				var bg:BGSprite = new BGSprite('void', 0, null, 1, 1);
+				var bg:BGSprite = new BGSprite('void', 0, '', 1, 1);
 				bg.loadGraphic(Paths.image('backgrounds/void/scarybg'));
 				bg.setGraphicSize(Std.int(bg.width * 3));
 				bg.antialiasing = false;
@@ -459,7 +459,7 @@ class PlayState extends MusicBeatState
 			case 'desktop':
 				defaultCamZoom = 0.5;
 	
-				expungedBG = new BGSprite('void', -600, -200, '', null, 1, 1, false, true);
+				expungedBG = new BGSprite('void', -600, -200, '', 1, 1);
 				expungedBG.loadGraphic(Paths.image('backgrounds/void/exploit/creepyRoom', 'shared'));
 				expungedBG.setPosition(0, 200);
 				expungedBG.setGraphicSize(Std.int(expungedBG.width * 2));
@@ -469,13 +469,13 @@ class PlayState extends MusicBeatState
 				voidShader(expungedBG);
 
 			case 'yoyleworld':
-				var oppositonBG:BGSprite = new BGSprite('backgrounds/oppositon/OppositonLol', -600, -300, null, 0, 0);
+				var oppositonBG:BGSprite = new BGSprite('backgrounds/oppositon/OppositonLol', -600, -300, 0, 0);
 				oppositonBG.setGraphicSize(Std.int(oppositonBG.width * 1.8));
 				oppositonBG.setGraphicSize(Std.int(oppositonBG.height * 1.8));
 				voidShader(oppositonBG);
 				add(oppositonBG);
 
-				var oppositonGround:BGSprite = new BGSprite('backgrounds/oppositon/ThanosGround', 790, 620, null, 1, 1);
+				var oppositonGround:BGSprite = new BGSprite('backgrounds/oppositon/ThanosGround', 790, 620, 1, 1);
 				oppositonGround.setGraphicSize(Std.int(oppositonGround.width * 1.5));
 				oppositonGround.setGraphicSize(Std.int(oppositonGround.height * 1.5));
 				oppositonGround.updateHitbox();
@@ -3628,10 +3628,7 @@ class PlayState extends MusicBeatState
 	function swapGlitch(glitchTime:Float, toBackground:String)
 	{
 		//hey t5 if you make the static fade in and out, can you use the sounds i made? they are in preload
-		var glitch = new BGSprite('glitch', 0, 0, 'ui/glitch/glitchSwitch', 
-		[
-			new Animation('glitch', 'glitchScreen', 24, true, [false, false])
-		], 0, 0, false, true);
+		var glitch = new BGSprite('glitch', 0, 0, 'ui/glitch/glitchSwitch', 0, 0, [new Animation('glitch', 'glitchScreen', 24, true, [false, false])]);
 		glitch.scrollFactor.set();
 		glitch.cameras = [camHUD];
 		glitch.setGraphicSize(FlxG.width, FlxG.height);
