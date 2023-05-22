@@ -202,6 +202,8 @@ class PlayState extends MusicBeatState
 	var black:FlxSprite;
 	var blackScreen:FlxSprite;
 
+	var comboSpr:FlxSprite;
+
 	private var timeBarBG:AttachedSprite;
 	public var timeBar:FlxBar;
 
@@ -437,8 +439,6 @@ class PlayState extends MusicBeatState
 					add(stageCurtains);
 				}
 			case 'green-void':
-				defaultCamZoom = 0.7;
-
 				var bg:BGSprite = new BGSprite('void', -700, -350, 1, 1);
 				bg.loadGraphic(Paths.image('backgrounds/void/cheater'));
 				bg.setGraphicSize(Std.int(bg.width * 2));
@@ -447,8 +447,6 @@ class PlayState extends MusicBeatState
 				voidShader(bg);
 
 			case 'glitchy-void':
-				defaultCamZoom = 0.7;
-	
 				var bg:BGSprite = new BGSprite('void', 0, '', 1, 1);
 				bg.loadGraphic(Paths.image('backgrounds/void/scarybg'));
 				bg.setGraphicSize(Std.int(bg.width * 3));
@@ -457,8 +455,6 @@ class PlayState extends MusicBeatState
 				voidShader(bg);
 
 			case 'desktop':
-				defaultCamZoom = 0.5;
-	
 				expungedBG = new BGSprite('void', -600, -200, '', 1, 1);
 				expungedBG.loadGraphic(Paths.image('backgrounds/void/exploit/creepyRoom', 'shared'));
 				expungedBG.setPosition(0, 200);
@@ -522,7 +518,7 @@ class PlayState extends MusicBeatState
 			phillyCityLightsEvent = new FlxTypedGroup<BGSprite>();
 			for (i in 0...5)
 			{
-				var light:BGSprite = new BGSprite('philly/win' + i, -10, 0, null, 0.3, 0.3);
+				var light:BGSprite = new BGSprite('philly/win' + i, -10, 0, 0.3, 0.3);
 				light.visible = false;
 				light.setGraphicSize(Std.int(light.width * 0.85));
 				light.updateHitbox();
@@ -2997,7 +2993,7 @@ class PlayState extends MusicBeatState
 		rating.velocity.x -= FlxG.random.int(0, 10);
 		rating.visible = !ClientPrefs.hideHud;
 
-		var comboSpr:FlxSprite = new FlxSprite().loadGraphic(Paths.image(pixelShitPart1 + 'combo' + pixelShitPart2));
+		var comboSpr = new FlxSprite().loadGraphic(Paths.image(pixelShitPart1 + 'combo' + pixelShitPart2));
 		comboSpr.screenCenter();
 		comboSpr.x = coolText.x;
 		comboSpr.acceleration.y = 600;
@@ -3628,7 +3624,7 @@ class PlayState extends MusicBeatState
 	function swapGlitch(glitchTime:Float, toBackground:String)
 	{
 		//hey t5 if you make the static fade in and out, can you use the sounds i made? they are in preload
-		var glitch = new BGSprite('glitch', 0, 0, 'ui/glitch/glitchSwitch', 0, 0, [new Animation('glitch', 'glitchScreen', 24, true, [false, false])]);
+		var glitch = new BGSprite('glitch', 0, 0, 'ui/glitch/glitchSwitch', 0, 0, ['glitchScreen'], true);
 		glitch.scrollFactor.set();
 		glitch.cameras = [camHUD];
 		glitch.setGraphicSize(FlxG.width, FlxG.height);
@@ -3643,7 +3639,7 @@ class PlayState extends MusicBeatState
 			switch (toBackground)
 			{
 				case 'expunged':
-					expungedBG.loadGraphic(Paths.image('backgrounds/void/exploit/creepyRoom', 'shared'));
+					expungedBG.loadGraphic(Paths.image('backgrounds/void/exploit/creepyRoom'));
 					expungedBG.setGraphicSize(Std.int(expungedBG.width * 2));
 				case 'cheating':
 					expungedBG.loadGraphic(Paths.image('backgrounds/void/exploit/cheater GLITCH'));
