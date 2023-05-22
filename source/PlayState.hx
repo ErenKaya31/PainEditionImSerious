@@ -447,7 +447,7 @@ class PlayState extends MusicBeatState
 				voidShader(bg);
 
 			case 'glitchy-void':
-				var bg:BGSprite = new BGSprite('void', 0, '', 1, 1);
+				var bg:BGSprite = new BGSprite('void', 0, 0, 1, 1);
 				bg.loadGraphic(Paths.image('backgrounds/void/scarybg'));
 				bg.setGraphicSize(Std.int(bg.width * 3));
 				bg.antialiasing = false;
@@ -455,7 +455,7 @@ class PlayState extends MusicBeatState
 				voidShader(bg);
 
 			case 'desktop':
-				expungedBG = new BGSprite('void', -600, -200, '', 1, 1);
+				expungedBG = new BGSprite('void', -600, -200, 1, 1);
 				expungedBG.loadGraphic(Paths.image('backgrounds/void/exploit/creepyRoom', 'shared'));
 				expungedBG.setPosition(0, 200);
 				expungedBG.setGraphicSize(Std.int(expungedBG.width * 2));
@@ -3624,13 +3624,12 @@ class PlayState extends MusicBeatState
 	function swapGlitch(glitchTime:Float, toBackground:String)
 	{
 		//hey t5 if you make the static fade in and out, can you use the sounds i made? they are in preload
-		var glitch = new BGSprite('glitch', 0, 0, 'ui/glitch/glitchSwitch', 0, 0, ['glitchScreen'], true);
+		var glitch = new BGSprite('glitch/glitchSwitch', 0, 0, 0, 0, ['glitchScreen'], true);
 		glitch.scrollFactor.set();
 		glitch.cameras = [camHUD];
 		glitch.setGraphicSize(FlxG.width, FlxG.height);
 		glitch.updateHitbox();
 		glitch.screenCenter();
-		glitch.animation.play('glitch');
 		add(glitch);
 
 		new FlxTimer().start(glitchTime, function(timer:FlxTimer)
