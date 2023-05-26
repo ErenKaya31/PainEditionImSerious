@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				9,
+				0
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "garcello bambi left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				4,
+				-2
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "garcello bambi down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-32,
+				13
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "garcello bambi up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-24,
+				0
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "garcello bambi right",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "garcello bambi idle",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/RealityBreakingBambi",
+	"position": [
+		150,
+		200
+	],
+	"healthicon": "bambi-garcello",
+	"flip_x": false,
+	"healthbar_colors": [
+		255,
+		255,
+		255
+	],
+	"camera_position": [
+		0,
+		100
+	],
+	"sing_duration": 6.1,
+	"scale": 1
+}

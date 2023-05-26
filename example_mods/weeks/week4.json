@@ -1,0 +1,48 @@
+{
+	"songs": [
+		[
+			"Cheating",
+			"bambi-3d",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"Unfairness",
+			"bambi-unfair",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"Exploitation",
+			"expunged",
+			[
+				146,
+				113,
+				253
+			]
+		]
+	],
+	"hideFreeplay": false,
+	"weekBackground": "expunged",
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"storyName": "Expungeds 3D Dimension",
+	"weekName": "Custom Week",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"hideStoryMode": false,
+	"weekBefore": "tutorial",
+	"startUnlocked": true
+}

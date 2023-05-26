@@ -1,0 +1,30 @@
+{
+	"songs": [
+		[
+			"Last Reality",
+			"glitchy-expunged",
+			[
+				146,
+				113,
+				253
+			]
+		]
+	],
+	"hideFreeplay": false,
+	"weekBackground": "glitchyidfk",
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"storyName": "The Last Reality",
+	"weekName": "Custom Week",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"hideStoryMode": false,
+	"weekBefore": "tutorial",
+	"startUnlocked": true
+}

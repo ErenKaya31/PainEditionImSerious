@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="RippleBambi.png">
+	<!-- Created with Adobe Animate version 20.5.0.29329 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="ripple down0000" x="0" y="0" width="411" height="277" frameX="0" frameY="-13" frameWidth="411" frameHeight="290"/>
+	<SubTexture name="ripple down0001" x="0" y="0" width="411" height="277" frameX="0" frameY="-13" frameWidth="411" frameHeight="290"/>
+	<SubTexture name="ripple down0002" x="411" y="0" width="387" height="290" frameX="-10" frameY="0" frameWidth="411" frameHeight="290"/>
+	<SubTexture name="ripple down0003" x="411" y="0" width="387" height="290" frameX="-10" frameY="0" frameWidth="411" frameHeight="290"/>
+	<SubTexture name="ripple going up0000" x="798" y="0" width="281" height="309" frameX="-17" frameY="-91" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0001" x="798" y="0" width="281" height="309" frameX="-17" frameY="-91" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0002" x="1079" y="0" width="294" height="298" frameX="-9" frameY="-102" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0003" x="1079" y="0" width="294" height="298" frameX="-9" frameY="-102" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0004" x="1373" y="0" width="281" height="288" frameX="-9" frameY="-112" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0005" x="1373" y="0" width="281" height="288" frameX="-9" frameY="-112" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0006" x="1654" y="0" width="281" height="288" frameX="-9" frameY="-112" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0007" x="1654" y="0" width="281" height="288" frameX="-9" frameY="-112" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0008" x="1935" y="0" width="281" height="288" frameX="-9" frameY="-112" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0009" x="1935" y="0" width="281" height="288" frameX="-9" frameY="-112" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0010" x="1935" y="0" width="281" height="288" frameX="-9" frameY="-112" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0011" x="1935" y="0" width="281" height="288" frameX="-9" frameY="-112" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0012" x="1935" y="0" width="281" height="288" frameX="-9" frameY="-112" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0013" x="1935" y="0" width="281" height="288" frameX="-9" frameY="-112" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0014" x="2216" y="0" width="281" height="288" frameX="-9" frameY="-112" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0015" x="2497" y="0" width="281" height="288" frameX="-9" frameY="-112" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0016" x="2497" y="0" width="281" height="288" frameX="-9" frameY="-111" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0017" x="2778" y="0" width="281" height="288" frameX="-9" frameY="-111" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0018" x="2497" y="0" width="281" height="288" frameX="-9" frameY="-110" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0019" x="2778" y="0" width="281" height="288" frameX="-9" frameY="-109" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0020" x="2778" y="0" width="281" height="288" frameX="-9" frameY="-109" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0021" x="3059" y="0" width="282" height="289" frameX="-9" frameY="-108" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0022" x="3059" y="0" width="282" height="289" frameX="-9" frameY="-108" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0023" x="3341" y="0" width="282" height="289" frameX="-9" frameY="-107" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0024" x="3623" y="0" width="282" height="289" frameX="-9" frameY="-107" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0025" x="3905" y="0" width="282" height="289" frameX="-9" frameY="-106" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0026" x="4187" y="0" width="282" height="289" frameX="-9" frameY="-106" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0027" x="4469" y="0" width="282" height="289" frameX="-9" frameY="-105" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0028" x="4751" y="0" width="282" height="290" frameX="-9" frameY="-104" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0029" x="5033" y="0" width="282" height="289" frameX="-9" frameY="-104" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0030" x="5315" y="0" width="282" height="290" frameX="-9" frameY="-103" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0031" x="5597" y="0" width="283" height="289" frameX="-8" frameY="-103" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0032" x="5880" y="0" width="283" height="290" frameX="-8" frameY="-102" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0033" x="6163" y="0" width="283" height="290" frameX="-8" frameY="-101" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0034" x="6446" y="0" width="283" height="290" frameX="-8" frameY="-101" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0035" x="6729" y="0" width="283" height="290" frameX="-8" frameY="-100" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0036" x="7012" y="0" width="283" height="290" frameX="-8" frameY="-99" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0037" x="7295" y="0" width="283" height="290" frameX="-8" frameY="-99" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0038" x="7578" y="0" width="283" height="290" frameX="-8" frameY="-98" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0039" x="7861" y="0" width="283" height="291" frameX="-8" frameY="-97" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0040" x="0" y="309" width="283" height="290" frameX="-8" frameY="-97" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0041" x="283" y="309" width="283" height="290" frameX="-8" frameY="-96" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0042" x="566" y="309" width="283" height="290" frameX="-8" frameY="-96" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0043" x="849" y="309" width="283" height="290" frameX="-8" frameY="-95" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0044" x="1132" y="309" width="284" height="290" frameX="-8" frameY="-95" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0045" x="1416" y="309" width="284" height="290" frameX="-8" frameY="-94" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0046" x="1700" y="309" width="284" height="290" frameX="-8" frameY="-93" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0047" x="1984" y="309" width="285" height="291" frameX="-7" frameY="-92" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0048" x="2269" y="309" width="285" height="290" frameX="-7" frameY="-92" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0049" x="2554" y="309" width="285" height="290" frameX="-7" frameY="-91" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0050" x="2839" y="309" width="285" height="291" frameX="-7" frameY="-90" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0051" x="3124" y="309" width="285" height="291" frameX="-7" frameY="-89" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0052" x="3409" y="309" width="285" height="290" frameX="-7" frameY="-89" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0053" x="3694" y="309" width="285" height="291" frameX="-7" frameY="-88" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0054" x="3979" y="309" width="285" height="291" frameX="-7" frameY="-87" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0055" x="4264" y="309" width="285" height="291" frameX="-7" frameY="-86" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0056" x="4549" y="309" width="285" height="292" frameX="-7" frameY="-85" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0057" x="4834" y="309" width="285" height="292" frameX="-7" frameY="-84" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0058" x="5119" y="309" width="285" height="291" frameX="-7" frameY="-84" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0059" x="5404" y="309" width="285" height="292" frameX="-7" frameY="-83" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0060" x="5689" y="309" width="285" height="292" frameX="-7" frameY="-82" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0061" x="5974" y="309" width="285" height="292" frameX="-7" frameY="-81" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0062" x="6259" y="309" width="286" height="292" frameX="-6" frameY="-80" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0063" x="6545" y="309" width="287" height="292" frameX="-6" frameY="-80" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0064" x="6832" y="309" width="287" height="292" frameX="-6" frameY="-79" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0065" x="7119" y="309" width="287" height="292" frameX="-6" frameY="-78" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0066" x="7406" y="309" width="287" height="293" frameX="-6" frameY="-77" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0067" x="7693" y="309" width="287" height="293" frameX="-6" frameY="-76" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0068" x="0" y="602" width="287" height="293" frameX="-6" frameY="-75" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0069" x="287" y="602" width="287" height="293" frameX="-6" frameY="-74" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0070" x="574" y="602" width="287" height="294" frameX="-6" frameY="-73" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0071" x="861" y="602" width="287" height="293" frameX="-6" frameY="-73" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0072" x="1148" y="602" width="287" height="293" frameX="-6" frameY="-72" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0073" x="1435" y="602" width="287" height="293" frameX="-6" frameY="-71" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0074" x="1722" y="602" width="287" height="294" frameX="-6" frameY="-70" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0075" x="2009" y="602" width="288" height="294" frameX="-5" frameY="-69" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0076" x="2297" y="602" width="288" height="294" frameX="-5" frameY="-68" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0077" x="2585" y="602" width="288" height="295" frameX="-5" frameY="-67" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0078" x="2873" y="602" width="288" height="296" frameX="-5" frameY="-66" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0079" x="3161" y="602" width="288" height="295" frameX="-5" frameY="-66" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0080" x="3449" y="602" width="288" height="296" frameX="-5" frameY="-65" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0081" x="3737" y="602" width="289" height="296" frameX="-5" frameY="-64" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0082" x="4026" y="602" width="289" height="297" frameX="-5" frameY="-63" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0083" x="4315" y="602" width="289" height="297" frameX="-5" frameY="-62" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0084" x="4604" y="602" width="289" height="298" frameX="-5" frameY="-61" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0085" x="4893" y="602" width="289" height="298" frameX="-5" frameY="-60" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0086" x="5182" y="602" width="289" height="298" frameX="-5" frameY="-60" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0087" x="5471" y="602" width="289" height="298" frameX="-5" frameY="-59" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0088" x="5760" y="602" width="289" height="299" frameX="-5" frameY="-58" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0089" x="6049" y="602" width="290" height="299" frameX="-4" frameY="-57" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0090" x="6339" y="602" width="290" height="300" frameX="-4" frameY="-56" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0091" x="6629" y="602" width="290" height="300" frameX="-4" frameY="-55" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0092" x="6919" y="602" width="290" height="301" frameX="-4" frameY="-54" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0093" x="7209" y="602" width="290" height="300" frameX="-4" frameY="-54" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0094" x="7499" y="602" width="290" height="301" frameX="-4" frameY="-53" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0095" x="7789" y="602" width="290" height="301" frameX="-4" frameY="-52" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0096" x="0" y="903" width="290" height="302" frameX="-4" frameY="-51" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0097" x="290" y="903" width="290" height="303" frameX="-4" frameY="-50" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0098" x="580" y="903" width="290" height="303" frameX="-4" frameY="-49" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0099" x="870" y="903" width="291" height="303" frameX="-4" frameY="-49" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0100" x="1161" y="903" width="291" height="303" frameX="-4" frameY="-48" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0101" x="1452" y="903" width="291" height="304" frameX="-4" frameY="-47" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0102" x="1743" y="903" width="291" height="304" frameX="-4" frameY="-46" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0103" x="2034" y="903" width="292" height="305" frameX="-3" frameY="-45" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0104" x="2326" y="903" width="292" height="304" frameX="-3" frameY="-45" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0105" x="2618" y="903" width="292" height="305" frameX="-3" frameY="-44" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0106" x="2910" y="903" width="292" height="306" frameX="-3" frameY="-43" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0107" x="3202" y="903" width="292" height="306" frameX="-3" frameY="-42" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0108" x="3494" y="903" width="292" height="306" frameX="-3" frameY="-42" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0109" x="3786" y="903" width="292" height="306" frameX="-3" frameY="-41" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0110" x="4078" y="903" width="292" height="307" frameX="-3" frameY="-40" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0111" x="4370" y="903" width="292" height="308" frameX="-3" frameY="-39" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0112" x="4662" y="903" width="292" height="307" frameX="-3" frameY="-39" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0113" x="4954" y="903" width="292" height="308" frameX="-3" frameY="-38" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0114" x="5246" y="903" width="292" height="308" frameX="-3" frameY="-37" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0115" x="5538" y="903" width="292" height="309" frameX="-3" frameY="-36" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0116" x="5830" y="903" width="292" height="309" frameX="-3" frameY="-36" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0117" x="6122" y="903" width="292" height="309" frameX="-3" frameY="-35" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0118" x="6414" y="903" width="293" height="310" frameX="-2" frameY="-34" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0119" x="6707" y="903" width="293" height="309" frameX="-2" frameY="-34" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0120" x="7000" y="903" width="294" height="310" frameX="-2" frameY="-33" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0121" x="7294" y="903" width="294" height="311" frameX="-2" frameY="-32" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0122" x="7588" y="903" width="294" height="310" frameX="-2" frameY="-32" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0123" x="7882" y="903" width="294" height="311" frameX="-2" frameY="-31" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0124" x="0" y="1214" width="294" height="311" frameX="-2" frameY="-31" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0125" x="294" y="1214" width="294" height="311" frameX="-2" frameY="-30" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0126" x="588" y="1214" width="294" height="312" frameX="-2" frameY="-29" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0127" x="882" y="1214" width="294" height="312" frameX="-2" frameY="-29" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0128" x="1176" y="1214" width="294" height="312" frameX="-2" frameY="-28" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0129" x="1470" y="1214" width="294" height="312" frameX="-2" frameY="-28" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0130" x="1764" y="1214" width="294" height="313" frameX="-2" frameY="-27" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0131" x="2058" y="1214" width="294" height="313" frameX="-2" frameY="-26" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0132" x="2352" y="1214" width="294" height="313" frameX="-2" frameY="-26" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0133" x="2646" y="1214" width="294" height="314" frameX="-2" frameY="-25" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0134" x="2940" y="1214" width="294" height="313" frameX="-2" frameY="-25" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0135" x="3234" y="1214" width="294" height="314" frameX="-2" frameY="-24" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0136" x="3528" y="1214" width="294" height="314" frameX="-2" frameY="-24" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0137" x="3822" y="1214" width="294" height="315" frameX="-2" frameY="-23" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0138" x="4116" y="1214" width="295" height="314" frameX="-1" frameY="-23" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0139" x="4411" y="1214" width="295" height="315" frameX="-1" frameY="-22" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0140" x="4706" y="1214" width="295" height="315" frameX="-1" frameY="-22" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0141" x="5001" y="1214" width="295" height="315" frameX="-1" frameY="-21" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0142" x="5296" y="1214" width="295" height="315" frameX="-1" frameY="-21" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0143" x="5591" y="1214" width="295" height="316" frameX="-1" frameY="-20" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0144" x="5886" y="1214" width="295" height="316" frameX="-1" frameY="-20" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0145" x="6181" y="1214" width="295" height="316" frameX="-1" frameY="-19" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0146" x="6476" y="1214" width="295" height="316" frameX="-1" frameY="-19" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0147" x="6771" y="1214" width="295" height="317" frameX="-1" frameY="-18" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0148" x="7066" y="1214" width="296" height="317" frameX="-1" frameY="-18" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0149" x="7362" y="1214" width="296" height="317" frameX="-1" frameY="-17" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0150" x="7658" y="1214" width="296" height="317" frameX="-1" frameY="-17" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0151" x="0" y="1531" width="296" height="317" frameX="-1" frameY="-17" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0152" x="296" y="1531" width="296" height="318" frameX="-1" frameY="-16" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0153" x="592" y="1531" width="296" height="318" frameX="-1" frameY="-16" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0154" x="888" y="1531" width="296" height="318" frameX="-1" frameY="-15" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0155" x="1184" y="1531" width="296" height="318" frameX="-1" frameY="-15" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0156" x="1480" y="1531" width="296" height="318" frameX="-1" frameY="-15" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0157" x="1776" y="1531" width="296" height="319" frameX="-1" frameY="-14" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0158" x="2072" y="1531" width="296" height="318" frameX="-1" frameY="-14" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0159" x="2072" y="1531" width="296" height="318" frameX="-1" frameY="-13" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0160" x="2368" y="1531" width="296" height="319" frameX="-1" frameY="-13" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0161" x="2664" y="1531" width="296" height="319" frameX="-1" frameY="-13" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0162" x="2960" y="1531" width="296" height="320" frameX="-1" frameY="-12" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0163" x="3256" y="1531" width="296" height="319" frameX="-1" frameY="-12" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0164" x="3256" y="1531" width="296" height="319" frameX="-1" frameY="-12" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0165" x="3552" y="1531" width="296" height="320" frameX="-1" frameY="-11" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0166" x="3848" y="1531" width="297" height="320" frameX="0" frameY="-11" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0167" x="4145" y="1531" width="297" height="320" frameX="0" frameY="-11" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0168" x="4442" y="1531" width="297" height="321" frameX="0" frameY="-10" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0169" x="4739" y="1531" width="297" height="320" frameX="0" frameY="-10" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0170" x="4739" y="1531" width="297" height="320" frameX="0" frameY="-10" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0171" x="5036" y="1531" width="297" height="320" frameX="0" frameY="-10" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0172" x="5333" y="1531" width="297" height="321" frameX="0" frameY="-9" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0173" x="5630" y="1531" width="297" height="321" frameX="0" frameY="-9" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0174" x="5927" y="1531" width="297" height="321" frameX="0" frameY="-9" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0175" x="6224" y="1531" width="297" height="321" frameX="0" frameY="-8" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0176" x="6521" y="1531" width="297" height="321" frameX="0" frameY="-8" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0177" x="6521" y="1531" width="297" height="321" frameX="0" frameY="-8" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0178" x="6818" y="1531" width="297" height="321" frameX="0" frameY="-8" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0179" x="7115" y="1531" width="297" height="322" frameX="0" frameY="-7" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0180" x="7412" y="1531" width="297" height="322" frameX="0" frameY="-7" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0181" x="7412" y="1531" width="297" height="322" frameX="0" frameY="-7" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0182" x="7709" y="1531" width="297" height="322" frameX="0" frameY="-7" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0183" x="0" y="1853" width="297" height="322" frameX="0" frameY="-6" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0184" x="297" y="1853" width="297" height="322" frameX="0" frameY="-6" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0185" x="297" y="1853" width="297" height="322" frameX="0" frameY="-6" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0186" x="594" y="1853" width="297" height="322" frameX="0" frameY="-6" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0187" x="891" y="1853" width="297" height="322" frameX="0" frameY="-6" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0188" x="891" y="1853" width="297" height="322" frameX="0" frameY="-5" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0189" x="1188" y="1853" width="297" height="323" frameX="0" frameY="-5" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0190" x="1485" y="1853" width="297" height="323" frameX="0" frameY="-5" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0191" x="1782" y="1853" width="297" height="323" frameX="0" frameY="-5" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0192" x="2079" y="1853" width="297" height="322" frameX="0" frameY="-5" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0193" x="2079" y="1853" width="297" height="322" frameX="0" frameY="-4" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0194" x="2079" y="1853" width="297" height="322" frameX="0" frameY="-4" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0195" x="2376" y="1853" width="297" height="323" frameX="0" frameY="-4" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0196" x="2673" y="1853" width="297" height="323" frameX="0" frameY="-4" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0197" x="2970" y="1853" width="297" height="323" frameX="0" frameY="-4" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0198" x="2970" y="1853" width="297" height="323" frameX="0" frameY="-4" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0199" x="2970" y="1853" width="297" height="323" frameX="0" frameY="-3" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0200" x="3267" y="1853" width="297" height="324" frameX="0" frameY="-3" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0201" x="3564" y="1853" width="297" height="324" frameX="0" frameY="-3" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0202" x="3861" y="1853" width="297" height="324" frameX="0" frameY="-3" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0203" x="3861" y="1853" width="297" height="324" frameX="0" frameY="-3" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0204" x="4158" y="1853" width="297" height="323" frameX="0" frameY="-3" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0205" x="4455" y="1853" width="297" height="323" frameX="0" frameY="-3" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0206" x="4455" y="1853" width="297" height="323" frameX="0" frameY="-2" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0207" x="4455" y="1853" width="297" height="323" frameX="0" frameY="-2" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0208" x="4455" y="1853" width="297" height="323" frameX="0" frameY="-2" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0209" x="4752" y="1853" width="298" height="324" frameX="0" frameY="-2" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0210" x="5050" y="1853" width="298" height="324" frameX="0" frameY="-2" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0211" x="5050" y="1853" width="298" height="324" frameX="0" frameY="-2" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0212" x="5050" y="1853" width="298" height="324" frameX="0" frameY="-2" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0213" x="5050" y="1853" width="298" height="324" frameX="0" frameY="-2" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0214" x="5050" y="1853" width="298" height="324" frameX="0" frameY="-2" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0215" x="5050" y="1853" width="298" height="324" frameX="0" frameY="-2" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0216" x="5348" y="1853" width="298" height="325" frameX="0" frameY="-1" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0217" x="5348" y="1853" width="298" height="325" frameX="0" frameY="-1" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0218" x="5348" y="1853" width="298" height="325" frameX="0" frameY="-1" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0219" x="5348" y="1853" width="298" height="325" frameX="0" frameY="-1" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0220" x="5348" y="1853" width="298" height="325" frameX="0" frameY="-1" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0221" x="5646" y="1853" width="298" height="325" frameX="0" frameY="-1" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0222" x="5944" y="1853" width="298" height="324" frameX="0" frameY="-1" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0223" x="6242" y="1853" width="298" height="324" frameX="0" frameY="-1" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0224" x="6242" y="1853" width="298" height="324" frameX="0" frameY="-1" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0225" x="6540" y="1853" width="298" height="324" frameX="0" frameY="-1" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0226" x="6540" y="1853" width="298" height="324" frameX="0" frameY="-1" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0227" x="6540" y="1853" width="298" height="324" frameX="0" frameY="-1" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0228" x="6540" y="1853" width="298" height="324" frameX="0" frameY="-1" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0229" x="6540" y="1853" width="298" height="324" frameX="0" frameY="-1" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0230" x="6540" y="1853" width="298" height="324" frameX="0" frameY="-1" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0231" x="6540" y="1853" width="298" height="324" frameX="0" frameY="-1" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0232" x="6540" y="1853" width="298" height="324" frameX="0" frameY="-1" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0233" x="6540" y="1853" width="298" height="324" frameX="0" frameY="-1" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0234" x="6540" y="1853" width="298" height="324" frameX="0" frameY="0" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0235" x="6540" y="1853" width="298" height="324" frameX="0" frameY="0" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0236" x="6540" y="1853" width="298" height="324" frameX="0" frameY="0" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0237" x="6540" y="1853" width="298" height="324" frameX="0" frameY="0" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0238" x="6540" y="1853" width="298" height="324" frameX="0" frameY="0" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0239" x="6540" y="1853" width="298" height="324" frameX="0" frameY="0" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0240" x="6540" y="1853" width="298" height="324" frameX="0" frameY="0" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple going up0241" x="6838" y="1853" width="298" height="325" frameX="0" frameY="0" frameWidth="303" frameHeight="400"/>
+	<SubTexture name="ripple idle0000" x="7136" y="1853" width="270" height="312" frameX="-40" frameY="-2" frameWidth="347" frameHeight="314"/>
+	<SubTexture name="ripple idle0001" x="7136" y="1853" width="270" height="312" frameX="-40" frameY="-2" frameWidth="347" frameHeight="314"/>
+	<SubTexture name="ripple idle0002" x="7406" y="1853" width="338" height="313" frameX="-3" frameY="-1" frameWidth="347" frameHeight="314"/>
+	<SubTexture name="ripple idle0003" x="7406" y="1853" width="338" height="313" frameX="-3" frameY="-1" frameWidth="347" frameHeight="314"/>
+	<SubTexture name="ripple idle0004" x="7744" y="1853" width="347" height="314"/>
+	<SubTexture name="ripple idle0005" x="7744" y="1853" width="347" height="314"/>
+	<SubTexture name="ripple idle0006" x="0" y="2178" width="324" height="313" frameX="-9" frameY="-1" frameWidth="347" frameHeight="314"/>
+	<SubTexture name="ripple idle0007" x="0" y="2178" width="324" height="313" frameX="-9" frameY="-1" frameWidth="347" frameHeight="314"/>
+	<SubTexture name="ripple idle0008" x="324" y="2178" width="254" height="310" frameX="-61" frameY="-4" frameWidth="347" frameHeight="314"/>
+	<SubTexture name="ripple idle0009" x="324" y="2178" width="254" height="310" frameX="-61" frameY="-4" frameWidth="347" frameHeight="314"/>
+	<SubTexture name="ripple idle0010" x="578" y="2178" width="237" height="306" frameX="-81" frameY="-8" frameWidth="347" frameHeight="314"/>
+	<SubTexture name="ripple idle0011" x="578" y="2178" width="237" height="306" frameX="-81" frameY="-8" frameWidth="347" frameHeight="314"/>
+	<SubTexture name="ripple idle0012" x="815" y="2178" width="272" height="304" frameX="-48" frameY="-10" frameWidth="347" frameHeight="314"/>
+	<SubTexture name="ripple idle0013" x="815" y="2178" width="272" height="304" frameX="-48" frameY="-10" frameWidth="347" frameHeight="314"/>
+	<SubTexture name="ripple idle0014" x="1087" y="2178" width="286" height="302" frameX="-30" frameY="-12" frameWidth="347" frameHeight="314"/>
+	<SubTexture name="ripple idle0015" x="1087" y="2178" width="286" height="302" frameX="-30" frameY="-12" frameWidth="347" frameHeight="314"/>
+	<SubTexture name="ripple idle0016" x="1373" y="2178" width="285" height="304" frameX="-27" frameY="-10" frameWidth="347" frameHeight="314"/>
+	<SubTexture name="ripple idle0017" x="1658" y="2178" width="279" height="307" frameX="-29" frameY="-7" frameWidth="347" frameHeight="314"/>
+	<SubTexture name="ripple idle0018" x="1658" y="2178" width="279" height="307" frameX="-29" frameY="-7" frameWidth="347" frameHeight="314"/>
+	<SubTexture name="ripple idle0019" x="1937" y="2178" width="236" height="309" frameX="-70" frameY="-5" frameWidth="347" frameHeight="314"/>
+	<SubTexture name="ripple idle0020" x="1937" y="2178" width="236" height="309" frameX="-70" frameY="-5" frameWidth="347" frameHeight="314"/>
+	<SubTexture name="ripple left0000" x="2173" y="2178" width="340" height="314" frameX="-4" frameY="0" frameWidth="344" frameHeight="314"/>
+	<SubTexture name="ripple left0001" x="2173" y="2178" width="340" height="314" frameX="-4" frameY="0" frameWidth="344" frameHeight="314"/>
+	<SubTexture name="ripple left0002" x="2513" y="2178" width="335" height="314" frameX="0" frameY="0" frameWidth="344" frameHeight="314"/>
+	<SubTexture name="ripple left0003" x="2513" y="2178" width="335" height="314" frameX="0" frameY="0" frameWidth="344" frameHeight="314"/>
+	<SubTexture name="ripple phone0000" x="2848" y="2178" width="456" height="381" frameX="0" frameY="-42" frameWidth="500" frameHeight="423"/>
+	<SubTexture name="ripple phone0001" x="3304" y="2178" width="483" height="423" frameX="-17" frameY="0" frameWidth="500" frameHeight="423"/>
+	<SubTexture name="ripple phone0002" x="3787" y="2178" width="349" height="307" frameX="-151" frameY="-116" frameWidth="500" frameHeight="423"/>
+	<SubTexture name="ripple phone0003" x="4136" y="2178" width="323" height="304" frameX="-153" frameY="-118" frameWidth="500" frameHeight="423"/>
+	<SubTexture name="ripple phone0004" x="4136" y="2178" width="323" height="304" frameX="-153" frameY="-118" frameWidth="500" frameHeight="423"/>
+	<SubTexture name="ripple phone0005" x="4459" y="2178" width="317" height="312" frameX="-155" frameY="-111" frameWidth="500" frameHeight="423"/>
+	<SubTexture name="ripple phone0006" x="4459" y="2178" width="317" height="312" frameX="-155" frameY="-111" frameWidth="500" frameHeight="423"/>
+	<SubTexture name="ripple phone0007" x="4776" y="2178" width="317" height="314" frameX="-155" frameY="-109" frameWidth="500" frameHeight="423"/>
+	<SubTexture name="ripple phone0008" x="4776" y="2178" width="317" height="314" frameX="-155" frameY="-109" frameWidth="500" frameHeight="423"/>
+	<SubTexture name="ripple phone0009" x="5093" y="2178" width="318" height="317" frameX="-154" frameY="-106" frameWidth="500" frameHeight="423"/>
+	<SubTexture name="ripple phone0010" x="5093" y="2178" width="318" height="317" frameX="-154" frameY="-106" frameWidth="500" frameHeight="423"/>
+	<SubTexture name="ripple phone0011" x="5411" y="2178" width="318" height="317" frameX="-154" frameY="-106" frameWidth="500" frameHeight="423"/>
+	<SubTexture name="ripple phone0012" x="5411" y="2178" width="318" height="317" frameX="-154" frameY="-106" frameWidth="500" frameHeight="423"/>
+	<SubTexture name="ripple phone0013" x="5093" y="2178" width="318" height="317" frameX="-154" frameY="-106" frameWidth="500" frameHeight="423"/>
+	<SubTexture name="ripple phone0014" x="5093" y="2178" width="318" height="317" frameX="-154" frameY="-106" frameWidth="500" frameHeight="423"/>
+	<SubTexture name="ripple phone0015" x="5411" y="2178" width="318" height="317" frameX="-154" frameY="-106" frameWidth="500" frameHeight="423"/>
+	<SubTexture name="ripple right0000" x="5729" y="2178" width="436" height="315" frameX="-12" frameY="0" frameWidth="448" frameHeight="315"/>
+	<SubTexture name="ripple right0001" x="5729" y="2178" width="436" height="315" frameX="-12" frameY="0" frameWidth="448" frameHeight="315"/>
+	<SubTexture name="ripple right0002" x="6165" y="2178" width="428" height="314" frameX="0" frameY="-1" frameWidth="448" frameHeight="315"/>
+	<SubTexture name="ripple right0003" x="6165" y="2178" width="428" height="314" frameX="0" frameY="-1" frameWidth="448" frameHeight="315"/>
+	<SubTexture name="ripple throw0000" x="6593" y="2178" width="432" height="340" frameX="-23" frameY="-5" frameWidth="1208" frameHeight="371"/>
+	<SubTexture name="ripple throw0001" x="7025" y="2178" width="446" height="343" frameX="0" frameY="-3" frameWidth="1208" frameHeight="371"/>
+	<SubTexture name="ripple throw0002" x="7471" y="2178" width="472" height="317" frameX="-146" frameY="-28" frameWidth="1208" frameHeight="371"/>
+	<SubTexture name="ripple throw0003" x="0" y="2601" width="763" height="371" frameX="-137" frameY="0" frameWidth="1208" frameHeight="371"/>
+	<SubTexture name="ripple throw0004" x="763" y="2601" width="885" height="371" frameX="-137" frameY="0" frameWidth="1208" frameHeight="371"/>
+	<SubTexture name="ripple throw0005" x="1648" y="2601" width="854" height="335" frameX="-173" frameY="-9" frameWidth="1208" frameHeight="371"/>
+	<SubTexture name="ripple throw0006" x="2502" y="2601" width="918" height="335" frameX="-173" frameY="-9" frameWidth="1208" frameHeight="371"/>
+	<SubTexture name="ripple throw0007" x="3420" y="2601" width="931" height="332" frameX="-177" frameY="-12" frameWidth="1208" frameHeight="371"/>
+	<SubTexture name="ripple throw0008" x="4351" y="2601" width="928" height="332" frameX="-177" frameY="-12" frameWidth="1208" frameHeight="371"/>
+	<SubTexture name="ripple throw0009" x="5279" y="2601" width="961" height="325" frameX="-176" frameY="-19" frameWidth="1208" frameHeight="371"/>
+	<SubTexture name="ripple throw0010" x="6240" y="2601" width="1005" height="325" frameX="-176" frameY="-19" frameWidth="1208" frameHeight="371"/>
+	<SubTexture name="ripple throw0011" x="0" y="2972" width="1033" height="338" frameX="-175" frameY="-20" frameWidth="1208" frameHeight="371"/>
+	<SubTexture name="ripple throw0012" x="1033" y="2972" width="1027" height="345" frameX="-175" frameY="-20" frameWidth="1208" frameHeight="371"/>
+	<SubTexture name="ripple throw0013" x="2060" y="2972" width="1028" height="348" frameX="-175" frameY="-20" frameWidth="1208" frameHeight="371"/>
+	<SubTexture name="ripple throw0014" x="2060" y="2972" width="1028" height="348" frameX="-175" frameY="-20" frameWidth="1208" frameHeight="371"/>
+	<SubTexture name="ripple throw0015" x="3088" y="2972" width="1028" height="348" frameX="-175" frameY="-20" frameWidth="1208" frameHeight="371"/>
+	<SubTexture name="ripple throw0016" x="4116" y="2972" width="327" height="324" frameX="-175" frameY="-20" frameWidth="1208" frameHeight="371"/>
+	<SubTexture name="ripple throw0017" x="2060" y="2972" width="1028" height="348" frameX="-175" frameY="-20" frameWidth="1208" frameHeight="371"/>
+	<SubTexture name="ripple throw0018" x="4443" y="2972" width="328" height="324" frameX="-175" frameY="-20" frameWidth="1208" frameHeight="371"/>
+	<SubTexture name="ripple throw0019" x="4771" y="2972" width="325" height="307" frameX="-155" frameY="-40" frameWidth="1208" frameHeight="371"/>
+	<SubTexture name="ripple throw0020" x="4771" y="2972" width="325" height="307" frameX="-155" frameY="-40" frameWidth="1208" frameHeight="371"/>
+	<SubTexture name="ripple up0000" x="5096" y="2972" width="279" height="347" frameX="-6" frameY="0" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0001" x="5096" y="2972" width="279" height="347" frameX="-6" frameY="0" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0002" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0003" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0004" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0005" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0006" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0007" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0008" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0009" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0010" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0011" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0012" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0013" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0014" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0015" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0016" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0017" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0018" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0019" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0020" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0021" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0022" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0023" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0024" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0025" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0026" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0027" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+	<SubTexture name="ripple up0028" x="5375" y="2972" width="297" height="328" frameX="0" frameY="-19" frameWidth="297" frameHeight="347"/>
+</TextureAtlas>

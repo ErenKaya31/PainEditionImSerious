@@ -1,0 +1,76 @@
+{
+	"dialogue": [
+		{
+			"sound": "dialogue/gfDialogue",
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "It sure was nice of that Dave guy to invite us to a farm for a picnic after nearly killing us both and almost destroying the world."
+		},
+		{
+			"sound": "dialogue/bfDialogue",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Beephoo boopsa basphedi!"
+		},
+		{
+			"sound": "dialogue/bambDialogue1",
+			"speed": 0.05,
+			"portrait": "bambi",
+			"boxState": "normal",
+			"expression": "annoyed",
+			"text": "Who goes there??"
+		},
+		{
+			"sound": "dialogue/bfDialogue",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "Beep?"
+		},
+		{
+			"sound": "dialogue/bambDialogue1",
+			"speed": 0.05,
+			"portrait": "bambi",
+			"boxState": "normal",
+			"expression": "upset",
+			"text": "Hey! Are you trying to steal my corn?"
+		},
+		{
+			"sound": "dialogue/bfDialogue",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "Bo beep ber-"
+		},
+		{
+			"sound": "dialogue/bambDialogue1",
+			"speed": 0.05,
+			"portrait": "bambi",
+			"boxState": "angry",
+			"expression": "annoyed",
+			"text": "I GONNA BLOCK YOU OUT OF MY FARM! You never coming back ever again you dirty ole' rodeo trash."
+		},
+		{
+			"sound": "dialogue/bfDialogue",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "Bop?"
+		},
+		{
+			"sound": "dialogue/gfDialogue",
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "Here we go again.."
+		}
+	]
+}

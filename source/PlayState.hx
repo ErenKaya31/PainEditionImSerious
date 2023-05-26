@@ -1811,16 +1811,16 @@ class PlayState extends MusicBeatState
 		super.update(elapsed);
 
 		if(ratingString == '?') {
-			scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Accuracy: ' + Math.floor(ratingPercent * 100) + '%';
+			scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Accuracy: ' + floorDecimal(ratingPercent * 100, 2) + '%';
 		} else {
-			scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Accuracy: ' + Math.floor(ratingPercent * 100) + '%';
+			scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Accuracy: ' + floorDecimal(ratingPercent * 100, 2) + '%';
 		}
 
 		if (SONG.song.toLowerCase() == 'exploitation') {
 			scoreTxt.text =
 			"Scor3: " + (songScore * FlxG.random.int(1,9)) + 
 			" | M1ss3s: " + (songMisses * FlxG.random.int(1,9)) + 
-			" | Accuracy: " + (Math.floor(ratingPercent * 100) * FlxG.random.int(1,9)) + "%";
+			" | Accuracy: " + (floorDecimal(ratingPercent * 100, 2) * FlxG.random.int(1,9)) + "%";
 		}
 
 		if (combo >= 10) {

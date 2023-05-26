@@ -1,0 +1,48 @@
+{
+	"songs": [
+		[
+			"The Phone",
+			"bambi-angey",
+			[
+				37,
+				191,
+				55
+			]
+		],
+		[
+			"Indignancy",
+			"bambi-angey",
+			[
+				37,
+				191,
+				55
+			]
+		],
+		[
+			"Get Out",
+			"bambi-ripple",
+			[
+				255,
+				0,
+				0
+			]
+		]
+	],
+	"hideFreeplay": false,
+	"weekBackground": "screwed",
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"storyName": "Bambis Corn Maze",
+	"weekName": "Custom Week",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"hideStoryMode": false,
+	"weekBefore": "tutorial",
+	"startUnlocked": true
+}

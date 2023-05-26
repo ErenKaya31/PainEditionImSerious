@@ -1,0 +1,111 @@
+{
+	"animations": [
+		{
+			"loop": true,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "ripple idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				19,
+				0
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "ripple left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				16,
+				-24
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "ripple down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-33,
+				31
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "ripple up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-11,
+				0
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "ripple right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				138,
+				31
+			],
+			"anim": "singThrow",
+			"fps": 24,
+			"name": "ripple throw",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				65,
+				89
+			],
+			"anim": "singSmash",
+			"fps": 24,
+			"name": "ripple phone",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-23,
+				85
+			],
+			"anim": "ascend",
+			"fps": 24,
+			"name": "ripple going up",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/RippleBambi",
+	"position": [
+		207,
+		437
+	],
+	"healthicon": "bambi-ripple",
+	"flip_x": false,
+	"healthbar_colors": [
+		255,
+		0,
+		0
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 6.1,
+	"scale": 1
+}
