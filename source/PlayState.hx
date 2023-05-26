@@ -1746,8 +1746,6 @@ class PlayState extends MusicBeatState
 	
 				if (!expungedMoving)
 				{
-					elapsedexpungedtime += elapsed * 9;
-	
 					var screenwidth = Application.current.window.display.bounds.width;
 					var screenheight = Application.current.window.display.bounds.height;
 	
