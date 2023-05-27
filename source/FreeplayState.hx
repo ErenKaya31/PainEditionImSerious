@@ -46,7 +46,7 @@ class FreeplayState extends MusicBeatState
 
 	private var CurrentSongIcon:FlxSprite;
 
-	private var AllPossibleSongs:Array<String> = ["main", "extras", "joke", "mods", "friend-made"];
+	private var AllPossibleSongs:Array<String> = ["main", "extras", "joke", "friend-made"];
 
 	private var CurrentPack:Int = 0;
 
@@ -55,6 +55,8 @@ class FreeplayState extends MusicBeatState
 	var songColors:Array<FlxColor> = [
 		0xFF000000, // DUMBASS PLACEHOLDER
 		0xFF00B515, // MISTER BAMBI RETARD (thats kinda rude ngl)
+		0xFFFF0000, // ripple bambi
+		0xFFB7F1B9, // garcello bambi GARCELLO REFERENCE!?!??1**1
 		0xFF119A2B, // CHEATING
 		0xFFFF0000, // UNFAIRNESS
 		0xFF810000, // EXPLOITATION
@@ -105,14 +107,6 @@ class FreeplayState extends MusicBeatState
 		{
 			switch (AllPossibleSongs[CurrentPack].toLowerCase())
 			{
-			    case 'mods':
-					var initSonglist = CoolUtil.coolTextFile(Paths.txt('modsSonglist'));
-
-					for (i in 0...initSonglist.length)
-					{
-						var data:Array<String> = initSonglist[i].split(':');
-						songs.push(new SongMetadata(data[0], Std.parseInt(data[2]), data[1]));
-					}
 				case 'main':
 					addWeek(['Blocked', 'Corn-Theft', 'Flintcorn'], 1, ['bambi']);
 					addWeek(['The Phone', 'Indignancy'], 1, ['bambi-angey']);
@@ -121,30 +115,6 @@ class FreeplayState extends MusicBeatState
 					addWeek(['Cheating'], 4, ['bambi-3d']);
 					addWeek(['Unfairness'], 5, ['bambi-unfair']);
 					addWeek(['Exploitation'], 6, ['expunged']);
-				case 'extras':
-					var initSonglist = CoolUtil.coolTextFile(Paths.txt('extrasSonglist'));
-		
-					for (i in 0...initSonglist.length)
-					{
-						var data:Array<String> = initSonglist[i].split(':');
-						songs.push(new SongMetadata(data[0], Std.parseInt(data[2]), data[1]));
-					}
-				case 'joke':
-					var initSonglist = CoolUtil.coolTextFile(Paths.txt('jokeSonglist'));
-		
-					for (i in 0...initSonglist.length)
-					{
-						var data:Array<String> = initSonglist[i].split(':');
-						songs.push(new SongMetadata(data[0], Std.parseInt(data[2]), data[1]));
-					}
-				case 'friend-made':
-					var initSonglist = CoolUtil.coolTextFile(Paths.txt('friendMadeSonglist'));
-		
-					for (i in 0...initSonglist.length)
-					{
-						var data:Array<String> = initSonglist[i].split(':');
-						songs.push(new SongMetadata(data[0], Std.parseInt(data[2]), data[1]));
-					}
 			}
 		}
 

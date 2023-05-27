@@ -50,13 +50,15 @@ class CreditsPopUp extends FlxSpriteGroup
 				songCreator = 'MoldyGH\nVoices by Eren Kaya';
 				songCreatorIcon = 'MoldyGH';
 			case 'exploitation':
-				songCreator = 'Oxygen';
+				songCreator = 'Oxygen\nRemix by IndigoVoidigo';
 			case 'kuruwa-seru':
 				songCreator = 'Null_y34r';
 			case 'disruption':
 				songCreator = 'Sky!\nRemix by Eren Kaya\nVoices by tiledmind';
 			case 'reality-breaking':
 				songCreator = 'Pyramix';
+			case 'traumatism':
+				songCreator = 'naether';
 		}
 		switch (PlayState.storyWeek)
 		{
@@ -90,6 +92,15 @@ class CreditsPopUp extends FlxSpriteGroup
                     animation: new Animation('expunged', 'Expunged', 24, true, [false, false]),
                     iconOffset: 0
                 };
+			case 'traumatism':
+				headingPath = {path: 'songHeadings/traumatismHeading', antiAliasing: false, iconOffset: 0};
+		}
+
+		switch (PlayState.SONG.player2.toLowerCase()) {
+			case 'oppositionexpunged':
+				headingPath = {path: 'songHeadings/oppExpungedHeading', antiAliasing: false, iconOffset: 0};
+			case 'thearchyexpunged':
+				headingPath = {path: 'songHeadings/oppExpungedHeading', antiAliasing: false, iconOffset: 0};
 		}
 
 		if (headingPath != null)

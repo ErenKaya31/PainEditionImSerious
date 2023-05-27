@@ -201,6 +201,7 @@ class PlayState extends MusicBeatState
 
 	var black:FlxSprite;
 	var blackScreen:FlxSprite;
+	var bsod:FlxSprite;
 
 	var comboSpr:FlxSprite;
 
@@ -1809,7 +1810,7 @@ class PlayState extends MusicBeatState
 		super.update(elapsed);
 
 		if(ratingString == '?') {
-			scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Accuracy: ' + floorDecimal(ratingPercent * 100, 2) + '%';
+			scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Accuracy: ?';
 		} else {
 			scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Accuracy: ' + floorDecimal(ratingPercent * 100, 2) + '%';
 		}
@@ -3761,7 +3762,13 @@ class PlayState extends MusicBeatState
 					case 1270:
 						subtitleManager.addSubtitle("YOU LYING!", 0.02, 0.3);
 					case 1276:
-						subtitleManager.addSubtitle("A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€A€", 0.02, 0.3);
+						bsod = new FlxSprite(0, 0);
+						bsod.loadGraphic(Paths.image('bsod'));
+						bsod.cameras = [camOther];
+						bsod.screenCenter();
+						add(bsod);
+					case 1280:
+						bsod.alpha = 0;
 					case 1100:
 						PlatformUtil.sendWindowsNotification("Anticheat.dll", "Potential threat detected: expunged.dat");
 				}
