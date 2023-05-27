@@ -448,7 +448,7 @@ class PlayState extends MusicBeatState
 				voidShader(bg);
 
 			case 'missing-texture':
-				var bg:BGSprite = new BGSprite('void', -600, -200, 0, 0);
+				var bg:BGSprite = new BGSprite('void', 0, 0, 0, 0);
 				bg.loadGraphic(Paths.image('backgrounds/void/missingTexture'));
 				bg.setGraphicSize(Std.int(bg.width * 2));
 				bg.antialiasing = false;
