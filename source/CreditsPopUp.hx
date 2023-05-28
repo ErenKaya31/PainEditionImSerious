@@ -123,6 +123,9 @@ class CreditsPopUp extends FlxSpriteGroup
 		}
 		createHeadingText('Song by ' + songCreator);
 		funnyIcon = new FlxSprite(0, 0, Paths.image('songCreators/${songCreatorIcon != '' ? songCreatorIcon : songCreator}'));
+		if (!Paths.fileExists('songCreators/' + newIcon, IMAGE)) {
+			funnyIcon.loadGraphic(Paths.image('songCreators/none'));
+		}
 		rescaleIcon();
 		add(funnyIcon);
 
@@ -171,10 +174,6 @@ class CreditsPopUp extends FlxSpriteGroup
 		funnyIcon = new FlxSprite(0, 0, Paths.image('songCreators/' + newIcon));
 		rescaleIcon();
 		add(funnyIcon);
-
-		if (!Paths.fileExists('songCreators/' + newIcon, IMAGE)) {
-			funnyIcon.loadGraphic(Paths.image('songCreators/none'));
-		}
 
 		if (rescaleHeading)
 		{

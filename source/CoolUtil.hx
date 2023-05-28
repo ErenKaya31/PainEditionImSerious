@@ -22,11 +22,6 @@ class CoolUtil
 		['Normal', '']
 	];
 
-	public static function init()
-		{
-			CoolUtil.currentLocaleList = CoolUtil.coolTextFile(Paths.file('lyrics/lyrcis.txt', TEXT, 'text'));
-		}
-
 	public static function difficultyString():String
 	{
 		return difficultyStuff[PlayState.storyDifficulty][0].toUpperCase();
@@ -38,17 +33,6 @@ class CoolUtil
 		else if(newValue > max) newValue = max;
 		return newValue;
 	}
-
-	public static function coolTextFile(path:String):Array<String>
-		{
-			var daList:Array<String> = Assets.getText(path).trim().split('\n');
-	
-			for (i in 0...daList.length)
-			{
-				daList[i] = daList[i].trim();
-			}
-			return daList;
-		}
 
 	public static function numberArray(max:Int, ?min = 0):Array<Int>
 	{

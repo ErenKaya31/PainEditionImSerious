@@ -10,6 +10,7 @@ class StrumNote extends FlxSprite
 {
 	private var colorSwap:ColorSwap;
 	public var resetAnim:Float = 0;
+	var funnyFloatyBoys:Array<String> = ['bambi-3d', 'expunged', 'bambi-unfair', 'glitchy-expunged', 'oppositionexpunged', 'thearchyexpunged'];
 	private var noteData:Int = 0;
 
 	private var player:Int;
@@ -93,6 +94,12 @@ class StrumNote extends FlxSprite
 
 		updateHitbox();
 		scrollFactor.set();
+
+		if (funnyFloatyBoys.contains(PlayState.SONG.player2) || funnyFloatyBoys.contains(PlayState.SONG.player1))
+		{
+			frames = Paths.getSparrowAtlas('NOTE_assets_3D');
+			antialiasing = false;
+		}
 	}
 
 	public function postAddedToGroup() {

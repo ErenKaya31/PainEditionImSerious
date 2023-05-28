@@ -62,6 +62,8 @@ class Note extends FlxSprite
 	public var hitHealth:Float = 0.023;
 	public var missHealth:Float = 0.0475;
 
+	var funnyFloatyBoys:Array<String> = ['bambi-3d', 'expunged', 'bambi-unfair', 'glitchy-expunged', 'oppositionexpunged', 'thearchyexpunged'];
+
 	public var texture(default, set):String = null;
 
 	public var noAnimation:Bool = false;
@@ -254,6 +256,13 @@ class Note extends FlxSprite
 			loadNoteAnims();
 			antialiasing = ClientPrefs.globalAntialiasing;
 		}
+
+		if (funnyFloatyBoys.contains(PlayState.SONG.player2) || funnyFloatyBoys.contains(PlayState.SONG.player1))
+		{
+			frames = Paths.getSparrowAtlas('NOTE_assets_3D');
+			antialiasing = false;
+		}
+
 		if(isSustainNote) {
 			scale.y = lastScaleY;
 		}

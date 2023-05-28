@@ -1,132 +1,132 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"anim": "idle",
+			"loop": false,
 			"fps": 24,
-			"name": "bambi idle",
-			"indices": []
+			"anim": "idle",
+			"indices": [],
+			"name": "bambi idle"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				70,
 				6
 			],
-			"anim": "singLEFT",
+			"loop": false,
 			"fps": 24,
-			"name": "bambi left",
-			"indices": []
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "bambi left"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				22,
 				-28
 			],
-			"anim": "singDOWN",
+			"loop": false,
 			"fps": 24,
-			"name": "bambi down",
-			"indices": []
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "bambi down"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				55,
 				36
 			],
-			"anim": "singUP",
+			"loop": false,
 			"fps": 24,
-			"name": "bambi up",
-			"indices": []
+			"anim": "singUP",
+			"indices": [],
+			"name": "bambi up"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-16,
 				8
 			],
-			"anim": "singRIGHT",
+			"loop": false,
 			"fps": 24,
-			"name": "bambi right",
-			"indices": []
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "bambi right"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				24,
 				4
 			],
-			"anim": "singLEFT-alt",
+			"loop": false,
 			"fps": 24,
-			"name": "bambi alt left",
-			"indices": []
+			"anim": "singLEFT-alt",
+			"indices": [],
+			"name": "bambi alt left"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				20,
 				10
 			],
-			"anim": "singRIGHT-alt",
+			"loop": false,
 			"fps": 24,
-			"name": "bambi alt right",
-			"indices": []
+			"anim": "singRIGHT-alt",
+			"indices": [],
+			"name": "bambi alt right"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				37,
 				23
 			],
-			"anim": "singThrow",
+			"loop": false,
 			"fps": 24,
-			"name": "bambi throw",
-			"indices": []
+			"anim": "singThrow",
+			"indices": [],
+			"name": "bambi throw"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				98,
 				81
 			],
-			"anim": "singSmash",
+			"loop": false,
 			"fps": 24,
-			"name": "bambi phone",
-			"indices": []
+			"anim": "singSmash",
+			"indices": [],
+			"name": "bambi phone"
 		},
 		{
+			"loop": false,
 			"offsets": [
 				2,
 				7
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "hey",
-			"loop": false,
-			"name": "bambi hey"
+			"fps": 24,
+			"name": "bambi hey",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				4,
 				-1
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "idiot",
-			"loop": false,
-			"name": "bambi idiot"
+			"fps": 24,
+			"name": "bambi idiot",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
 	"image": "characters/bambiRemake",
 	"position": [
-		237,
-		437
+		200,
+		400
 	],
 	"healthicon": "bambi",
 	"flip_x": false,

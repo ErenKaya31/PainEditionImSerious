@@ -48,4 +48,8 @@ function onUpdate()
 	setProperty('cornFence2.color', 0x878787)
 	setProperty('cornBag.color', 0x878787)
 	setProperty('sign.color', 0x878787)
+
+	if not mustHitSection then
+		cameraTarget('dad')
+	end
 end
