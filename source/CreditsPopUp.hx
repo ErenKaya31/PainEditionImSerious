@@ -41,11 +41,13 @@ class CreditsPopUp extends FlxSpriteGroup
 		{
 			case 'corn-theft' | 'indignancy' | 'unfairness':
 				songCreator = 'MoldyGH';
-			case 'blocked' | 'last-reality' | 'get-out' | 'the-phone' | 'mazeophobia':
+			case 'blocked' | 'get-out' | 'the-phone' | 'mazeophobia':
 				songCreator = 'Eren Kaya';
 			case 'flintcorn':
 				songCreator = 'BobbbyOfficial\nRemake by Eren Kaya';
                 songCreatorIcon = 'BobbbyOfficial';
+			case 'last-reality':
+				songCreator = 'BobbbyOfficial & Eren Kaya';
 			case 'cheating':
 				songCreator = 'MoldyGH\nVoices by Eren Kaya';
 				songCreatorIcon = 'MoldyGH';
@@ -169,6 +171,10 @@ class CreditsPopUp extends FlxSpriteGroup
 		funnyIcon = new FlxSprite(0, 0, Paths.image('songCreators/' + newIcon));
 		rescaleIcon();
 		add(funnyIcon);
+
+		if (!Paths.fileExists('songCreators/' + newIcon, IMAGE)) {
+			funnyIcon.loadGraphic(Paths.image('songCreators/none'));
+		}
 
 		if (rescaleHeading)
 		{

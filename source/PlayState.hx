@@ -448,12 +448,12 @@ class PlayState extends MusicBeatState
 				voidShader(bg);
 
 			case 'missing-texture':
-				var bg:BGSprite = new BGSprite('void', 0, 0, 0, 0);
+				var bg:BGSprite = new BGSprite('void', 0, 0, 1, 1);
 				bg.loadGraphic(Paths.image('backgrounds/void/missingTexture'));
 				bg.setGraphicSize(Std.int(bg.width * 2));
 				bg.antialiasing = false;
 				add(bg);
-				voidShader(bg);
+				holyVoidShader(bg);
 
 			case 'glitchy-void':
 				var bg:BGSprite = new BGSprite('void', 0, 0, 1, 1);
@@ -3420,15 +3420,26 @@ class PlayState extends MusicBeatState
 		}
 	}
 
+	function holyVoidShader(background:BGSprite)
+	{
+		var testshader:Shaders.GlitchEffect = new Shaders.GlitchEffect();
+		testshader.waveAmplitude = 0.05;
+		testshader.waveFrequency = 150;
+		testshader.waveSpeed = 4;
+			
+		background.shader = testshader.shader;
+		curbg = background; // i love this!!!!!!!!!
+	}
+
 	function voidShader(background:BGSprite)
 	{
 		var testshader:Shaders.GlitchEffect = new Shaders.GlitchEffect();
 		testshader.waveAmplitude = 0.1;
 		testshader.waveFrequency = 5;
 		testshader.waveSpeed = 2;
-			
+				
 		background.shader = testshader.shader;
-		curbg = background; // i love this!!!!!!!!!
+		curbg = background; // THE FUCKING HOLY ASJDAJSDJASD
 	}
 
 	public function spawnNoteSplash(x:Float, y:Float, data:Int, ?note:Note = null) {
@@ -3630,7 +3641,6 @@ class PlayState extends MusicBeatState
 
 	function swapGlitch(glitchTime:Float, toBackground:String)
 	{
-		//hey t5 if you make the static fade in and out, can you use the sounds i made? they are in preload
 		var glitch = new BGSprite('glitch/glitchSwitch', 0, 0, 0, 0, ['glitchScreen'], true);
 		glitch.scrollFactor.set();
 		glitch.cameras = [camHUD];
@@ -4069,7 +4079,7 @@ class PlayState extends MusicBeatState
 			}
 			
 			window = Application.current.createWindow({
-				title: "expunged.dat",
+				title: SONG.player2 + ".dat",
 				width: 800,
 				height: 800,
 				borderless: true,
