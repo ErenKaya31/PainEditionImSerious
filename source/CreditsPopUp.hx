@@ -123,7 +123,7 @@ class CreditsPopUp extends FlxSpriteGroup
 		}
 		createHeadingText('Song by ' + songCreator);
 		funnyIcon = new FlxSprite(0, 0, Paths.image('songCreators/${songCreatorIcon != '' ? songCreatorIcon : songCreator}'));
-		if (!Paths.fileExists('songCreators/'${songCreatorIcon != '' ? songCreatorIcon : songCreator}, IMAGE)) {
+		if (!Paths.fileExists('songCreators/${songCreatorIcon != '' ? songCreatorIcon : songCreator}', IMAGE)) {
 			funnyIcon.loadGraphic(Paths.image('songCreators/none'));
 		}
 		rescaleIcon();
