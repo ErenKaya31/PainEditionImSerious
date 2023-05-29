@@ -112,11 +112,6 @@ class PauseSubState extends MusicBeatSubstate
 			grpMenuShit.add(songText);
 		}
 
-		if (!Sys.getEnv("USERNAME") == 'hp')
-		{
-			menuItems = ['Resume', 'Restart Song', 'Change Difficulty', 'Toggle Practice Mode', 'Exit to menu'];
-		}
-
 		changeSelection();
 
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];

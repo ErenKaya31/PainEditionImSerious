@@ -26,7 +26,7 @@ class FreeplayState extends MusicBeatState
 
 	var selector:FlxText;
 	var curSelected:Int = 0;
-	var curDifficulty:Int = 1;
+	var curDifficulty:Int = 0;
 
 	var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('backgrounds/SUSSUS AMOGUS'));
 
@@ -148,12 +148,6 @@ class FreeplayState extends MusicBeatState
 		scoreBG.y = 10;
 		add(scoreBG);
 
-		diffText = new FlxText(scoreText.x -10, scoreText.y + 30, 0, "", 24);
-		diffText.font = scoreText.font;
-		diffText.x = 20;
-		diffText.y = 40;
-		add(diffText);
-
 		add(scoreText);
 
 		changeSelection();
@@ -262,7 +256,7 @@ class FreeplayState extends MusicBeatState
 		var downP = controls.UI_DOWN_P;
 		var accepted = controls.ACCEPT;
 		var space = FlxG.keys.justPressed.SPACE;
-		var fuckyou = FlxG.keys.justPressed.SEVEN;
+		var fuckyou = FlxG.keys.justPressed.F4;
 
 		if (upP)
 		{
@@ -299,8 +293,8 @@ class FreeplayState extends MusicBeatState
 		if (fuckyou)
 		{
 			FlxG.sound.music.volume = 0;
-			PlayState.SONG = Song.loadFromJson("opposition-hard", "opposition"); // you dun fucked up again
-			FlxG.save.data.oppositionFound = true;
+			PlayState.SONG = Song.loadFromJson("crazyness", "crazyness"); // you dun fucked up again
+			FlxG.save.data.crazyGuyFound = true;
 			
 			new FlxTimer().start(0.25, function(tmr:FlxTimer)
 			{
@@ -367,17 +361,17 @@ public static function destroyFreeplayVocals() {
 		curDifficulty += change;
 
 		if (curDifficulty < 0)
-			curDifficulty = 2;
-		if (curDifficulty > 2)
+			curDifficulty = 0;
+		if (curDifficulty > 0)
 			curDifficulty = 0;
 		
 		if (songs[curSelected].week == 4)
 			{
-				curDifficulty = 3;
+				curDifficulty = 0;
 			}
 		if (songs[curSelected].week == 6 || songs[curSelected].week == 7 || songs[curSelected].week == 8 || songs[curSelected].week == 9 || songs[curSelected].week == 10 || songs[curSelected].week == 11)
 			{
-				curDifficulty = 2;
+				curDifficulty = 0;
 			}
 		#if !switch
 		intendedScore = Highscore.getScore(songs[curSelected].songName, curDifficulty);
@@ -401,11 +395,11 @@ public static function destroyFreeplayVocals() {
 
 		if (songs[curSelected].week == 4)
 		{
-			curDifficulty = 3;
+			curDifficulty = 0;
 		}
 		if (songs[curSelected].week == 6 || songs[curSelected].week == 7 || songs[curSelected].week == 8 || songs[curSelected].week == 9 || songs[curSelected].week == 10 || songs[curSelected].week == 11)
 		{
-			curDifficulty = 2;
+			curDifficulty = 0;
 		}
 
 		#if !switch

@@ -87,7 +87,7 @@ class CreditsPopUp extends FlxSpriteGroup
 					animation: new Animation('unfair', 'Unfairness', 24, true, [false, false]),
 					iconOffset: 0
 				};
-            case 'exploitation':
+            case 'exploitation' | 'last-reality':
                 headingPath = {
                     path: 'songHeadings/expungedHeading',
                     antiAliasing: true,
