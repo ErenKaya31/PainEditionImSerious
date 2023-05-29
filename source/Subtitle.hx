@@ -49,7 +49,7 @@ class Subtitle extends FlxTypeText
             {
                finish();
             }});
-            FlxTween.tween(this, {y: ((FlxG.height / 2) - 200) + 20}, 1, {FlxEase.quadOut});
+            FlxTween.tween(this, {y: ((FlxG.height / 2) - 200) + 20}, 0.5);
          });
       });
    }
