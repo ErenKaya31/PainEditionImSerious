@@ -11,6 +11,7 @@ class HealthIcon extends FlxSprite
 	private var isOldIcon:Bool = false;
 	private var isPlayer:Bool = false;
 	private var char:String = '';
+	public var animatedIcon:Bool = false;
 
 	public var noAaChars:Array<String> = [
 		'icon-bambi-3d',
@@ -18,6 +19,7 @@ class HealthIcon extends FlxSprite
 		'icon-expunged',
 		'icon-glitchy-expunged'
 	];
+	public var ditheredChars:Array<String> = [];
 
 	public function new(char:String = 'bf', isPlayer:Bool = false)
 	{
@@ -43,7 +45,10 @@ class HealthIcon extends FlxSprite
 
 	private var iconOffsets:Array<Float> = [0, 0];
 	public function changeIcon(char:String) {
+		ditheredChars = noAaChars;
 		if(this.char != char) {
+			animatedIcon = false;
+
 			var name:String = 'icons/' + char;
 			if(!Paths.fileExists('images/' + name + '.png', IMAGE)) name = 'icons/icon-' + char; //Older versions of psych engine's support
 			if(!Paths.fileExists('images/' + name + '.png', IMAGE)) name = 'icons/icon-face'; //Prevents crash from missing icon
@@ -55,19 +60,25 @@ class HealthIcon extends FlxSprite
 			iconOffsets[1] = (width - 150) / 2;
 			updateHitbox();
 
-			antialiasing = !noAaChars.contains(char);
+			antialiasing = !ditheredChars.contains(char);
 			animation.add(char, [0, 1], 0, false, isPlayer);
 			animation.play(char);
 			this.char = char;
 
-			if (char == 'glitchy-expunged') {
-				frames = Paths.getSparrowAtlas('icon-glitchy-expunged');
-				animation.addByPrefix(char, char, 24, false, isPlayer, false);
-			}
-
 			antialiasing = ClientPrefs.globalAntialiasing;
 			if(char.endsWith('-pixel')) {
 				antialiasing = false;
+			}
+
+			switch (char)
+			{
+				case 'glitchy-expunged':
+					frames = Paths.getSparrowAtlas('icons/animated/icon-glitchy-expunged');
+
+					animation.addByPrefix(char, char, 24, true);
+					animation.play(char);
+
+					animatedIcon = true;
 			}
 		}
 	}

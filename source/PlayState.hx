@@ -290,6 +290,9 @@ class PlayState extends MusicBeatState
 	public var inCutscene:Bool = false;
 	var songLength:Float = 0;
 
+	public var cheatingModchart:Bool = false;
+	public var unfairnessModchart:Bool = false;
+
 	#if desktop
 	// Discord RPC variables
 	var storyDifficultyText:String = "";
@@ -448,7 +451,7 @@ class PlayState extends MusicBeatState
 				voidShader(bg);
 
 			case 'missing-texture':
-				var bg:BGSprite = new BGSprite('void', 0, 0, 1, 1);
+				var bg:BGSprite = new BGSprite('void', 250, 0, 1, 1);
 				bg.loadGraphic(Paths.image('backgrounds/void/missingTexture'));
 				bg.setGraphicSize(Std.int(bg.width * 2));
 				bg.antialiasing = false;
@@ -1723,10 +1726,41 @@ class PlayState extends MusicBeatState
 	{
 		elapsedtime += elapsed;
 		elapsedexpungedtime += elapsed * 9;
-		/*if (FlxG.keys.justPressed.NINE)
+
+		if (FlxG.keys.justPressed.NINE)
 		{
 			iconP1.swapOldIcon();
-		}*/
+		}
+
+		if ((cheatingModchart && !inCutscene)) // fuck you
+		{
+			playerStrums.forEach(function(spr:StrumNote)                                               
+			{
+				spr.x += Math.sin(elapsedtime) * ((spr.ID % 2) == 0 ? 1 : -1);
+				spr.y += Math.cos(elapsedtime) * ((spr.ID % 2) == 0 ? 1 : -1) / 3;
+				spr.x += Math.cos(elapsedtime) * 1.5;
+			});
+			opponentStrums.forEach(function(spr:StrumNote)
+			{
+				spr.x -= Math.sin(elapsedtime) * ((spr.ID % 2) == 0 ? 1 : -1);
+				spr.y -= Math.cos(elapsedtime) * ((spr.ID % 2) == 0 ? 1 : -1);
+				spr.x -= Math.cos(elapsedtime) * 1.5;
+			});
+		}
+
+		if (unfairnessModchart && !inCutscene) // fuck you x2
+		{
+			playerStrums.forEach(function(spr:StrumNote)
+			{
+				spr.x = ((FlxG.width / 2) - (spr.width / 2)) + (Math.sin((elapsedtime + (spr.ID))) * 300);
+				spr.y = ((FlxG.height / 2) - (spr.height / 2)) + (Math.cos((elapsedtime + (spr.ID))) * 300);
+			});
+			opponentStrums.forEach(function(spr:StrumNote)
+			{
+				spr.x = ((FlxG.width / 2) - (spr.width / 2)) + (Math.sin((elapsedtime + (spr.ID)) * 2) * 300);
+				spr.y = ((FlxG.height / 2) - (spr.height / 2)) + (Math.cos((elapsedtime + (spr.ID)) * 2) * 300);
+			});
+		}
 
 		callOnLuas('onUpdate', [elapsed]);
 
@@ -1822,8 +1856,14 @@ class PlayState extends MusicBeatState
 			" | Accuracy: " + (floorDecimal(ratingPercent * 100, 2) * FlxG.random.int(1,9)) + "%";
 		}
 
-		if (combo >= 10) {
+		if (combo >= 10) 
+		{
 			add(comboSpr);
+		}
+
+		if (shakeCam)
+		{
+			FlxG.camera.shake(0.010, 0.010);
 		}
 
 		if(cpuControlled) {
@@ -2103,6 +2143,11 @@ class PlayState extends MusicBeatState
 
 				if (!daNote.mustPress && daNote.wasGoodHit && !daNote.hitByOpponent && !daNote.ignoreNote)
 				{
+					if(dad.curCharacter == 'traumatism')
+					{
+						FlxG.camera.shake(0.010, 0.010);
+					}
+
 					if (Paths.formatToSongPath(SONG.song) != 'tutorial')
 						camZooming = true;
 

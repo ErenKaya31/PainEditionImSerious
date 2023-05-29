@@ -288,6 +288,8 @@ class FreeplayState extends MusicBeatState
 			
 				PlayState.storyWeek = songs[curSelected].week;
 				LoadingState.loadAndSwitchState(new PlayState());
+				FlxG.sound.music.volume = 0;
+				FreeplayState.destroyFreeplayVocals();
 			}
 		}
 		if (fuckyou)
